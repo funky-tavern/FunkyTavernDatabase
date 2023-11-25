@@ -15,6 +15,7 @@
    },
    "scripts": {
       "start": "ts-node funky-tavern-db/index.ts",
+      "build": "ts-node funky-tavern-db/build.ts",
       "typeorm": "typeorm-ts-node-commonjs"
    }
 }

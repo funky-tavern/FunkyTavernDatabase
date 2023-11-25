@@ -2,14 +2,14 @@ import {join} from "path";
 import {existsSync} from "fs";
 import {readFile} from "fs/promises";
 import {AppDataSource} from "../data-source";
-import {Repository} from "typeorm";
+import { EntityTarget } from "typeorm/common/EntityTarget";
 
 
 export class Mapper<T> {
 
-    private readonly class: {new(): T};
+    private readonly class: { new (): T };
 
-    constructor(classType: {new(): T}) {
+    constructor(classType: { new (): T }) {
         this.class = classType;
     }
 

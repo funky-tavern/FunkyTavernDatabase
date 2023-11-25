@@ -1,23 +1,11 @@
-import { AppDataSource } from "./data-source"
-import {AbilityScore} from "./entity/ability-score.entity";
-import { Mapper } from "./mapper/mapper";
+import {DATABASE_FILE_PATH} from "./data-source";
+import * as fs from "fs/promises";
 
-AppDataSource.initialize().then(async () => {
-    const mapper = new Mapper<AbilityScore>(AbilityScore);
 
-    const abilityScoreRepository = AppDataSource.getRepository(AbilityScore);
+const _getDatabaseData = async () => {
+    const data = await fs.readFile(DATABASE_FILE_PATH, { encoding: 'utf8' });
 
-    mapper.map("./funky-tavern-db/srd/ability-scores.json").then((data) => {
-        data.forEach((abilityScore) => {
-            abilityScoreRepository.save(abilityScore);
-        });
-    });
+    return new Uint8Array(Buffer.from(data));
+}
 
-    abilityScoreRepository.find({
-        where: {
-            index: "str"
-        }
-    }).then((abilityScores) => {
-        console.log(abilityScores);
-    });
-}).catch(error => console.log(error))
+export const getDatabaseData = _getDatabaseData;
