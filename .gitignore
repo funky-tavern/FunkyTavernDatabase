@@ -6,3 +6,6 @@ tmp/
 temp/
 *.sqlite
 *.database
+
+lib/
+.secret

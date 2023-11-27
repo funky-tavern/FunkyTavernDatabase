@@ -9,12 +9,13 @@ AppDataSource.initialize().then(async () => {
         const Repository = AppDataSource.getRepository(entityMapping.entity);
 
         (new Mapper(entityMapping.entity)).map(entityMapping.path).then((data) => {
-            data
             Repository.save(data);
         });
 
         Repository.find().then((entities) => {
-            console.log(entities);
+            console.log(`${entityMapping.entity.name}: created;`);
+        }).catch((error) => {
+            console.log(`${entityMapping.entity.name}: failed;`);
         });
     });
 

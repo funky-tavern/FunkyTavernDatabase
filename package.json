@@ -1,6 +1,6 @@
 {
-   "name": "5e_database",
-   "version": "0.0.1",
+   "name": "funky-tavern-db",
+   "version": "0.0.1-2",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
    "devDependencies": {
@@ -14,8 +14,8 @@
       "sqlite3": "^5.0.2"
    },
    "scripts": {
-      "start": "ts-node funky-tavern-db/index.ts",
-      "build": "ts-node funky-tavern-db/build.ts",
+      "build": "ts-node src/build.ts && tsc && cp db lib/db -r && cp package.json lib/",
+      "publish": "cd lib && npm publish --access public",
       "typeorm": "typeorm-ts-node-commonjs"
    }
 }

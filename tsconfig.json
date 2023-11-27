@@ -1,4 +1,6 @@
 {
+   "collection": "@nestjs/schematics",
+   "sourceRoot": "src",
    "compilerOptions": {
       "lib": [
          "es5",
@@ -7,7 +9,8 @@
       "target": "es5",
       "module": "commonjs",
       "moduleResolution": "node",
-      "outDir": "./build",
+      "outDir": "./lib",
+      "declaration": true,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true
