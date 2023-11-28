@@ -1,6 +1,7 @@
-import { AppDataSource } from "./data-source"
+import {AppDataSource} from "./data-source"
 import { Mapper } from "./mapper/mapper";
 import { ENTITY_MAPPINGS } from "./mapper/mapping";
+
 
 AppDataSource.initialize().then(async () => {
 
