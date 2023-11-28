@@ -16,10 +16,9 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-          always-auth: true
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm run publish
+      - run: cd lib && npm publish --access public
         env:
 #           NOTE: using the built-in GITHUB token here because we're publishing to THIS repository's packages.
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

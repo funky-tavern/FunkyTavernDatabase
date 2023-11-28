@@ -13,9 +13,11 @@ AppDataSource.initialize().then(async () => {
         });
 
         Repository.find().then((entities) => {
-            console.log(`${entityMapping.entity.name}: created;`);
+            console.log(`${entityMapping.entity.name}: ${entities.length};`);
         }).catch((error) => {
             console.log(`${entityMapping.entity.name}: failed;`);
+        }).finally(() => {
+            console.log(`${entityMapping.entity.name}: done;`);
         });
     });
 

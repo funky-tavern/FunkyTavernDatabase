@@ -1,6 +1,6 @@
 {
-   "name": "funky-tavern-db",
-   "version": "0.0.1-2",
+   "name": "@funky-tavern/db",
+   "version": "0.0.1-3",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
    "devDependencies": {
@@ -15,7 +15,6 @@
    },
    "scripts": {
       "build": "ts-node src/build.ts && tsc && cp db lib/db -r && cp package.json lib/",
-      "publish": "cd lib && npm publish --access public",
       "typeorm": "typeorm-ts-node-commonjs"
    }
 }
