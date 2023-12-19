@@ -9,10 +9,8 @@ export class SubClass {
     @Column({
         transformer: {
             to: (value: object|string) => {
-                if (typeof value === 'string') {
-                    return value
-                }
-                return value["index"]
+                value["source"] = "srd"
+                return value
             },
             from: (value: string) => value
         }

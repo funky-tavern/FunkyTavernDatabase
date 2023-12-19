@@ -9,13 +9,11 @@ export class SubRace {
     @Column()
     name: string
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
             to: (value: object|string) => {
-                if (typeof value === "string") {
-                    return value
-                }
-                return value["index"]
+                value["source"] = "srd"
+                return value
             },
             from: (value: string) => {
                 return value
@@ -49,7 +47,7 @@ export class SubRace {
     })
     ability_bonuses: string
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
             to: (values: object[]|string[]) => {
                 if (!values || values.length === 0) {
@@ -57,25 +55,22 @@ export class SubRace {
                 }
 
                 return values.map((value) => {
-                    if (typeof value !== "string") {
-                        value = value["index"]
-                    }
-
+                    value["source"] = "srd";
                     return value
-                }).join("$");
+                });
             },
             from: (value: string) => {
                 if (!value) {
                     return null;
                 }
-                return value.split("$")
+                return value;
             }
         },
         nullable: true
     })
     starting_proficiencies: string
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
             to: (values: object[]|string[]) => {
                 if (!values || values.length === 0) {
@@ -83,18 +78,15 @@ export class SubRace {
                 }
 
                 return values.map((value) => {
-                    if (typeof value !== "string") {
-                        value = value["index"]
-                    }
-
+                    value["source"] = "srd";
                     return value
-                }).join("$");
+                });
             },
             from: (value: string) => {
                 if (!value) {
                     return null;
                 }
-                return value.split("$")
+                return value;
             }
         },
         nullable: true
@@ -113,13 +105,8 @@ export class SubRace {
                 }
 
                 value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
-
-                    if (option && option["index"]) {
-                        return option["index"];
-                    }
+                    option["source"] = "srd"
+                    return option
                 });
 
                 return value;
@@ -133,7 +120,7 @@ export class SubRace {
     })
     language_options: string
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
             to: (values: object[]|string[]) => {
                 if (!values || values.length === 0) {
@@ -142,14 +129,15 @@ export class SubRace {
 
                 return values.map((value) => {
                     if (typeof value !== "string") {
-                        value = value["index"]
+                        value["source"] = "srd"
+                        return value
                     }
 
                     return value
-                }).join("$");
+                });
             },
             from: (value: string) => {
-                return value.split("$")
+                return value;
             }
         }
     })

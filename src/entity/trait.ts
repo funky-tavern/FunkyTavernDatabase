@@ -21,7 +21,7 @@ export class Trait {
     })
     desc: string
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
             to: (value: object[]|string[]) => {
                 if (!value || value.length === 0) {
@@ -29,18 +29,15 @@ export class Trait {
                 }
 
                 return value.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
-
-                    return value["index"];
-                }).join("$");
+                    value["source"] = "srd";
+                    return value;
+                });
             },
             from: (value: string) => {
                 if (!value) {
                     return null;
                 }
-                return value.split("$");
+                return value;
             }
         },
         nullable: true
@@ -55,11 +52,9 @@ export class Trait {
                 }
 
                 value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
+                    option["item"]["source"] = "srd"
 
-                    return option["item"]["index"];
+                    return option["item"];
                 });
 
                 return value;
@@ -80,11 +75,9 @@ export class Trait {
                 }
 
                 value["spell_options"]["from"]["options"] = value["spell_options"]["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
+                    option["item"]["source"] = "srd"
 
-                    return option["item"]["index"];
+                    return option["item"];
                 });
 
                 return value;
@@ -105,11 +98,9 @@ export class Trait {
                 }
 
                 value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
+                    option["item"]["source"] = "srd"
 
-                    return option["item"]["index"];
+                    return option["item"];
                 });
 
                 return value;

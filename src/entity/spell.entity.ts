@@ -125,13 +125,11 @@ export class Spell {
     @Column("simple-json", { nullable: true })
     area_of_effect: object
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
             to: (value: object|string) => {
-                if (typeof value === "string") {
-                    return value;
-                }
-                return value["index"];
+                value["source"] = "srd";
+                return value;
             },
             from: (value: string) => {
                 return value;

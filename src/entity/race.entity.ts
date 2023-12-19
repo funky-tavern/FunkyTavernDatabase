@@ -41,26 +41,23 @@ export class Race {
     @Column()
     size_description: string
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
-            to: (values: object[]|string[]) => {
+            to: (values: object[]) => {
                 if (!values || values.length === 0) {
                     return null;
                 }
 
                 return values.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
-
-                    return value["index"];
-                }).join("$");
+                    value["source"] = "srd";
+                    return value;
+                });
             },
             from: (values: string) => {
                 if (!values) {
                     return null;
                 }
-                return values.split("$");
+                return values;
             }
         },
         nullable: true
@@ -80,13 +77,7 @@ export class Race {
                     }
 
                     value["from"]["options"] = value["from"]["options"].map((option) => {
-                        if (typeof option === "string") {
-                            return option;
-                        }
-
-                        if (option && option["index"]) {
-                            return option["index"];
-                        }
+                        option["source"] = "srd";
                     });
 
                     return value;
@@ -100,23 +91,20 @@ export class Race {
     )
     starting_proficiency_options: string
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
-            to: (values: object[]|string[]) => {
+            to: (values: object[]) => {
                 if (!values || values.length === 0) {
                     return null;
                 }
 
                 return values.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
-
-                    return value["index"];
-                }).join("$");
+                    value["source"] = "srd";
+                    return value;
+                });
             },
             from: (values: string) => {
-                return values.split("$");
+                return values;
             }
         }
     })
@@ -134,13 +122,8 @@ export class Race {
                 }
 
                 value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
-
-                    if (option && option["index"]) {
-                        return option["index"];
-                    }
+                    option["source"] = "srd";
+                    return option;
                 });
 
                 return value;
@@ -157,7 +140,7 @@ export class Race {
     @Column()
     language_desc: string
 
-    @Column({
+    @Column("simple-json", {
         transformer: {
             to: (values: object[] | string[]) => {
                 if (!values || values.length === 0) {
@@ -165,18 +148,15 @@ export class Race {
                 }
 
                 return values.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
-
-                    return value["index"];
-                }).join("$");
+                    value["source"] = "srd";
+                    return value;
+                });
             },
             from: (values: string) => {
                 if (!values) {
                     return null;
                 }
-                return values.split("$");
+                return values;
             }
         },
         nullable: true

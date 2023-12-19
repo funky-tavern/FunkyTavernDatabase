@@ -11,29 +11,4 @@ export class Proficiency {
 
     @Column()
     name: string
-
-    @Column("simple-json", {
-        transformer: {
-            to: (value: object) => {
-                if (!value) {
-                    return null;
-                }
-
-                if (value["url"]) {
-                    value["type"] = value["url"].split("/")[2];
-                    delete value["url"];
-                }
-
-                if (value["name"]) {
-                    delete value["name"];
-                }
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
-        }
-    })
-    reference: object
 }
