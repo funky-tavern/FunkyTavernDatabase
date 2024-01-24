@@ -13,7 +13,7 @@ import {Race} from "../entity/race.entity";
 import {MagicSchool} from "../entity/magic-school.entity";
 import {Trait} from "../entity/trait";
 import {Spell} from "../entity/spell.entity";
-import {Backgroud} from "../entity/backgroud.entity";
+import {Background} from "../entity/background.entity";
 import {Condition} from "../entity/condition.entity";
 import {Feat} from "../entity/feat.entity";
 import {Monster} from "../entity/monster.entity";
@@ -40,7 +40,7 @@ const ENTITY_MAPPINGS: { entity: any; path: string; }[] = [
     { entity: Spell, path: "./src/srd/spells.json" },
     { entity: Trait, path: "./src/srd/traits.json" },
     { entity: Race, path: "./src/srd/races.json" },
-    { entity: Backgroud, path: "./src/srd/backgrounds.json" },
+    { entity: Background, path: "./src/srd/backgrounds.json" },
     { entity: Condition, path: "./src/srd/conditions.json" },
     { entity: Feat, path: "./src/srd/feats.json" },
     { entity: Monster, path: "./src/srd/monsters.json" },

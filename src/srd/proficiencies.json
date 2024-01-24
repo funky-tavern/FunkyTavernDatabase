@@ -6,46 +6,37 @@
     "classes": [
       {
         "index": "barbarian",
-        "name": "Barbarian",
-        "url": "/api/classes/barbarian"
+        "name": "Barbarian"
       },
       {
         "index": "bard",
-        "name": "Bard",
-        "url": "/api/classes/bard"
+        "name": "Bard"
       },
       {
         "index": "cleric",
-        "name": "Cleric",
-        "url": "/api/classes/cleric"
+        "name": "Cleric"
       },
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "ranger",
-        "name": "Ranger",
-        "url": "/api/classes/ranger"
+        "name": "Ranger"
       },
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       },
       {
         "index": "warlock",
-        "name": "Warlock",
-        "url": "/api/classes/warlock"
+        "name": "Warlock"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/light-armor",
     "reference": {
       "index": "light-armor",
-      "name": "Light Armor",
-      "url": "/api/equipment-categories/light-armor"
+      "name": "Light Armor"
     }
   },
   {
@@ -55,31 +46,25 @@
     "classes": [
       {
         "index": "barbarian",
-        "name": "Barbarian",
-        "url": "/api/classes/barbarian"
+        "name": "Barbarian"
       },
       {
         "index": "cleric",
-        "name": "Cleric",
-        "url": "/api/classes/cleric"
+        "name": "Cleric"
       },
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "ranger",
-        "name": "Ranger",
-        "url": "/api/classes/ranger"
+        "name": "Ranger"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/medium-armor",
     "reference": {
       "index": "medium-armor",
-      "name": "Medium Armor",
-      "url": "/api/equipment-categories/medium-armor"
+      "name": "Medium Armor"
     }
   },
   {
@@ -88,11 +73,9 @@
     "name": "Heavy Armor",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/heavy-armor",
     "reference": {
       "index": "heavy-armor",
-      "name": "Heavy Armor",
-      "url": "/api/equipment-categories/heavy-armor"
+      "name": "Heavy Armor"
     }
   },
   {
@@ -102,21 +85,17 @@
     "classes": [
       {
         "index": "fighter",
-        "name": "Fighter",
-        "url": "/api/classes/fighter"
+        "name": "Fighter"
       },
       {
         "index": "paladin",
-        "name": "Paladin",
-        "url": "/api/classes/paladin"
+        "name": "Paladin"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/all-armor",
     "reference": {
       "index": "armor",
-      "name": "Armor",
-      "url": "/api/equipment-categories/armor"
+      "name": "Armor"
     }
   },
   {
@@ -125,11 +104,9 @@
     "name": "Padded Armor",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/padded-armor",
     "reference": {
       "index": "padded-armor",
-      "name": "Padded Armor",
-      "url": "/api/equipment/padded-armor"
+      "name": "Padded Armor"
     }
   },
   {
@@ -138,11 +115,9 @@
     "name": "Leather Armor",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/leather-armor",
     "reference": {
       "index": "leather-armor",
-      "name": "Leather Armor",
-      "url": "/api/equipment/leather-armor"
+      "name": "Leather Armor"
     }
   },
   {
@@ -151,11 +126,9 @@
     "name": "Studded Leather Armor",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/studded-leather-armor",
     "reference": {
       "index": "studded-leather-armor",
-      "name": "Studded Leather Armor",
-      "url": "/api/equipment/studded-leather-armor"
+      "name": "Studded Leather Armor"
     }
   },
   {
@@ -164,11 +137,9 @@
     "name": "Hide Armor",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/hide-armor",
     "reference": {
       "index": "hide-armor",
-      "name": "Hide Armor",
-      "url": "/api/equipment/hide-armor"
+      "name": "Hide Armor"
     }
   },
   {
@@ -177,11 +148,9 @@
     "name": "Chain Shirt",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/chain-shirt",
     "reference": {
       "index": "chain-shirt",
-      "name": "Chain Shirt",
-      "url": "/api/equipment/chain-shirt"
+      "name": "Chain Shirt"
     }
   },
   {
@@ -190,11 +159,9 @@
     "name": "Scale Mail",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/scale-mail",
     "reference": {
       "index": "scale-mail",
-      "name": "Scale Mail",
-      "url": "/api/equipment/scale-mail"
+      "name": "Scale Mail"
     }
   },
   {
@@ -203,11 +170,9 @@
     "name": "Breastplate",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/breastplate",
     "reference": {
       "index": "breastplate",
-      "name": "Breastplate",
-      "url": "/api/equipment/breastplate"
+      "name": "Breastplate"
     }
   },
   {
@@ -216,11 +181,9 @@
     "name": "Half Plate Armor",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/half-plate-armor",
     "reference": {
       "index": "half-plate-armor",
-      "name": "Half Plate Armor",
-      "url": "/api/equipment/half-plate-armor"
+      "name": "Half Plate Armor"
     }
   },
   {
@@ -229,11 +192,9 @@
     "name": "Ring Mail",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/ring-mail",
     "reference": {
       "index": "ring-mail",
-      "name": "Ring Mail",
-      "url": "/api/equipment/ring-mail"
+      "name": "Ring Mail"
     }
   },
   {
@@ -242,11 +203,9 @@
     "name": "Chain Mail",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/chain-mail",
     "reference": {
       "index": "chain-mail",
-      "name": "Chain Mail",
-      "url": "/api/equipment/chain-mail"
+      "name": "Chain Mail"
     }
   },
   {
@@ -255,11 +214,9 @@
     "name": "Splint Armor",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/splint-armor",
     "reference": {
       "index": "splint-armor",
-      "name": "Splint Armor",
-      "url": "/api/equipment/splint-armor"
+      "name": "Splint Armor"
     }
   },
   {
@@ -268,11 +225,9 @@
     "name": "Plate Armor",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/plate-armor",
     "reference": {
       "index": "plate-armor",
-      "name": "Plate Armor",
-      "url": "/api/equipment/plate-armor"
+      "name": "Plate Armor"
     }
   },
   {
@@ -282,41 +237,33 @@
     "classes": [
       {
         "index": "barbarian",
-        "name": "Barbarian",
-        "url": "/api/classes/barbarian"
+        "name": "Barbarian"
       },
       {
         "index": "cleric",
-        "name": "Cleric",
-        "url": "/api/classes/cleric"
+        "name": "Cleric"
       },
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "fighter",
-        "name": "Fighter",
-        "url": "/api/classes/fighter"
+        "name": "Fighter"
       },
       {
         "index": "paladin",
-        "name": "Paladin",
-        "url": "/api/classes/paladin"
+        "name": "Paladin"
       },
       {
         "index": "ranger",
-        "name": "Ranger",
-        "url": "/api/classes/ranger"
+        "name": "Ranger"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/shields",
     "reference": {
       "index": "shield",
-      "name": "Shield",
-      "url": "/api/equipment/shield"
+      "name": "Shield"
     }
   },
   {
@@ -326,56 +273,45 @@
     "classes": [
       {
         "index": "barbarian",
-        "name": "Barbarian",
-        "url": "/api/classes/barbarian"
+        "name": "Barbarian"
       },
       {
         "index": "bard",
-        "name": "Bard",
-        "url": "/api/classes/bard"
+        "name": "Bard"
       },
       {
         "index": "cleric",
-        "name": "Cleric",
-        "url": "/api/classes/cleric"
+        "name": "Cleric"
       },
       {
         "index": "fighter",
-        "name": "Fighter",
-        "url": "/api/classes/fighter"
+        "name": "Fighter"
       },
       {
         "index": "monk",
-        "name": "Monk",
-        "url": "/api/classes/monk"
+        "name": "Monk"
       },
       {
         "index": "paladin",
-        "name": "Paladin",
-        "url": "/api/classes/paladin"
+        "name": "Paladin"
       },
       {
         "index": "ranger",
-        "name": "Ranger",
-        "url": "/api/classes/ranger"
+        "name": "Ranger"
       },
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       },
       {
         "index": "warlock",
-        "name": "Warlock",
-        "url": "/api/classes/warlock"
+        "name": "Warlock"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/simple-weapons",
     "reference": {
       "index": "simple-weapons",
-      "name": "Simple Weapons",
-      "url": "/api/equipment-categories/simple-weapons"
+      "name": "Simple Weapons"
     }
   },
   {
@@ -385,31 +321,25 @@
     "classes": [
       {
         "index": "barbarian",
-        "name": "Barbarian",
-        "url": "/api/classes/barbarian"
+        "name": "Barbarian"
       },
       {
         "index": "fighter",
-        "name": "Fighter",
-        "url": "/api/classes/fighter"
+        "name": "Fighter"
       },
       {
         "index": "paladin",
-        "name": "Paladin",
-        "url": "/api/classes/paladin"
+        "name": "Paladin"
       },
       {
         "index": "ranger",
-        "name": "Ranger",
-        "url": "/api/classes/ranger"
+        "name": "Ranger"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/martial-weapons",
     "reference": {
       "index": "martial-weapons",
-      "name": "Martial Weapons",
-      "url": "/api/equipment-categories/martial-weapons"
+      "name": "Martial Weapons"
     }
   },
   {
@@ -419,16 +349,13 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/clubs",
     "reference": {
       "index": "club",
-      "name": "Club",
-      "url": "/api/equipment/club"
+      "name": "Club"
     }
   },
   {
@@ -438,26 +365,21 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "sorcerer",
-        "name": "Sorcerer",
-        "url": "/api/classes/sorcerer"
+        "name": "Sorcerer"
       },
       {
         "index": "wizard",
-        "name": "Wizard",
-        "url": "/api/classes/wizard"
+        "name": "Wizard"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/daggers",
     "reference": {
       "index": "dagger",
-      "name": "Dagger",
-      "url": "/api/equipment/dagger"
+      "name": "Dagger"
     }
   },
   {
@@ -466,11 +388,9 @@
     "name": "Greatclubs",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/greatclubs",
     "reference": {
       "index": "greatclub",
-      "name": "Greatclub",
-      "url": "/api/equipment/greatclub"
+      "name": "Greatclub"
     }
   },
   {
@@ -481,15 +401,12 @@
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       }
     ],
-    "url": "/api/proficiencies/handaxes",
     "reference": {
       "index": "handaxe",
-      "name": "Handaxe",
-      "url": "/api/equipment/handaxe"
+      "name": "Handaxe"
     }
   },
   {
@@ -499,16 +416,13 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/javelins",
     "reference": {
       "index": "javelin",
-      "name": "Javelin",
-      "url": "/api/equipment/javelin"
+      "name": "Javelin"
     }
   },
   {
@@ -519,15 +433,12 @@
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       }
     ],
-    "url": "/api/proficiencies/light-hammers",
     "reference": {
       "index": "light-hammer",
-      "name": "Light hammer",
-      "url": "/api/equipment/light-hammer"
+      "name": "Light hammer"
     }
   },
   {
@@ -537,16 +448,13 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/maces",
     "reference": {
       "index": "mace",
-      "name": "Mace",
-      "url": "/api/equipment/mace"
+      "name": "Mace"
     }
   },
   {
@@ -556,26 +464,21 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "sorcerer",
-        "name": "Sorcerer",
-        "url": "/api/classes/sorcerer"
+        "name": "Sorcerer"
       },
       {
         "index": "wizard",
-        "name": "Wizard",
-        "url": "/api/classes/wizard"
+        "name": "Wizard"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/quarterstaffs",
     "reference": {
       "index": "quarterstaff",
-      "name": "Quarterstaff",
-      "url": "/api/equipment/quarterstaff"
+      "name": "Quarterstaff"
     }
   },
   {
@@ -585,16 +488,13 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/sickles",
     "reference": {
       "index": "sickle",
-      "name": "Sickle",
-      "url": "/api/equipment/sickle"
+      "name": "Sickle"
     }
   },
   {
@@ -604,16 +504,13 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/spears",
     "reference": {
       "index": "spear",
-      "name": "Spear",
-      "url": "/api/equipment/spear"
+      "name": "Spear"
     }
   },
   {
@@ -623,21 +520,17 @@
     "classes": [
       {
         "index": "sorcerer",
-        "name": "Sorcerer",
-        "url": "/api/classes/sorcerer"
+        "name": "Sorcerer"
       },
       {
         "index": "wizard",
-        "name": "Wizard",
-        "url": "/api/classes/wizard"
+        "name": "Wizard"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/crossbows-light",
     "reference": {
       "index": "crossbow-light",
-      "name": "Crossbow, light",
-      "url": "/api/equipment/crossbow-light"
+      "name": "Crossbow, light"
     }
   },
   {
@@ -647,26 +540,21 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "sorcerer",
-        "name": "Sorcerer",
-        "url": "/api/classes/sorcerer"
+        "name": "Sorcerer"
       },
       {
         "index": "wizard",
-        "name": "Wizard",
-        "url": "/api/classes/wizard"
+        "name": "Wizard"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/darts",
     "reference": {
       "index": "dart",
-      "name": "Dart",
-      "url": "/api/equipment/dart"
+      "name": "Dart"
     }
   },
   {
@@ -677,15 +565,12 @@
     "races": [
       {
         "index": "high-elf",
-        "name": "High Elf",
-        "url": "/api/subraces/high-elf"
+        "name": "High Elf"
       }
     ],
-    "url": "/api/proficiencies/shortbows",
     "reference": {
       "index": "shortbow",
-      "name": "Shortbow",
-      "url": "/api/equipment/shortbow"
+      "name": "Shortbow"
     }
   },
   {
@@ -695,26 +580,21 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "sorcerer",
-        "name": "Sorcerer",
-        "url": "/api/classes/sorcerer"
+        "name": "Sorcerer"
       },
       {
         "index": "wizard",
-        "name": "Wizard",
-        "url": "/api/classes/wizard"
+        "name": "Wizard"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/slings",
     "reference": {
       "index": "sling",
-      "name": "Sling",
-      "url": "/api/equipment/sling"
+      "name": "Sling"
     }
   },
   {
@@ -725,15 +605,12 @@
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       }
     ],
-    "url": "/api/proficiencies/battleaxes",
     "reference": {
       "index": "battleaxe",
-      "name": "Battleaxe",
-      "url": "/api/equipment/battleaxe"
+      "name": "Battleaxe"
     }
   },
   {
@@ -742,11 +619,9 @@
     "name": "Flails",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/flails",
     "reference": {
       "index": "flail",
-      "name": "Flail",
-      "url": "/api/equipment/flail"
+      "name": "Flail"
     }
   },
   {
@@ -755,11 +630,9 @@
     "name": "Glaives",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/glaives",
     "reference": {
       "index": "glaive",
-      "name": "Glaive",
-      "url": "/api/equipment/glaive"
+      "name": "Glaive"
     }
   },
   {
@@ -768,11 +641,9 @@
     "name": "Greataxes",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/greataxes",
     "reference": {
       "index": "greataxe",
-      "name": "Greataxe",
-      "url": "/api/equipment/greataxe"
+      "name": "Greataxe"
     }
   },
   {
@@ -781,11 +652,9 @@
     "name": "Greatswords",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/greatswords",
     "reference": {
       "index": "greatsword",
-      "name": "Greatsword",
-      "url": "/api/equipment/greatsword"
+      "name": "Greatsword"
     }
   },
   {
@@ -794,11 +663,9 @@
     "name": "Halberds",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/halberds",
     "reference": {
       "index": "halberd",
-      "name": "Halberd",
-      "url": "/api/equipment/halberd"
+      "name": "Halberd"
     }
   },
   {
@@ -807,11 +674,9 @@
     "name": "Lances",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/lances",
     "reference": {
       "index": "lance",
-      "name": "Lance",
-      "url": "/api/equipment/lance"
+      "name": "Lance"
     }
   },
   {
@@ -821,27 +686,22 @@
     "classes": [
       {
         "index": "bard",
-        "name": "Bard",
-        "url": "/api/classes/bard"
+        "name": "Bard"
       },
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       }
     ],
     "races": [
       {
         "index": "high-elf",
-        "name": "High Elf",
-        "url": "/api/subraces/high-elf"
+        "name": "High Elf"
       }
     ],
-    "url": "/api/proficiencies/longswords",
     "reference": {
       "index": "longsword",
-      "name": "Longsword",
-      "url": "/api/equipment/longsword"
+      "name": "Longsword"
     }
   },
   {
@@ -850,11 +710,9 @@
     "name": "Mauls",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/mauls",
     "reference": {
       "index": "maul",
-      "name": "Maul",
-      "url": "/api/equipment/maul"
+      "name": "Maul"
     }
   },
   {
@@ -863,11 +721,9 @@
     "name": "Morningstars",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/morningstars",
     "reference": {
       "index": "morningstar",
-      "name": "Morningstar",
-      "url": "/api/equipment/morningstar"
+      "name": "Morningstar"
     }
   },
   {
@@ -876,11 +732,9 @@
     "name": "Pikes",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/pikes",
     "reference": {
       "index": "pike",
-      "name": "Pike",
-      "url": "/api/equipment/pike"
+      "name": "Pike"
     }
   },
   {
@@ -890,21 +744,17 @@
     "classes": [
       {
         "index": "bard",
-        "name": "Bard",
-        "url": "/api/classes/bard"
+        "name": "Bard"
       },
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/rapiers",
     "reference": {
       "index": "rapier",
-      "name": "Rapier",
-      "url": "/api/equipment/rapier"
+      "name": "Rapier"
     }
   },
   {
@@ -914,16 +764,13 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/scimitars",
     "reference": {
       "index": "scimitar",
-      "name": "Scimitar",
-      "url": "/api/equipment/scimitar"
+      "name": "Scimitar"
     }
   },
   {
@@ -933,32 +780,26 @@
     "classes": [
       {
         "index": "bard",
-        "name": "Bard",
-        "url": "/api/classes/bard"
+        "name": "Bard"
       },
       {
         "index": "monk",
-        "name": "Monk",
-        "url": "/api/classes/monk"
+        "name": "Monk"
       },
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       }
     ],
     "races": [
       {
         "index": "high-elf",
-        "name": "High Elf",
-        "url": "/api/subraces/high-elf"
+        "name": "High Elf"
       }
     ],
-    "url": "/api/proficiencies/shortswords",
     "reference": {
       "index": "shortsword",
-      "name": "Shortsword",
-      "url": "/api/equipment/shortsword"
+      "name": "Shortsword"
     }
   },
   {
@@ -967,11 +808,9 @@
     "name": "Tridents",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/tridents",
     "reference": {
       "index": "trident",
-      "name": "Trident",
-      "url": "/api/equipment/trident"
+      "name": "Trident"
     }
   },
   {
@@ -980,11 +819,9 @@
     "name": "War picks",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/war-picks",
     "reference": {
       "index": "war-pick",
-      "name": "War pick",
-      "url": "/api/equipment/war-pick"
+      "name": "War pick"
     }
   },
   {
@@ -995,15 +832,12 @@
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       }
     ],
-    "url": "/api/proficiencies/warhammers",
     "reference": {
       "index": "warhammer",
-      "name": "Warhammer",
-      "url": "/api/equipment/warhammer"
+      "name": "Warhammer"
     }
   },
   {
@@ -1012,11 +846,9 @@
     "name": "Whips",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/whips",
     "reference": {
       "index": "whip",
-      "name": "Whip",
-      "url": "/api/equipment/whip"
+      "name": "Whip"
     }
   },
   {
@@ -1025,11 +857,9 @@
     "name": "Blowguns",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/blowguns",
     "reference": {
       "index": "blowgun",
-      "name": "Blowgun",
-      "url": "/api/equipment/blowgun"
+      "name": "Blowgun"
     }
   },
   {
@@ -1039,21 +869,17 @@
     "classes": [
       {
         "index": "bard",
-        "name": "Bard",
-        "url": "/api/classes/bard"
+        "name": "Bard"
       },
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/hand-crossbows",
     "reference": {
       "index": "crossbow-hand",
-      "name": "Crossbow, hand",
-      "url": "/api/equipment/crossbow-hand"
+      "name": "Crossbow, hand"
     }
   },
   {
@@ -1062,11 +888,9 @@
     "name": "Crossbows, heavy",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/crossbows-heavy",
     "reference": {
       "index": "crossbow-heavy",
-      "name": "Crossbow, heavy",
-      "url": "/api/equipment/crossbow-heavy"
+      "name": "Crossbow, heavy"
     }
   },
   {
@@ -1077,15 +901,12 @@
     "races": [
       {
         "index": "high-elf",
-        "name": "High Elf",
-        "url": "/api/subraces/high-elf"
+        "name": "High Elf"
       }
     ],
-    "url": "/api/proficiencies/longbows",
     "reference": {
       "index": "longbow",
-      "name": "Longbow",
-      "url": "/api/equipment/longbow"
+      "name": "Longbow"
     }
   },
   {
@@ -1094,11 +915,9 @@
     "name": "Nets",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/nets",
     "reference": {
       "index": "net",
-      "name": "Net",
-      "url": "/api/equipment/net"
+      "name": "Net"
     }
   },
   {
@@ -1107,11 +926,9 @@
     "name": "Alchemist's Supplies",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/alchemists-supplies",
     "reference": {
       "index": "alchemists-supplies",
-      "name": "Alchemist's Supplies",
-      "url": "/api/equipment/alchemists-supplies"
+      "name": "Alchemist's Supplies"
     }
   },
   {
@@ -1120,11 +937,9 @@
     "name": "Brewer's Supplies",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/brewers-supplies",
     "reference": {
       "index": "brewers-supplies",
-      "name": "Brewer's Supplies",
-      "url": "/api/equipment/brewers-supplies"
+      "name": "Brewer's Supplies"
     }
   },
   {
@@ -1133,11 +948,9 @@
     "name": "Calligrapher's Supplies",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/calligraphers-supplies",
     "reference": {
       "index": "calligraphers-supplies",
-      "name": "Calligrapher's Supplies",
-      "url": "/api/equipment/calligraphers-supplies"
+      "name": "Calligrapher's Supplies"
     }
   },
   {
@@ -1146,11 +959,9 @@
     "name": "Carpenter's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/carpenters-tools",
     "reference": {
       "index": "carpenters-tools",
-      "name": "Carpenter's Tools",
-      "url": "/api/equipment/carpenters-tools"
+      "name": "Carpenter's Tools"
     }
   },
   {
@@ -1159,11 +970,9 @@
     "name": "Cartographer's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/cartographers-tools",
     "reference": {
       "index": "cartographers-tools",
-      "name": "Cartographer's Tools",
-      "url": "/api/equipment/cartographers-tools"
+      "name": "Cartographer's Tools"
     }
   },
   {
@@ -1172,11 +981,9 @@
     "name": "Cobbler's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/cobblers-tools",
     "reference": {
       "index": "cobblers-tools",
-      "name": "Cobbler's Tools",
-      "url": "/api/equipment/cobblers-tools"
+      "name": "Cobbler's Tools"
     }
   },
   {
@@ -1185,11 +992,9 @@
     "name": "Cook's utensils",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/cooks-utensils",
     "reference": {
       "index": "cooks-utensils",
-      "name": "Cook's utensils",
-      "url": "/api/equipment/cooks-utensils"
+      "name": "Cook's utensils"
     }
   },
   {
@@ -1198,11 +1003,9 @@
     "name": "Glassblower's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/glassblowers-tools",
     "reference": {
       "index": "glassblowers-tools",
-      "name": "Glassblower's Tools",
-      "url": "/api/equipment/glassblowers-tools"
+      "name": "Glassblower's Tools"
     }
   },
   {
@@ -1211,11 +1014,9 @@
     "name": "Jeweler's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/jewelers-tools",
     "reference": {
       "index": "jewelers-tools",
-      "name": "Jeweler's Tools",
-      "url": "/api/equipment/jewelers-tools"
+      "name": "Jeweler's Tools"
     }
   },
   {
@@ -1224,11 +1025,9 @@
     "name": "Leatherworker's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/leatherworkers-tools",
     "reference": {
       "index": "leatherworkers-tools",
-      "name": "Leatherworker's Tools",
-      "url": "/api/equipment/leatherworkers-tools"
+      "name": "Leatherworker's Tools"
     }
   },
   {
@@ -1237,11 +1036,9 @@
     "name": "Mason's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/masons-tools",
     "reference": {
       "index": "masons-tools",
-      "name": "Mason's Tools",
-      "url": "/api/equipment/masons-tools"
+      "name": "Mason's Tools"
     }
   },
   {
@@ -1250,11 +1047,9 @@
     "name": "Painter's Supplies",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/painters-supplies",
     "reference": {
       "index": "painters-supplies",
-      "name": "Painter's Supplies",
-      "url": "/api/equipment/painters-supplies"
+      "name": "Painter's Supplies"
     }
   },
   {
@@ -1263,11 +1058,9 @@
     "name": "Potter's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/potters-tools",
     "reference": {
       "index": "potters-tools",
-      "name": "Potter's Tools",
-      "url": "/api/equipment/potters-tools"
+      "name": "Potter's Tools"
     }
   },
   {
@@ -1276,11 +1069,9 @@
     "name": "Smith's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/smiths-tools",
     "reference": {
       "index": "smiths-tools",
-      "name": "Smith's Tools",
-      "url": "/api/equipment/smiths-tools"
+      "name": "Smith's Tools"
     }
   },
   {
@@ -1289,11 +1080,9 @@
     "name": "Tinker's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/tinkers-tools",
     "reference": {
       "index": "tinkers-tools",
-      "name": "Tinker's Tools",
-      "url": "/api/equipment/tinkers-tools"
+      "name": "Tinker's Tools"
     }
   },
   {
@@ -1302,11 +1091,9 @@
     "name": "Weaver's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/weavers-tools",
     "reference": {
       "index": "weavers-tools",
-      "name": "Weaver's Tools",
-      "url": "/api/equipment/weavers-tools"
+      "name": "Weaver's Tools"
     }
   },
   {
@@ -1315,11 +1102,9 @@
     "name": "Woodcarver's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/woodcarvers-tools",
     "reference": {
       "index": "woodcarvers-tools",
-      "name": "Woodcarver's Tools",
-      "url": "/api/equipment/woodcarvers-tools"
+      "name": "Woodcarver's Tools"
     }
   },
   {
@@ -1328,11 +1113,9 @@
     "name": "Disguise Kit",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/disguise-kit",
     "reference": {
       "index": "disguise-kit",
-      "name": "Disguise Kit",
-      "url": "/api/equipment/disguise-kit"
+      "name": "Disguise Kit"
     }
   },
   {
@@ -1341,11 +1124,9 @@
     "name": "Forgery Kit",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/forgery-kit",
     "reference": {
       "index": "forgery-kit",
-      "name": "Forgery Kit",
-      "url": "/api/equipment/forgery-kit"
+      "name": "Forgery Kit"
     }
   },
   {
@@ -1354,11 +1135,9 @@
     "name": "Dice Set",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/dice-set",
     "reference": {
       "index": "dice-set",
-      "name": "Dice Set",
-      "url": "/api/equipment/dice-set"
+      "name": "Dice Set"
     }
   },
   {
@@ -1367,11 +1146,9 @@
     "name": "Playing Card Set",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/playing-card-set",
     "reference": {
       "index": "playing-card-set",
-      "name": "Playing Card Set",
-      "url": "/api/equipment/playing-card-set"
+      "name": "Playing Card Set"
     }
   },
   {
@@ -1380,11 +1157,9 @@
     "name": "Bagpipes",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/bagpipes",
     "reference": {
       "index": "bagpipes",
-      "name": "Bagpipes",
-      "url": "/api/equipment/bagpipes"
+      "name": "Bagpipes"
     }
   },
   {
@@ -1393,11 +1168,9 @@
     "name": "Drum",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/drum",
     "reference": {
       "index": "drum",
-      "name": "Drum",
-      "url": "/api/equipment/drum"
+      "name": "Drum"
     }
   },
   {
@@ -1406,11 +1179,9 @@
     "name": "Dulcimer",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/dulcimer",
     "reference": {
       "index": "dulcimer",
-      "name": "Dulcimer",
-      "url": "/api/equipment/dulcimer"
+      "name": "Dulcimer"
     }
   },
   {
@@ -1419,11 +1190,9 @@
     "name": "Flute",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/flute",
     "reference": {
       "index": "flute",
-      "name": "Flute",
-      "url": "/api/equipment/flute"
+      "name": "Flute"
     }
   },
   {
@@ -1432,11 +1201,9 @@
     "name": "Lute",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/lute",
     "reference": {
       "index": "lute",
-      "name": "Lute",
-      "url": "/api/equipment/lute"
+      "name": "Lute"
     }
   },
   {
@@ -1445,11 +1212,9 @@
     "name": "Lyre",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/lyre",
     "reference": {
       "index": "lyre",
-      "name": "Lyre",
-      "url": "/api/equipment/lyre"
+      "name": "Lyre"
     }
   },
   {
@@ -1458,11 +1223,9 @@
     "name": "Horn",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/horn",
     "reference": {
       "index": "horn",
-      "name": "Horn",
-      "url": "/api/equipment/horn"
+      "name": "Horn"
     }
   },
   {
@@ -1471,11 +1234,9 @@
     "name": "Pan flute",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/pan-flute",
     "reference": {
       "index": "pan-flute",
-      "name": "Pan flute",
-      "url": "/api/equipment/pan-flute"
+      "name": "Pan flute"
     }
   },
   {
@@ -1484,11 +1245,9 @@
     "name": "Shawm",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/shawm",
     "reference": {
       "index": "shawm",
-      "name": "Shawm",
-      "url": "/api/equipment/shawm"
+      "name": "Shawm"
     }
   },
   {
@@ -1497,11 +1256,9 @@
     "name": "Viol",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/viol",
     "reference": {
       "index": "viol",
-      "name": "Viol",
-      "url": "/api/equipment/viol"
+      "name": "Viol"
     }
   },
   {
@@ -1511,16 +1268,13 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/herbalism-kit",
     "reference": {
       "index": "herbalism-kit",
-      "name": "Herbalism Kit",
-      "url": "/api/equipment/herbalism-kit"
+      "name": "Herbalism Kit"
     }
   },
   {
@@ -1529,11 +1283,9 @@
     "name": "Navigator's Tools",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/navigators-tools",
     "reference": {
       "index": "navigators-tools",
-      "name": "Navigator's Tools",
-      "url": "/api/equipment/navigators-tools"
+      "name": "Navigator's Tools"
     }
   },
   {
@@ -1542,11 +1294,9 @@
     "name": "Poisoner's Kit",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/poisoners-kit",
     "reference": {
       "index": "poisoners-kit",
-      "name": "Poisoner's Kit",
-      "url": "/api/equipment/poisoners-kit"
+      "name": "Poisoner's Kit"
     }
   },
   {
@@ -1556,16 +1306,13 @@
     "classes": [
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/thieves-tools",
     "reference": {
       "index": "thieves-tools",
-      "name": "Thieves' Tools",
-      "url": "/api/equipment/thieves-tools"
+      "name": "Thieves' Tools"
     }
   },
   {
@@ -1574,11 +1321,9 @@
     "name": "Land Vehicles",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/land-vehicles",
     "reference": {
       "index": "land-vehicles",
-      "name": "Land Vehicles",
-      "url": "/api/equipment-categories/land-vehicles"
+      "name": "Land Vehicles"
     }
   },
   {
@@ -1587,11 +1332,9 @@
     "name": "Water Vehicles",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/water-vehicles",
     "reference": {
       "index": "waterborne-vehicles",
-      "name": "Waterborne Vehicles",
-      "url": "/api/equipment-categories/waterborne-vehicles"
+      "name": "Waterborne Vehicles"
     }
   },
   {
@@ -1601,31 +1344,25 @@
     "classes": [
       {
         "index": "barbarian",
-        "name": "Barbarian",
-        "url": "/api/classes/barbarian"
+        "name": "Barbarian"
       },
       {
         "index": "fighter",
-        "name": "Fighter",
-        "url": "/api/classes/fighter"
+        "name": "Fighter"
       },
       {
         "index": "monk",
-        "name": "Monk",
-        "url": "/api/classes/monk"
+        "name": "Monk"
       },
       {
         "index": "ranger",
-        "name": "Ranger",
-        "url": "/api/classes/ranger"
+        "name": "Ranger"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/saving-throw-str",
     "reference": {
       "index": "str",
-      "name": "STR",
-      "url": "/api/ability-scores/str"
+      "name": "STR"
     }
   },
   {
@@ -1635,31 +1372,25 @@
     "classes": [
       {
         "index": "bard",
-        "name": "Bard",
-        "url": "/api/classes/bard"
+        "name": "Bard"
       },
       {
         "index": "monk",
-        "name": "Monk",
-        "url": "/api/classes/monk"
+        "name": "Monk"
       },
       {
         "index": "ranger",
-        "name": "Ranger",
-        "url": "/api/classes/ranger"
+        "name": "Ranger"
       },
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/saving-throw-dex",
     "reference": {
       "index": "dex",
-      "name": "DEX",
-      "url": "/api/ability-scores/dex"
+      "name": "DEX"
     }
   },
   {
@@ -1669,26 +1400,21 @@
     "classes": [
       {
         "index": "barbarian",
-        "name": "Barbarian",
-        "url": "/api/classes/barbarian"
+        "name": "Barbarian"
       },
       {
         "index": "fighter",
-        "name": "Fighter",
-        "url": "/api/classes/fighter"
+        "name": "Fighter"
       },
       {
         "index": "sorcerer",
-        "name": "Sorcerer",
-        "url": "/api/classes/sorcerer"
+        "name": "Sorcerer"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/saving-throw-con",
     "reference": {
       "index": "con",
-      "name": "CON",
-      "url": "/api/ability-scores/con"
+      "name": "CON"
     }
   },
   {
@@ -1698,26 +1424,21 @@
     "classes": [
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "rogue",
-        "name": "Rogue",
-        "url": "/api/classes/rogue"
+        "name": "Rogue"
       },
       {
         "index": "wizard",
-        "name": "Wizard",
-        "url": "/api/classes/wizard"
+        "name": "Wizard"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/saving-throw-int",
     "reference": {
       "index": "int",
-      "name": "INT",
-      "url": "/api/ability-scores/int"
+      "name": "INT"
     }
   },
   {
@@ -1727,36 +1448,29 @@
     "classes": [
       {
         "index": "cleric",
-        "name": "Cleric",
-        "url": "/api/classes/cleric"
+        "name": "Cleric"
       },
       {
         "index": "druid",
-        "name": "Druid",
-        "url": "/api/classes/druid"
+        "name": "Druid"
       },
       {
         "index": "paladin",
-        "name": "Paladin",
-        "url": "/api/classes/paladin"
+        "name": "Paladin"
       },
       {
         "index": "warlock",
-        "name": "Warlock",
-        "url": "/api/classes/warlock"
+        "name": "Warlock"
       },
       {
         "index": "wizard",
-        "name": "Wizard",
-        "url": "/api/classes/wizard"
+        "name": "Wizard"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/saving-throw-wis",
     "reference": {
       "index": "wis",
-      "name": "WIS",
-      "url": "/api/ability-scores/wis"
+      "name": "WIS"
     }
   },
   {
@@ -1766,36 +1480,29 @@
     "classes": [
       {
         "index": "bard",
-        "name": "Bard",
-        "url": "/api/classes/bard"
+        "name": "Bard"
       },
       {
         "index": "cleric",
-        "name": "Cleric",
-        "url": "/api/classes/cleric"
+        "name": "Cleric"
       },
       {
         "index": "paladin",
-        "name": "Paladin",
-        "url": "/api/classes/paladin"
+        "name": "Paladin"
       },
       {
         "index": "sorcerer",
-        "name": "Sorcerer",
-        "url": "/api/classes/sorcerer"
+        "name": "Sorcerer"
       },
       {
         "index": "warlock",
-        "name": "Warlock",
-        "url": "/api/classes/warlock"
+        "name": "Warlock"
       }
     ],
     "races": [],
-    "url": "/api/proficiencies/saving-throw-cha",
     "reference": {
       "index": "cha",
-      "name": "CHA",
-      "url": "/api/ability-scores/cha"
+      "name": "CHA"
     }
   },
   {
@@ -1804,11 +1511,9 @@
     "name": "Skill: Acrobatics",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-acrobatics",
     "reference": {
       "index": "acrobatics",
-      "name": "Acrobatics",
-      "url": "/api/skills/acrobatics"
+      "name": "Acrobatics"
     }
   },
   {
@@ -1817,11 +1522,9 @@
     "name": "Skill: Animal Handling",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-animal-handling",
     "reference": {
       "index": "animal-handling",
-      "name": "Animal Handling",
-      "url": "/api/skills/animal-handling"
+      "name": "Animal Handling"
     }
   },
   {
@@ -1830,11 +1533,9 @@
     "name": "Skill: Arcana",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-arcana",
     "reference": {
       "index": "arcana",
-      "name": "Arcana",
-      "url": "/api/skills/arcana"
+      "name": "Arcana"
     }
   },
   {
@@ -1843,11 +1544,9 @@
     "name": "Skill: Athletics",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-athletics",
     "reference": {
       "index": "athletics",
-      "name": "Athletics",
-      "url": "/api/skills/athletics"
+      "name": "Athletics"
     }
   },
   {
@@ -1856,11 +1555,9 @@
     "name": "Skill: Deception",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-deception",
     "reference": {
       "index": "deception",
-      "name": "Deception",
-      "url": "/api/skills/deception"
+      "name": "Deception"
     }
   },
   {
@@ -1869,11 +1566,9 @@
     "name": "Skill: History",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-history",
     "reference": {
       "index": "history",
-      "name": "History",
-      "url": "/api/skills/history"
+      "name": "History"
     }
   },
   {
@@ -1882,11 +1577,9 @@
     "name": "Skill: Insight",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-insight",
     "reference": {
       "index": "insight",
-      "name": "Insight",
-      "url": "/api/skills/insight"
+      "name": "Insight"
     }
   },
   {
@@ -1895,11 +1588,9 @@
     "name": "Skill: Intimidation",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-intimidation",
     "reference": {
       "index": "intimidation",
-      "name": "Intimidation",
-      "url": "/api/skills/intimidation"
+      "name": "Intimidation"
     }
   },
   {
@@ -1908,11 +1599,9 @@
     "name": "Skill: Investigation",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-investigation",
     "reference": {
       "index": "investigation",
-      "name": "Investigation",
-      "url": "/api/skills/investigation"
+      "name": "Investigation"
     }
   },
   {
@@ -1921,11 +1610,9 @@
     "name": "Skill: Medicine",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-medicine",
     "reference": {
       "index": "medicine",
-      "name": "Medicine",
-      "url": "/api/skills/medicine"
+      "name": "Medicine"
     }
   },
   {
@@ -1934,11 +1621,9 @@
     "name": "Skill: Nature",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-nature",
     "reference": {
       "index": "nature",
-      "name": "Nature",
-      "url": "/api/skills/nature"
+      "name": "Nature"
     }
   },
   {
@@ -1949,15 +1634,12 @@
     "races": [
       {
         "index": "elf",
-        "name": "Elf",
-        "url": "/api/races/elf"
+        "name": "Elf"
       }
     ],
-    "url": "/api/proficiencies/skill-perception",
     "reference": {
       "index": "perception",
-      "name": "Perception",
-      "url": "/api/skills/perception"
+      "name": "Perception"
     }
   },
   {
@@ -1966,11 +1648,9 @@
     "name": "Skill: Performance",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-performance",
     "reference": {
       "index": "performance",
-      "name": "Performance",
-      "url": "/api/skills/performance"
+      "name": "Performance"
     }
   },
   {
@@ -1979,11 +1659,9 @@
     "name": "Skill: Persuasion",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-persuasion",
     "reference": {
       "index": "persuasion",
-      "name": "Persuasion",
-      "url": "/api/skills/persuasion"
+      "name": "Persuasion"
     }
   },
   {
@@ -1992,11 +1670,9 @@
     "name": "Skill: Religion",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-religion",
     "reference": {
       "index": "religion",
-      "name": "Religion",
-      "url": "/api/skills/religion"
+      "name": "Religion"
     }
   },
   {
@@ -2005,11 +1681,9 @@
     "name": "Skill: Sleight of Hand",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-sleight-of-hand",
     "reference": {
       "index": "sleight-of-hand",
-      "name": "Sleight of Hand",
-      "url": "/api/skills/sleight-of-hand"
+      "name": "Sleight of Hand"
     }
   },
   {
@@ -2018,11 +1692,9 @@
     "name": "Skill: Stealth",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-stealth",
     "reference": {
       "index": "stealth",
-      "name": "Stealth",
-      "url": "/api/skills/stealth"
+      "name": "Stealth"
     }
   },
   {
@@ -2031,11 +1703,9 @@
     "name": "Skill: Survival",
     "classes": [],
     "races": [],
-    "url": "/api/proficiencies/skill-survival",
     "reference": {
       "index": "survival",
-      "name": "Survival",
-      "url": "/api/skills/survival"
+      "name": "Survival"
     }
   }
 ]

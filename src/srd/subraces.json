@@ -4,16 +4,14 @@
     "name": "Hill Dwarf",
     "race": {
       "index": "dwarf",
-      "name": "Dwarf",
-      "url": "/api/races/dwarf"
+      "name": "Dwarf"
     },
     "desc": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.",
     "ability_bonuses": [
       {
         "ability_score": {
           "index": "wis",
-          "name": "WIS",
-          "url": "/api/ability-scores/wis"
+          "name": "WIS"
         },
         "bonus": 1
       }
@@ -23,27 +21,23 @@
     "racial_traits": [
       {
         "index": "dwarven-toughness",
-        "name": "Dwarven Toughness",
-        "url": "/api/traits/dwarven-toughness"
+        "name": "Dwarven Toughness"
       }
-    ],
-    "url": "/api/subraces/hill-dwarf"
+    ]
   },
   {
     "index": "high-elf",
     "name": "High Elf",
     "race": {
       "index": "elf",
-      "name": "Elf",
-      "url": "/api/races/elf"
+      "name": "Elf"
     },
     "desc": "As a high elf, you have a keen mind and a mastery of at least the basics of magic. In many fantasy gaming worlds, there are two kinds of high elves. One type is haughty and reclusive, believing themselves to be superior to non-elves and even other elves. The other type is more common and more friendly, and often encountered among humans and other races.",
     "ability_bonuses": [
       {
         "ability_score": {
           "index": "int",
-          "name": "INT",
-          "url": "/api/ability-scores/int"
+          "name": "INT"
         },
         "bonus": 1
       }
@@ -51,23 +45,19 @@
     "starting_proficiencies": [
       {
         "index": "longswords",
-        "name": "Longswords",
-        "url": "/api/proficiencies/longswords"
+        "name": "Longswords"
       },
       {
         "index": "shortswords",
-        "name": "Shortswords",
-        "url": "/api/proficiencies/shortswords"
+        "name": "Shortswords"
       },
       {
         "index": "shortbows",
-        "name": "Shortbows",
-        "url": "/api/proficiencies/shortbows"
+        "name": "Shortbows"
       },
       {
         "index": "longbows",
-        "name": "Longbows",
-        "url": "/api/proficiencies/longbows"
+        "name": "Longbows"
       }
     ],
     "languages": [],
@@ -80,112 +70,98 @@
             "option_type": "reference",
             "item": {
               "index": "dwarvish",
-              "name": "Dwarvish",
-              "url": "/api/languages/dwarvish"
+              "name": "Dwarvish"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "giant",
-              "name": "Giant",
-              "url": "/api/languages/giant"
+              "name": "Giant"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "gnomish",
-              "name": "Gnomish",
-              "url": "/api/languages/gnomish"
+              "name": "Gnomish"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "goblin",
-              "name": "Goblin",
-              "url": "/api/languages/goblin"
+              "name": "Goblin"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "halfling",
-              "name": "Halfling",
-              "url": "/api/languages/halfling"
+              "name": "Halfling"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "orc",
-              "name": "Orc",
-              "url": "/api/languages/orc"
+              "name": "Orc"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "abyssal",
-              "name": "Abyssal",
-              "url": "/api/languages/abyssal"
+              "name": "Abyssal"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "celestial",
-              "name": "Celestial",
-              "url": "/api/languages/celestial"
+              "name": "Celestial"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "draconic",
-              "name": "Draconic",
-              "url": "/api/languages/draconic"
+              "name": "Draconic"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "deep-speech",
-              "name": "Deep Speech",
-              "url": "/api/languages/deep-speech"
+              "name": "Deep Speech"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "infernal",
-              "name": "Infernal",
-              "url": "/api/languages/infernal"
+              "name": "Infernal"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "primordial",
-              "name": "Primordial",
-              "url": "/api/languages/primordial"
+              "name": "Primordial"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "sylvan",
-              "name": "Sylvan",
-              "url": "/api/languages/sylvan"
+              "name": "Sylvan"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "undercommon",
-              "name": "Undercommon",
-              "url": "/api/languages/undercommon"
+              "name": "Undercommon"
             }
           }
         ]
@@ -195,37 +171,31 @@
     "racial_traits": [
       {
         "index": "elf-weapon-training",
-        "name": "Elf Weapon Training",
-        "url": "/api/traits/elf-weapon-training"
+        "name": "Elf Weapon Training"
       },
       {
         "index": "high-elf-cantrip",
-        "name": "High Elf Cantrip",
-        "url": "/api/traits/high-elf-cantrip"
+        "name": "High Elf Cantrip"
       },
       {
         "index": "extra-language",
-        "name": "Extra Language",
-        "url": "/api/traits/extra-language"
+        "name": "Extra Language"
       }
-    ],
-    "url": "/api/subraces/high-elf"
+    ]
   },
   {
     "index": "lightfoot-halfling",
     "name": "Lightfoot Halfling",
     "race": {
       "index": "halfling",
-      "name": "Halfling",
-      "url": "/api/races/halfling"
+      "name": "Halfling"
     },
     "desc": "As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined to be affable and get along well with others. Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life.",
     "ability_bonuses": [
       {
         "ability_score": {
           "index": "cha",
-          "name": "CHA",
-          "url": "/api/ability-scores/cha"
+          "name": "CHA"
         },
         "bonus": 1
       }
@@ -235,27 +205,23 @@
     "racial_traits": [
       {
         "index": "naturally-stealthy",
-        "name": "Naturally Stealthy",
-        "url": "/api/traits/naturally-stealthy"
+        "name": "Naturally Stealthy"
       }
-    ],
-    "url": "/api/subraces/lightfoot-halfling"
+    ]
   },
   {
     "index": "rock-gnome",
     "name": "Rock Gnome",
     "race": {
       "index": "gnome",
-      "name": "Gnome",
-      "url": "/api/races/gnome"
+      "name": "Gnome"
     },
     "desc": "As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes.",
     "ability_bonuses": [
       {
         "ability_score": {
           "index": "con",
-          "name": "CON",
-          "url": "/api/ability-scores/con"
+          "name": "CON"
         },
         "bonus": 1
       }
@@ -263,23 +229,19 @@
     "starting_proficiencies": [
       {
         "index": "tinkers-tools",
-        "name": "Tinker's Tools",
-        "url": "/api/proficiencies/tinkers-tools"
+        "name": "Tinker's Tools"
       }
     ],
     "languages": [],
     "racial_traits": [
       {
         "index": "artificers-lore",
-        "name": "Artificer's Lore",
-        "url": "/api/traits/artificers-lore"
+        "name": "Artificer's Lore"
       },
       {
         "index": "tinker",
-        "name": "Tinker",
-        "url": "/api/traits/tinker"
+        "name": "Tinker"
       }
-    ],
-    "url": "/api/subraces/rock-gnome"
+    ]
   }
 ]

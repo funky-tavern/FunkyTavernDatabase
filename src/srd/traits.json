@@ -4,33 +4,27 @@
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       },
       {
         "index": "elf",
-        "name": "Elf",
-        "url": "/api/races/elf"
+        "name": "Elf"
       },
       {
         "index": "gnome",
-        "name": "Gnome",
-        "url": "/api/races/gnome"
+        "name": "Gnome"
       },
       {
         "index": "half-elf",
-        "name": "Half-Elf",
-        "url": "/api/races/half-elf"
+        "name": "Half-Elf"
       },
       {
         "index": "half-orc",
-        "name": "Half-Orc",
-        "url": "/api/races/half-orc"
+        "name": "Half-Orc"
       },
       {
         "index": "tiefling",
-        "name": "Tiefling",
-        "url": "/api/races/tiefling"
+        "name": "Tiefling"
       }
     ],
     "subraces": [],
@@ -38,16 +32,14 @@
     "desc": [
       "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/darkvision"
+    "proficiencies": []
   },
   {
     "index": "dwarven-resilience",
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       }
     ],
     "subraces": [],
@@ -55,16 +47,14 @@
     "desc": [
       "You have advantage on saving throws against poison, and you have resistance against poison damage."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/dwarven-resilience"
+    "proficiencies": []
   },
   {
     "index": "dwarven-combat-training",
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       }
     ],
     "subraces": [],
@@ -75,34 +65,28 @@
     "proficiencies": [
       {
         "index": "battleaxes",
-        "name": "Battleaxes",
-        "url": "/api/proficiencies/battleaxes"
+        "name": "Battleaxes"
       },
       {
         "index": "handaxes",
-        "name": "Handaxes",
-        "url": "/api/proficiencies/handaxes"
+        "name": "Handaxes"
       },
       {
         "index": "light-hammers",
-        "name": "Light hammers",
-        "url": "/api/proficiencies/light-hammers"
+        "name": "Light hammers"
       },
       {
         "index": "warhammers",
-        "name": "Warhammers",
-        "url": "/api/proficiencies/warhammers"
+        "name": "Warhammers"
       }
-    ],
-    "url": "/api/traits/dwarven-combat-training"
+    ]
   },
   {
     "index": "tool-proficiency",
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       }
     ],
     "subraces": [],
@@ -121,38 +105,33 @@
             "option_type": "reference",
             "item": {
               "index": "smiths-tools",
-              "name": "Smith's Tools",
-              "url": "/api/proficiencies/smiths-tools"
+              "name": "Smith's Tools"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "brewers-supplies",
-              "name": "Brewer's Supplies",
-              "url": "/api/proficiencies/brewers-supplies"
+              "name": "Brewer's Supplies"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "masons-tools",
-              "name": "Mason's Tools",
-              "url": "/api/proficiencies/masons-tools"
+              "name": "Mason's Tools"
             }
           }
         ]
       }
-    },
-    "url": "/api/traits/tool-proficiency"
+    }
   },
   {
     "index": "stonecunning",
     "races": [
       {
         "index": "dwarf",
-        "name": "Dwarf",
-        "url": "/api/races/dwarf"
+        "name": "Dwarf"
       }
     ],
     "subraces": [],
@@ -160,8 +139,7 @@
     "desc": [
       "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/stonecunning"
+    "proficiencies": []
   },
   {
     "index": "dwarven-toughness",
@@ -169,50 +147,45 @@
     "subraces": [
       {
         "index": "hill-dwarf",
-        "name": "Hill Dwarf",
-        "url": "/api/subraces/hill-dwarf"
+        "name": "Hill Dwarf"
       }
     ],
     "name": "Dwarven Toughness",
     "desc": [
       "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/dwarven-toughness"
+    "proficiencies": []
   },
   {
     "index": "keen-senses",
     "races": [
       {
         "index": "elf",
-        "name": "Elf",
-        "url": "/api/races/elf"
+        "name": "Elf"
       }
     ],
     "subraces": [],
     "name": "Keen Senses",
-    "desc": ["You have proficiency in the Perception skill."],
+    "desc": [
+      "You have proficiency in the Perception skill."
+    ],
     "proficiencies": [
       {
         "index": "skill-perception",
-        "name": "Skill: Perception",
-        "url": "/api/proficiencies/skill-perception"
+        "name": "Skill: Perception"
       }
-    ],
-    "url": "/api/traits/keen-senses"
+    ]
   },
   {
     "index": "fey-ancestry",
     "races": [
       {
         "index": "elf",
-        "name": "Elf",
-        "url": "/api/races/elf"
+        "name": "Elf"
       },
       {
         "index": "half-elf",
-        "name": "Half-Elf",
-        "url": "/api/races/half-elf"
+        "name": "Half-Elf"
       }
     ],
     "subraces": [],
@@ -220,16 +193,14 @@
     "desc": [
       "You have advantage on saving throws against being charmed, and magic cannot put you to sleep."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/fey-ancestry"
+    "proficiencies": []
   },
   {
     "index": "trance",
     "races": [
       {
         "index": "elf",
-        "name": "Elf",
-        "url": "/api/races/elf"
+        "name": "Elf"
       }
     ],
     "subraces": [],
@@ -237,8 +208,7 @@
     "desc": [
       "Elves do not need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting this way, you gain the same benefit that a human does from 8 hours of sleep."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/trance"
+    "proficiencies": []
   },
   {
     "index": "elf-weapon-training",
@@ -246,8 +216,7 @@
     "subraces": [
       {
         "index": "high-elf",
-        "name": "High Elf",
-        "url": "/api/subraces/high-elf"
+        "name": "High Elf"
       }
     ],
     "name": "Elf Weapon Training",
@@ -257,26 +226,21 @@
     "proficiencies": [
       {
         "index": "longswords",
-        "name": "Longswords",
-        "url": "/api/proficiencies/longswords"
+        "name": "Longswords"
       },
       {
         "index": "shortswords",
-        "name": "Shortswords",
-        "url": "/api/proficiencies/shortswords"
+        "name": "Shortswords"
       },
       {
         "index": "shortbows",
-        "name": "Shortbows",
-        "url": "/api/proficiencies/shortbows"
+        "name": "Shortbows"
       },
       {
         "index": "longbows",
-        "name": "Longbows",
-        "url": "/api/proficiencies/longbows"
+        "name": "Longbows"
       }
-    ],
-    "url": "/api/traits/elf-weapon-training"
+    ]
   },
   {
     "index": "high-elf-cantrip",
@@ -284,8 +248,7 @@
     "subraces": [
       {
         "index": "high-elf",
-        "name": "High Elf",
-        "url": "/api/subraces/high-elf"
+        "name": "High Elf"
       }
     ],
     "name": "High Elf Cantrip",
@@ -303,120 +266,105 @@
               "option_type": "reference",
               "item": {
                 "index": "light",
-                "name": "Light",
-                "url": "/api/spells/light"
+                "name": "Light"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "mage-hand",
-                "name": "Mage Hand",
-                "url": "/api/spells/mage-hand"
+                "name": "Mage Hand"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "mending",
-                "name": "Mending",
-                "url": "/api/spells/mending"
+                "name": "Mending"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "message",
-                "name": "Message",
-                "url": "/api/spells/message"
+                "name": "Message"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "minor-illusion",
-                "name": "Minor Illusion",
-                "url": "/api/spells/minor-illusion"
+                "name": "Minor Illusion"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "acid-splash",
-                "name": "Acid Splash",
-                "url": "/api/spells/acid-splash"
+                "name": "Acid Splash"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "prestidigitation",
-                "name": "Prestidigitation",
-                "url": "/api/spells/prestidigitation"
+                "name": "Prestidigitation"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "ray-of-frost",
-                "name": "Ray of Frost",
-                "url": "/api/spells/ray-of-frost"
+                "name": "Ray of Frost"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "shocking-grasp",
-                "name": "Shocking Grasp",
-                "url": "/api/spells/shocking-grasp"
+                "name": "Shocking Grasp"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "true-strike",
-                "name": "True Strike",
-                "url": "/api/spells/true-strike"
+                "name": "True Strike"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "chill-touch",
-                "name": "Chill Touch",
-                "url": "/api/spells/chill-touch"
+                "name": "Chill Touch"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "dancing-lights",
-                "name": "Dancing Lights",
-                "url": "/api/spells/dancing-lights"
+                "name": "Dancing Lights"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "fire-bolt",
-                "name": "Fire Bolt",
-                "url": "/api/spells/fire-bolt"
+                "name": "Fire Bolt"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "poison-spray",
-                "name": "Poison Spray",
-                "url": "/api/spells/poison-spray"
+                "name": "Poison Spray"
               }
             }
           ]
         },
         "type": "spell"
       }
-    },
-    "url": "/api/traits/high-elf-cantrip"
+    }
   },
   {
     "index": "extra-language",
@@ -424,8 +372,7 @@
     "subraces": [
       {
         "index": "high-elf",
-        "name": "High Elf",
-        "url": "/api/subraces/high-elf"
+        "name": "High Elf"
       }
     ],
     "name": "Extra Language",
@@ -443,126 +390,110 @@
             "option_type": "reference",
             "item": {
               "index": "dwarvish",
-              "name": "Dwarvish",
-              "url": "/api/languages/dwarvish"
+              "name": "Dwarvish"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "giant",
-              "name": "Giant",
-              "url": "/api/languages/giant"
+              "name": "Giant"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "gnomish",
-              "name": "Gnomish",
-              "url": "/api/languages/gnomish"
+              "name": "Gnomish"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "goblin",
-              "name": "Goblin",
-              "url": "/api/languages/goblin"
+              "name": "Goblin"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "halfling",
-              "name": "Halfling",
-              "url": "/api/languages/halfling"
+              "name": "Halfling"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "orc",
-              "name": "Orc",
-              "url": "/api/languages/orc"
+              "name": "Orc"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "abyssal",
-              "name": "Abyssal",
-              "url": "/api/languages/abyssal"
+              "name": "Abyssal"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "celestial",
-              "name": "Celestial",
-              "url": "/api/languages/celestial"
+              "name": "Celestial"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "draconic",
-              "name": "Draconic",
-              "url": "/api/languages/draconic"
+              "name": "Draconic"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "deep-speech",
-              "name": "Deep Speech",
-              "url": "/api/languages/deep-speech"
+              "name": "Deep Speech"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "infernal",
-              "name": "Infernal",
-              "url": "/api/languages/infernal"
+              "name": "Infernal"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "primordial",
-              "name": "Primordial",
-              "url": "/api/languages/primordial"
+              "name": "Primordial"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "sylvan",
-              "name": "Sylvan",
-              "url": "/api/languages/sylvan"
+              "name": "Sylvan"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "undercommon",
-              "name": "Undercommon",
-              "url": "/api/languages/undercommon"
+              "name": "Undercommon"
             }
           }
         ]
       }
-    },
-    "url": "/api/traits/extra-language"
+    }
   },
   {
     "index": "lucky",
     "races": [
       {
         "index": "halfling",
-        "name": "Halfling",
-        "url": "/api/races/halfling"
+        "name": "Halfling"
       }
     ],
     "subraces": [],
@@ -570,31 +501,29 @@
     "desc": [
       "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/lucky"
+    "proficiencies": []
   },
   {
     "index": "brave",
     "races": [
       {
         "index": "halfling",
-        "name": "Halfling",
-        "url": "/api/races/halfling"
+        "name": "Halfling"
       }
     ],
     "subraces": [],
     "name": "Brave",
-    "desc": ["You have advantage on saving throw against being frightened."],
-    "proficiencies": [],
-    "url": "/api/traits/brave"
+    "desc": [
+      "You have advantage on saving throw against being frightened."
+    ],
+    "proficiencies": []
   },
   {
     "index": "halfling-nimbleness",
     "races": [
       {
         "index": "halfling",
-        "name": "Halfling",
-        "url": "/api/races/halfling"
+        "name": "Halfling"
       }
     ],
     "subraces": [],
@@ -602,8 +531,7 @@
     "desc": [
       "You can move through the space of any creature that is of a size larger than yours."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/halfling-nimbleness"
+    "proficiencies": []
   },
   {
     "index": "naturally-stealthy",
@@ -611,24 +539,21 @@
     "subraces": [
       {
         "index": "lightfoot-halfling",
-        "name": "Lightfoot Halfling",
-        "url": "/api/subraces/lightfoot-halfling"
+        "name": "Lightfoot Halfling"
       }
     ],
     "name": "Naturally Stealthy",
     "desc": [
       "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/naturally-stealthy"
+    "proficiencies": []
   },
   {
     "index": "draconic-ancestry",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -647,96 +572,84 @@
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-black",
-                "name": "Draconic Ancestry (Black)",
-                "url": "/api/traits/draconic-ancestry-black"
+                "name": "Draconic Ancestry (Black)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-blue",
-                "name": "Draconic Ancestry (Blue)",
-                "url": "/api/traits/draconic-ancestry-blue"
+                "name": "Draconic Ancestry (Blue)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-brass",
-                "name": "Draconic Ancestry (Brass)",
-                "url": "/api/traits/draconic-ancestry-brass"
+                "name": "Draconic Ancestry (Brass)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-bronze",
-                "name": "Draconic Ancestry (Bronze)",
-                "url": "/api/traits/draconic-ancestry-bronze"
+                "name": "Draconic Ancestry (Bronze)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-copper",
-                "name": "Draconic Ancestry (Copper)",
-                "url": "/api/traits/draconic-ancestry-copper"
+                "name": "Draconic Ancestry (Copper)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-gold",
-                "name": "Draconic Ancestry (Gold)",
-                "url": "/api/traits/draconic-ancestry-gold"
+                "name": "Draconic Ancestry (Gold)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-green",
-                "name": "Draconic Ancestry (Green)",
-                "url": "/api/traits/draconic-ancestry-green"
+                "name": "Draconic Ancestry (Green)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-red",
-                "name": "Draconic Ancestry (Red)",
-                "url": "/api/traits/draconic-ancestry-red"
+                "name": "Draconic Ancestry (Red)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-silver",
-                "name": "Draconic Ancestry (Silver)",
-                "url": "/api/traits/draconic-ancestry-silver"
+                "name": "Draconic Ancestry (Silver)"
               }
             },
             {
               "option_type": "reference",
               "item": {
                 "index": "draconic-ancestry-white",
-                "name": "Draconic Ancestry (White)",
-                "url": "/api/traits/draconic-ancestry-white"
+                "name": "Draconic Ancestry (White)"
               }
             }
           ]
         },
         "type": "trait"
       }
-    },
-    "url": "/api/traits/draconic-ancestry"
+    }
   },
   {
     "index": "draconic-ancestry-black",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -746,15 +659,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "acid",
-        "name": "Acid",
-        "url": "/api/damage-types/acid"
+        "name": "Acid"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -770,8 +681,7 @@
         "dc": {
           "dc_type": {
             "index": "dex",
-            "name": "DEX",
-            "url": "/api/ability-scores/dex"
+            "name": "DEX"
           },
           "success_type": "half"
         },
@@ -779,8 +689,7 @@
           {
             "damage_type": {
               "index": "acid",
-              "name": "Acid",
-              "url": "/api/damage-types/acid"
+              "name": "Acid"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -791,16 +700,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-black"
+    }
   },
   {
     "index": "draconic-ancestry-blue",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -810,15 +717,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "lightning",
-        "name": "Lightning",
-        "url": "/api/damage-types/lightning"
+        "name": "Lightning"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -834,8 +739,7 @@
         "dc": {
           "dc_type": {
             "index": "dex",
-            "name": "DEX",
-            "url": "/api/ability-scores/dex"
+            "name": "DEX"
           },
           "success_type": "half"
         },
@@ -843,8 +747,7 @@
           {
             "damage_type": {
               "index": "lightning",
-              "name": "Lightning",
-              "url": "/api/damage-types/lightning"
+              "name": "Lightning"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -855,16 +758,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-blue"
+    }
   },
   {
     "index": "draconic-ancestry-brass",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -874,15 +775,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "fire",
-        "name": "Fire",
-        "url": "/api/damage-types/fire"
+        "name": "Fire"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -898,8 +797,7 @@
         "dc": {
           "dc_type": {
             "index": "dex",
-            "name": "DEX",
-            "url": "/api/ability-scores/dex"
+            "name": "DEX"
           },
           "success_type": "half"
         },
@@ -907,8 +805,7 @@
           {
             "damage_type": {
               "index": "fire",
-              "name": "Fire",
-              "url": "/api/damage-types/fire"
+              "name": "Fire"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -919,16 +816,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-brass"
+    }
   },
   {
     "index": "draconic-ancestry-bronze",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -938,15 +833,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "lightning",
-        "name": "Lightning",
-        "url": "/api/damage-types/lightning"
+        "name": "Lightning"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -962,8 +855,7 @@
         "dc": {
           "dc_type": {
             "index": "dex",
-            "name": "DEX",
-            "url": "/api/ability-scores/dex"
+            "name": "DEX"
           },
           "success_type": "half"
         },
@@ -971,8 +863,7 @@
           {
             "damage_type": {
               "index": "lightning",
-              "name": "Lightning",
-              "url": "/api/damage-types/lightning"
+              "name": "Lightning"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -983,16 +874,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-bronze"
+    }
   },
   {
     "index": "draconic-ancestry-copper",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -1002,15 +891,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "acid",
-        "name": "Acid",
-        "url": "/api/damage-types/acid"
+        "name": "Acid"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -1026,8 +913,7 @@
         "dc": {
           "dc_type": {
             "index": "dex",
-            "name": "DEX",
-            "url": "/api/ability-scores/dex"
+            "name": "DEX"
           },
           "success_type": "half"
         },
@@ -1035,8 +921,7 @@
           {
             "damage_type": {
               "index": "acid",
-              "name": "Acid",
-              "url": "/api/damage-types/acid"
+              "name": "Acid"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -1047,16 +932,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-copper"
+    }
   },
   {
     "index": "draconic-ancestry-gold",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -1066,15 +949,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "fire",
-        "name": "Fire",
-        "url": "/api/damage-types/fire"
+        "name": "Fire"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -1090,8 +971,7 @@
         "dc": {
           "dc_type": {
             "index": "dex",
-            "name": "DEX",
-            "url": "/api/ability-scores/dex"
+            "name": "DEX"
           },
           "success_type": "half"
         },
@@ -1099,8 +979,7 @@
           {
             "damage_type": {
               "index": "fire",
-              "name": "Fire",
-              "url": "/api/damage-types/fire"
+              "name": "Fire"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -1111,16 +990,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-gold"
+    }
   },
   {
     "index": "draconic-ancestry-green",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -1130,15 +1007,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "poison",
-        "name": "Poison",
-        "url": "/api/damage-types/poison"
+        "name": "Poison"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -1154,8 +1029,7 @@
         "dc": {
           "dc_type": {
             "index": "con",
-            "name": "CON",
-            "url": "/api/ability-scores/con"
+            "name": "CON"
           },
           "success_type": "half"
         },
@@ -1163,8 +1037,7 @@
           {
             "damage_type": {
               "index": "poison",
-              "name": "Poison",
-              "url": "/api/damage-types/poison"
+              "name": "Poison"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -1175,16 +1048,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-green"
+    }
   },
   {
     "index": "draconic-ancestry-red",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -1194,15 +1065,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "fire",
-        "name": "Fire",
-        "url": "/api/damage-types/fire"
+        "name": "Fire"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -1218,8 +1087,7 @@
         "dc": {
           "dc_type": {
             "index": "dex",
-            "name": "DEX",
-            "url": "/api/ability-scores/dex"
+            "name": "DEX"
           },
           "success_type": "half"
         },
@@ -1227,8 +1095,7 @@
           {
             "damage_type": {
               "index": "fire",
-              "name": "Fire",
-              "url": "/api/damage-types/fire"
+              "name": "Fire"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -1239,16 +1106,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-red"
+    }
   },
   {
     "index": "draconic-ancestry-silver",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -1258,15 +1123,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "cold",
-        "name": "Cold",
-        "url": "/api/damage-types/cold"
+        "name": "Cold"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -1282,8 +1145,7 @@
         "dc": {
           "dc_type": {
             "index": "con",
-            "name": "CON",
-            "url": "/api/ability-scores/con"
+            "name": "CON"
           },
           "success_type": "half"
         },
@@ -1291,8 +1153,7 @@
           {
             "damage_type": {
               "index": "cold",
-              "name": "Cold",
-              "url": "/api/damage-types/cold"
+              "name": "Cold"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -1303,16 +1164,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-silver"
+    }
   },
   {
     "index": "draconic-ancestry-white",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -1322,15 +1181,13 @@
     ],
     "parent": {
       "index": "draconic-ancestry",
-      "name": "Draconic Ancestry",
-      "url": "/api/traits/draconic-ancestry"
+      "name": "Draconic Ancestry"
     },
     "proficiencies": [],
     "trait_specific": {
       "damage_type": {
         "index": "cold",
-        "name": "Cold",
-        "url": "/api/damage-types/cold"
+        "name": "Cold"
       },
       "breath_weapon": {
         "name": "Breath Weapon",
@@ -1346,8 +1203,7 @@
         "dc": {
           "dc_type": {
             "index": "con",
-            "name": "CON",
-            "url": "/api/ability-scores/con"
+            "name": "CON"
           },
           "success_type": "half"
         },
@@ -1355,8 +1211,7 @@
           {
             "damage_type": {
               "index": "cold",
-              "name": "Cold",
-              "url": "/api/damage-types/cold"
+              "name": "Cold"
             },
             "damage_at_character_level": {
               "1": "2d6",
@@ -1367,16 +1222,14 @@
           }
         ]
       }
-    },
-    "url": "/api/traits/draconic-ancestry-white"
+    }
   },
   {
     "index": "breath-weapon",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -1386,16 +1239,14 @@
       "When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.",
       "After you use your breath weapon, you cannot use it again until you complete a short or long rest."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/breath-weapon"
+    "proficiencies": []
   },
   {
     "index": "damage-resistance",
     "races": [
       {
         "index": "dragonborn",
-        "name": "Dragonborn",
-        "url": "/api/races/dragonborn"
+        "name": "Dragonborn"
       }
     ],
     "subraces": [],
@@ -1403,16 +1254,14 @@
     "desc": [
       "You have resistance to the damage type associated with your draconic ancestry."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/damage-resistance"
+    "proficiencies": []
   },
   {
     "index": "gnome-cunning",
     "races": [
       {
         "index": "gnome",
-        "name": "Gnome",
-        "url": "/api/races/gnome"
+        "name": "Gnome"
       }
     ],
     "subraces": [],
@@ -1420,8 +1269,7 @@
     "desc": [
       "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/gnome-cunning"
+    "proficiencies": []
   },
   {
     "index": "artificers-lore",
@@ -1429,16 +1277,14 @@
     "subraces": [
       {
         "index": "rock-gnome",
-        "name": "Rock Gnome",
-        "url": "/api/subraces/rock-gnome"
+        "name": "Rock Gnome"
       }
     ],
     "name": "Artificer's Lore",
     "desc": [
       "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/artificers-lore"
+    "proficiencies": []
   },
   {
     "index": "tinker",
@@ -1446,8 +1292,7 @@
     "subraces": [
       {
         "index": "rock-gnome",
-        "name": "Rock Gnome",
-        "url": "/api/subraces/rock-gnome"
+        "name": "Rock Gnome"
       }
     ],
     "name": "Tinker",
@@ -1461,24 +1306,23 @@
     "proficiencies": [
       {
         "index": "tinkers-tools",
-        "name": "Tinker's Tools",
-        "url": "/api/proficiencies/tinkers-tools"
+        "name": "Tinker's Tools"
       }
-    ],
-    "url": "/api/traits/tinker"
+    ]
   },
   {
     "index": "skill-versatility",
     "races": [
       {
         "index": "half-elf",
-        "name": "Half-Elf",
-        "url": "/api/races/half-elf"
+        "name": "Half-Elf"
       }
     ],
     "subraces": [],
     "name": "Skill Versatility",
-    "desc": ["You gain proficiency in two skills of your choice."],
+    "desc": [
+      "You gain proficiency in two skills of your choice."
+    ],
     "proficiencies": [],
     "proficiency_choices": {
       "choose": 2,
@@ -1490,179 +1334,158 @@
             "option_type": "reference",
             "item": {
               "index": "skill-acrobatics",
-              "name": "Skill: Acrobatics",
-              "url": "/api/proficiencies/skill-acrobatics"
+              "name": "Skill: Acrobatics"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-animal-handling",
-              "name": "Skill: Animal Handling",
-              "url": "/api/proficiencies/skill-animal-handling"
+              "name": "Skill: Animal Handling"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-arcana",
-              "name": "Skill: Arcana",
-              "url": "/api/proficiencies/skill-arcana"
+              "name": "Skill: Arcana"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-athletics",
-              "name": "Skill: Athletics",
-              "url": "/api/proficiencies/skill-athletics"
+              "name": "Skill: Athletics"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-deception",
-              "name": "Skill: Deception",
-              "url": "/api/proficiencies/skill-deception"
+              "name": "Skill: Deception"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-history",
-              "name": "Skill: History",
-              "url": "/api/proficiencies/skill-history"
+              "name": "Skill: History"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-insight",
-              "name": "Skill: Insight",
-              "url": "/api/proficiencies/skill-insight"
+              "name": "Skill: Insight"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-intimidation",
-              "name": "Skill: Intimidation",
-              "url": "/api/proficiencies/skill-intimidation"
+              "name": "Skill: Intimidation"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-investigation",
-              "name": "Skill: Investigation",
-              "url": "/api/proficiencies/skill-investigation"
+              "name": "Skill: Investigation"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-medicine",
-              "name": "Skill: Medicine",
-              "url": "/api/proficiencies/skill-medicine"
+              "name": "Skill: Medicine"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-nature",
-              "name": "Skill: Nature",
-              "url": "/api/proficiencies/skill-nature"
+              "name": "Skill: Nature"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-perception",
-              "name": "Skill: Perception",
-              "url": "/api/proficiencies/skill-perception"
+              "name": "Skill: Perception"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-performance",
-              "name": "Skill: Performance",
-              "url": "/api/proficiencies/skill-performance"
+              "name": "Skill: Performance"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-persuasion",
-              "name": "Skill: Persuasion",
-              "url": "/api/proficiencies/skill-persuasion"
+              "name": "Skill: Persuasion"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-religion",
-              "name": "Skill: Religion",
-              "url": "/api/proficiencies/skill-religion"
+              "name": "Skill: Religion"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-sleight-of-hand",
-              "name": "Skill: Sleight of Hand",
-              "url": "/api/proficiencies/skill-sleight-of-hand"
+              "name": "Skill: Sleight of Hand"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-stealth",
-              "name": "Skill: Stealth",
-              "url": "/api/proficiencies/skill-stealth"
+              "name": "Skill: Stealth"
             }
           },
           {
             "option_type": "reference",
             "item": {
               "index": "skill-survival",
-              "name": "Skill: Survival",
-              "url": "/api/proficiencies/skill-survival"
+              "name": "Skill: Survival"
             }
           }
         ]
       }
-    },
-    "url": "/api/traits/skill-versatility"
+    }
   },
   {
     "index": "menacing",
     "races": [
       {
         "index": "half-orc",
-        "name": "Half-Orc",
-        "url": "/api/races/half-orc"
+        "name": "Half-Orc"
       }
     ],
     "subraces": [],
     "name": "Menacing",
-    "desc": ["You gain proficiency in the Intimidation skill."],
+    "desc": [
+      "You gain proficiency in the Intimidation skill."
+    ],
     "proficiencies": [
       {
         "index": "skill-intimidation",
-        "name": "Skill: Intimidation",
-        "url": "/api/proficiencies/skill-intimidation"
+        "name": "Skill: Intimidation"
       }
-    ],
-    "url": "/api/traits/menacing"
+    ]
   },
   {
     "index": "relentless-endurance",
     "races": [
       {
         "index": "half-orc",
-        "name": "Half-Orc",
-        "url": "/api/races/half-orc"
+        "name": "Half-Orc"
       }
     ],
     "subraces": [],
@@ -1670,16 +1493,14 @@
     "desc": [
       "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. you cannot use this feature again until you finish a long rest."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/relentless-endurance"
+    "proficiencies": []
   },
   {
     "index": "savage-attacks",
     "races": [
       {
         "index": "half-orc",
-        "name": "Half-Orc",
-        "url": "/api/races/half-orc"
+        "name": "Half-Orc"
       }
     ],
     "subraces": [],
@@ -1687,31 +1508,29 @@
     "desc": [
       "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/savage-attacks"
+    "proficiencies": []
   },
   {
     "index": "hellish-resistance",
     "races": [
       {
         "index": "tiefling",
-        "name": "Tiefling",
-        "url": "/api/races/tiefling"
+        "name": "Tiefling"
       }
     ],
     "subraces": [],
     "name": "Hellish Resistance",
-    "desc": ["You have resistance to fire damage."],
-    "proficiencies": [],
-    "url": "/api/traits/hellish-resistance"
+    "desc": [
+      "You have resistance to fire damage."
+    ],
+    "proficiencies": []
   },
   {
     "index": "infernal-legacy",
     "races": [
       {
         "index": "tiefling",
-        "name": "Tiefling",
-        "url": "/api/races/tiefling"
+        "name": "Tiefling"
       }
     ],
     "subraces": [],
@@ -1719,7 +1538,6 @@
     "desc": [
       "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
     ],
-    "proficiencies": [],
-    "url": "/api/traits/infernal-legacy"
+    "proficiencies": []
   }
 ]
