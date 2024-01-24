@@ -2,7 +2,7 @@ import { Entity, PrimaryColumn, Column } from "typeorm"
 
 
 @Entity()
-export class Backgroud {
+export class Background {
     @PrimaryColumn()
     index: string
 
