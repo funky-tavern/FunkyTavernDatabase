@@ -10,7 +10,13 @@ export class Mapper<T> {
         this.class = classType;
     }
 
-    public async map(urlPath: string): Promise<T[]> {
+    public async mapFromParent(subpath: string, parentPath: string): Promise<T[]> {
+        const data = await this.extractDataFromParent(subpath, parentPath);
+
+        return this.parseData(data);
+    }
+
+    public async mapFromUrl(urlPath: string): Promise<T[]> {
         const data = await this.extractDataFromUrl(urlPath);
 
         return this.parseData(data);
@@ -33,6 +39,22 @@ export class Mapper<T> {
     private getColumnNames(): string[] {
         return AppDataSource.getMetadata(this.class)
             .ownColumns.map(column => column.propertyName);
+    }
+
+    private async extractDataFromParent(subpath: string, parentPath: string): Promise<object[]> {
+        const parentIndexes = await this.getIndexes(parentPath);
+
+        let data = []
+        for (let parentIndex of parentIndexes) {
+            const res = await fetch(`${parentPath}/${parentIndex}/${subpath}`)
+            if (res.ok === false) {
+                throw new Error(`Failed to fetch data from ${parentPath}/${parentIndex}/${subpath}`);
+            }
+
+            data = [...data, ...(await res.json())];
+        }
+
+        return data;
     }
 
     private async extractDataFromUrl(urlPath: string): Promise<object[]> {

@@ -1,5 +1,5 @@
 import {AbilityScore} from "../entity/ability-score.entity";
-import { Alignment } from "../entity/alignment.entity";
+import {Alignment} from "../entity/alignment.entity";
 import {RuleSection} from "../entity/rule-section.entity";
 import {Rules} from "../entity/rules.entity";
 import {DamageType} from "../entity/damage-type.entity";
@@ -25,37 +25,57 @@ import {Feature} from "../entity/feature.entity";
 import {Class} from "../entity/class.entity";
 
 
-const ENTITY_MAPPINGS: { entity: any; path: string; }[] = [
-    { entity: AbilityScore, path: "https://www.dnd5eapi.co/api/ability-scores" },
-    { entity: Alignment, path: "https://www.dnd5eapi.co/api/alignments" },
-    { entity: Background, path: "https://www.dnd5eapi.co/api/backgrounds" },
-    { entity: Class, path: "https://www.dnd5eapi.co/api/classes" },
-    { entity: Condition, path: "https://www.dnd5eapi.co/api/conditions" },
-    { entity: DamageType, path: "https://www.dnd5eapi.co/api/damage-types" },
-    { entity: Equipment, path: "https://www.dnd5eapi.co/api/equipment" },
-    { entity: EquipmentCategory, path: "https://www.dnd5eapi.co/api/equipment-categories" },
-    { entity: Feat, path: "https://www.dnd5eapi.co/api/feats" },
-    { entity: Feature, path: "https://www.dnd5eapi.co/api/features"},
-    { entity: Language, path: "https://www.dnd5eapi.co/api/languages" },
-    { entity: MagicItem, path: "https://www.dnd5eapi.co/api/magic-items" },
-    { entity: Monster, path: "https://www.dnd5eapi.co/api/monsters" },
-    { entity: Proficiency, path: "https://www.dnd5eapi.co/api/proficiencies" },
-    { entity: Race, path: "https://www.dnd5eapi.co/api/races" },
-    { entity: RuleSection, path: "https://www.dnd5eapi.co/api/rule-sections" },
-    { entity: Rules, path: "https://www.dnd5eapi.co/api/rules" },
-    { entity: Skill, path: "https://www.dnd5eapi.co/api/skills"},
-    { entity: Spell, path: "https://www.dnd5eapi.co/api/spells" },
-    { entity: SubClass, path: "https://www.dnd5eapi.co/api/subclasses" },
-    { entity: SubRace, path: "https://www.dnd5eapi.co/api/subraces" },
-    { entity: Trait, path: "https://www.dnd5eapi.co/api/traits" },
-    { entity: WeaponProperty, path: "https://www.dnd5eapi.co/api/weapon-properties" },
-    { entity: MagicSchool, path: "https://www.dnd5eapi.co/api/magic-schools" },
-    { entity: Level, path: "https://www.dnd5eapi.co/api/levels"},
+const API_BASE_URL = "https://www.dnd5eapi.co/api";
+
+type ParentMapping = {
+    parent: any;
+    path: string;
+}
+
+type EntityMapping = {
+    entity: any;
+    path?: string;
+    parents?: ParentMapping[];
+    subpath?: string;
+}
+
+const ENTITY_MAPPINGS: EntityMapping[] = [
+    {entity: AbilityScore, path: `${API_BASE_URL}/ability-scores`},
+    {entity: Alignment, path: `${API_BASE_URL}/alignments`},
+    {entity: Background, path: `${API_BASE_URL}/backgrounds`},
+    {entity: Class, path: `${API_BASE_URL}/classes`},
+    {entity: Condition, path: `${API_BASE_URL}/conditions`},
+    {entity: DamageType, path: `${API_BASE_URL}/damage-types`},
+    {entity: Equipment, path: `${API_BASE_URL}/equipment`},
+    {entity: EquipmentCategory, path: `${API_BASE_URL}/equipment-categories`},
+    {entity: Feat, path: `${API_BASE_URL}/feats`},
+    {entity: Feature, path: `${API_BASE_URL}/features`},
+    {entity: Language, path: `${API_BASE_URL}/languages`},
+    {entity: MagicItem, path: `${API_BASE_URL}/magic-items`},
+    {entity: Monster, path: `${API_BASE_URL}/monsters`},
+    {entity: Proficiency, path: `${API_BASE_URL}/proficiencies`},
+    {entity: Race, path: `${API_BASE_URL}/races`},
+    {entity: RuleSection, path: `${API_BASE_URL}/rule-sections`},
+    {entity: Rules, path: `${API_BASE_URL}/rules`},
+    {entity: Skill, path: `${API_BASE_URL}/skills`},
+    {entity: Spell, path: `${API_BASE_URL}/spells`},
+    {entity: SubClass, path: `${API_BASE_URL}/subclasses`},
+    {entity: SubRace, path: `${API_BASE_URL}/subraces`},
+    {entity: Trait, path: `${API_BASE_URL}/traits`},
+    {entity: WeaponProperty, path: `${API_BASE_URL}/weapon-properties`},
+    {entity: MagicSchool, path: `${API_BASE_URL}/magic-schools`},
+    {
+        entity: Level, parents: [
+            {parent: Class, path: `${API_BASE_URL}/classes`},
+            {parent: SubClass, path: `${API_BASE_URL}/subclasses`}
+        ], subpath: "levels"
+    },
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(
     (entityMapping) => entityMapping.entity
 );
 
-export { ENTITY_MAPPINGS };
-export { ENTITIES };
+export type {EntityMapping};
+export {ENTITY_MAPPINGS};
+export {ENTITIES};
