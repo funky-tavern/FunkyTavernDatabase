@@ -30,7 +30,6 @@ This is a sqlite3 database for the FunkyTavern project. It contains the followin
 - Trait
 - Weapon Property
 
-## SRD Source Files
+## Data Source
 
-All SRD source files are located in the `srd` folder. The files are named after the table they are used to populate. For example, the `ability_score.json` file contains the data for the Ability Score table.
-They are all in JSON format and are generated from the [5e-Database](https://github.com/5e-bits/5e-database) project and Licenced under the MIT License.
+The data was taken from the [D&D 5e API](http://www.dnd5eapi.co/). All data is owned by Wizards of the Coast. The data is licensed under the [Open Gaming License](https://dnd.wizards.com/articles/features/systems-reference-document-srd).
