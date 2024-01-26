@@ -22,33 +22,35 @@ import {SubRace} from "../entity/subrace.entity";
 import {Skill} from "../entity/skill.entity";
 import {Level} from "../entity/level.entity";
 import {Feature} from "../entity/feature.entity";
+import {Class} from "../entity/class.entity";
 
 
 const ENTITY_MAPPINGS: { entity: any; path: string; }[] = [
-    { entity: AbilityScore, path: "./src/srd/ability-scores.json" },
-    { entity: Alignment, path: "./src/srd/alignments.json" },
-    { entity: RuleSection, path: "./src/srd/rule-sections.json" },
-    { entity: Rules, path: "./src/srd/rules.json" },
-    { entity: DamageType, path: "./src/srd/damage-types.json" },
-    { entity: EquipmentCategory, path: "./src/srd/equipment-categories.json" },
-    { entity: WeaponProperty, path: "./src/srd/weapon-properties.json" },
-    { entity: Equipment, path: "./src/srd/equipment.json" },
-    { entity: MagicItem, path: "./src/srd/magic-items.json" },
-    { entity: Proficiency, path: "./src/srd/proficiencies.json" },
-    { entity: Language, path: "./src/srd/languages.json" },
-    { entity: MagicSchool, path: "./src/srd/magic-schools.json" },
-    { entity: Spell, path: "./src/srd/spells.json" },
-    { entity: Trait, path: "./src/srd/traits.json" },
-    { entity: Race, path: "./src/srd/races.json" },
-    { entity: Background, path: "./src/srd/backgrounds.json" },
-    { entity: Condition, path: "./src/srd/conditions.json" },
-    { entity: Feat, path: "./src/srd/feats.json" },
-    { entity: Monster, path: "./src/srd/monsters.json" },
-    { entity: SubClass, path: "./src/srd/subclasses.json" },
-    { entity: SubRace, path: "./src/srd/subraces.json" },
-    { entity: Skill, path: "./src/srd/skills.json"},
-    { entity: Level, path: "./src/srd/levels.json"},
-    { entity: Feature, path: "./src/srd/features.json"}
+    { entity: AbilityScore, path: "https://www.dnd5eapi.co/api/ability-scores" },
+    { entity: Alignment, path: "https://www.dnd5eapi.co/api/alignments" },
+    { entity: Background, path: "https://www.dnd5eapi.co/api/backgrounds" },
+    { entity: Class, path: "https://www.dnd5eapi.co/api/classes" },
+    { entity: Condition, path: "https://www.dnd5eapi.co/api/conditions" },
+    { entity: DamageType, path: "https://www.dnd5eapi.co/api/damage-types" },
+    { entity: Equipment, path: "https://www.dnd5eapi.co/api/equipment" },
+    { entity: EquipmentCategory, path: "https://www.dnd5eapi.co/api/equipment-categories" },
+    { entity: Feat, path: "https://www.dnd5eapi.co/api/feats" },
+    { entity: Feature, path: "https://www.dnd5eapi.co/api/features"},
+    { entity: Language, path: "https://www.dnd5eapi.co/api/languages" },
+    { entity: MagicItem, path: "https://www.dnd5eapi.co/api/magic-items" },
+    { entity: Monster, path: "https://www.dnd5eapi.co/api/monsters" },
+    { entity: Proficiency, path: "https://www.dnd5eapi.co/api/proficiencies" },
+    { entity: Race, path: "https://www.dnd5eapi.co/api/races" },
+    { entity: RuleSection, path: "https://www.dnd5eapi.co/api/rule-sections" },
+    { entity: Rules, path: "https://www.dnd5eapi.co/api/rules" },
+    { entity: Skill, path: "https://www.dnd5eapi.co/api/skills"},
+    { entity: Spell, path: "https://www.dnd5eapi.co/api/spells" },
+    { entity: SubClass, path: "https://www.dnd5eapi.co/api/subclasses" },
+    { entity: SubRace, path: "https://www.dnd5eapi.co/api/subraces" },
+    { entity: Trait, path: "https://www.dnd5eapi.co/api/traits" },
+    { entity: WeaponProperty, path: "https://www.dnd5eapi.co/api/weapon-properties" },
+    { entity: MagicSchool, path: "https://www.dnd5eapi.co/api/magic-schools" },
+    { entity: Level, path: "https://www.dnd5eapi.co/api/levels"},
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(

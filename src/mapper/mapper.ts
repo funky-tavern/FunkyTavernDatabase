@@ -1,8 +1,5 @@
-import {join} from "path";
-import {existsSync} from "fs";
-import {readFile} from "fs/promises";
 import {AppDataSource} from "../data-source";
-import { EntityTarget } from "typeorm/common/EntityTarget";
+import fetch from 'node-fetch';
 
 
 export class Mapper<T> {
@@ -13,14 +10,8 @@ export class Mapper<T> {
         this.class = classType;
     }
 
-    public async map(filePath: string): Promise<T[]> {
-        filePath = join(filePath);
-
-        if (!existsSync(filePath)) {
-            throw new Error(`File ${filePath} does not exist`);
-        }
-
-        const data = await this.extractDataFromFile(filePath);
+    public async map(urlPath: string): Promise<T[]> {
+        const data = await this.extractDataFromUrl(urlPath);
 
         return this.parseData(data);
     }
@@ -44,8 +35,36 @@ export class Mapper<T> {
             .ownColumns.map(column => column.propertyName);
     }
 
-    private async extractDataFromFile(filePath: string): Promise<object[]> {
-        const file = await readFile(filePath, "utf8");
-        return JSON.parse(file);
+    private async extractDataFromUrl(urlPath: string): Promise<object[]> {
+        const indexes = await this.getIndexes(urlPath);
+
+        const data = []
+        for (let index of indexes) {
+            data.push(await this.getDataFromIndex(urlPath, index));
+        }
+
+        return data;
+    }
+
+    private async getIndexes(urlPath: string): Promise<string[]> {
+        const response = await fetch(urlPath);
+
+        if (response.ok === false) {
+            throw new Error(`Failed to fetch data from ${urlPath}`);
+        }
+
+        const data = (await response.json())["results"];
+
+        return data.map((row) => row["index"]);
+    }
+
+    private async getDataFromIndex(urlPath: string, index: string): Promise<object> {
+        const response = await fetch(`${urlPath}/${index}`);
+
+        if (response.ok === false) {
+            throw new Error(`Failed to fetch data from ${urlPath}/${index}`);
+        }
+
+        return response.json() as Promise<object>;
     }
 }
