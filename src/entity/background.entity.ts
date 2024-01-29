@@ -1,54 +1,55 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class Background {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column({
         transformer: {
-            to: (values: object[]|string[]) => {
+            to: (values: object[] | string[]) => {
                 if (!values || values.length === 0) {
                     return null;
                 }
 
-                return values.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
+                return values
+                    .map((value) => {
+                        if (typeof value === 'string') {
+                            return value;
+                        }
 
-                    return value["index"];
-                }).join("$");
+                        return value['index'];
+                    })
+                    .join('$');
             },
             from: (values: string) => {
                 if (!values) {
                     return [];
                 }
 
-                return values.split("$");
+                return values.split('$');
             }
         },
         nullable: true
     })
     starting_proficiencies: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
-                if (!value || !value["from"]) {
+                if (!value || !value['from']) {
                     return null;
                 }
 
-                if (value["type"]) {
-                    delete value["type"];
+                if (value['type']) {
+                    delete value['type'];
                 }
 
-                if (value["from"]["resource_list_url"]) {
-                    delete value["from"]["resource_list_url"]
+                if (value['from']['resource_list_url']) {
+                    delete value['from']['resource_list_url'];
                 }
 
                 return value;
@@ -60,12 +61,12 @@ export class Background {
     })
     language_options: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
                 return values.map((value) => {
-                    if (typeof value["equipment"] !== "string") {
-                        value["equipment"] = value["equipment"]["index"];
+                    if (typeof value['equipment'] !== 'string') {
+                        value['equipment'] = value['equipment']['index'];
                     }
 
                     return value;
@@ -78,7 +79,7 @@ export class Background {
     })
     starting_equipment: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
                 if (!values || values.length === 0) {
@@ -86,12 +87,15 @@ export class Background {
                 }
 
                 return values.map((value) => {
-                    if (value["type"]) {
-                        delete value["type"];
+                    if (value['type']) {
+                        delete value['type'];
                     }
 
-                    if (typeof value["from"]["equipment_category"] !== "string") {
-                        value["from"]["equipment_category"] = value["from"]["equipment_category"]["index"];
+                    if (
+                        typeof value['from']['equipment_category'] !== 'string'
+                    ) {
+                        value['from']['equipment_category'] =
+                            value['from']['equipment_category']['index'];
                     }
 
                     return value;
@@ -105,7 +109,7 @@ export class Background {
     })
     starting_equipment_options: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object[]) => {
                 if (!value) {
@@ -122,15 +126,15 @@ export class Background {
     })
     feature: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object[]) => {
-                if (!value || !value["from"]) {
+                if (!value || !value['from']) {
                     return null;
                 }
 
-                if (value["type"]) {
-                    delete value["type"];
+                if (value['type']) {
+                    delete value['type'];
                 }
 
                 return value;
@@ -142,31 +146,35 @@ export class Background {
     })
     personality_traits: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object[]) => {
-                if (!value || !value["from"]) {
+                if (!value || !value['from']) {
                     return null;
                 }
 
-                if (value["type"]) {
-                    delete value["type"];
+                if (value['type']) {
+                    delete value['type'];
                 }
 
-                value["from"]["options"].forEach((option) => {
-                    if (option["option_type"]) {
-                        delete option["option_type"];
+                value['from']['options'].forEach((option) => {
+                    if (option['option_type']) {
+                        delete option['option_type'];
                     }
 
-                    option["alignments"] = option["alignments"].map((alignment) => {
-                        if (!alignment) return null
+                    option['alignments'] = option['alignments'].map(
+                        (alignment) => {
+                            if (!alignment) return null;
 
-                        if (typeof alignment === "string") {
-                            return alignment;
+                            if (typeof alignment === 'string') {
+                                return alignment;
+                            }
+
+                            return !alignment['index']
+                                ? alignment['index']
+                                : null;
                         }
-
-                        return (!alignment["index"]) ? alignment["index"] : null;
-                    });
+                    );
                 });
 
                 return value;
@@ -178,15 +186,15 @@ export class Background {
     })
     ideals: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object[]) => {
-                if (!value || !value["from"]) {
+                if (!value || !value['from']) {
                     return null;
                 }
 
-                if (value["type"]) {
-                    delete value["type"];
+                if (value['type']) {
+                    delete value['type'];
                 }
 
                 return value;
@@ -198,15 +206,15 @@ export class Background {
     })
     bonds: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object[]) => {
-                if (!value || !value["from"]) {
+                if (!value || !value['from']) {
                     return null;
                 }
 
-                if (value["type"]) {
-                    delete value["type"];
+                if (value['type']) {
+                    delete value['type'];
                 }
 
                 return value;

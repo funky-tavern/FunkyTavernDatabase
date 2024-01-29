@@ -1,25 +1,24 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class Spell {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column({
         transformer: {
             to: (value: string[]) => {
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    desc: string
+    desc: string;
 
     @Column({
         transformer: {
@@ -28,64 +27,64 @@ export class Spell {
                     return null;
                 }
 
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
                 if (!value) {
                     return null;
                 }
-                return value.split("$");
+                return value.split('$');
             }
         },
         nullable: true
     })
-    higher_level: string
+    higher_level: string;
 
     @Column()
-    range: string
+    range: string;
 
     @Column({
         transformer: {
             to: (value: string[]) => {
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    components: string
-
-    @Column({nullable: true})
-    material: string
-
-    @Column()
-    ritual: boolean
-
-    @Column()
-    duration: string
-
-    @Column()
-    concentration: boolean
-
-    @Column()
-    casting_time: string
-
-    @Column()
-    level: number
+    components: string;
 
     @Column({ nullable: true })
-    attack_type: string
+    material: string;
 
-    @Column("simple-json", {
+    @Column()
+    ritual: boolean;
+
+    @Column()
+    duration: string;
+
+    @Column()
+    concentration: boolean;
+
+    @Column()
+    casting_time: string;
+
+    @Column()
+    level: number;
+
+    @Column({ nullable: true })
+    attack_type: string;
+
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
-                if (!value || !value["damage_type"]) {
+                if (!value || !value['damage_type']) {
                     return null;
                 }
 
-                if (value["damage_type"]["index"]) {
-                    value["damage_type"] = value["damage_type"]["index"];
+                if (value['damage_type']['index']) {
+                    value['damage_type'] = value['damage_type']['index'];
                 }
 
                 return value;
@@ -96,17 +95,17 @@ export class Spell {
         },
         nullable: true
     })
-    damage: object
+    damage: object;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
                 if (!value) {
                     return null;
                 }
 
-                if (value["dc_type"]["index"]) {
-                    value["dc_type"] = value["dc_type"]["index"];
+                if (value['dc_type']['index']) {
+                    value['dc_type'] = value['dc_type']['index'];
                 }
 
                 return value;
@@ -117,26 +116,26 @@ export class Spell {
         },
         nullable: true
     })
-    dc: object
+    dc: object;
 
-    @Column("simple-json", { nullable: true })
-    heal_at_slot_level: object
+    @Column('simple-json', { nullable: true })
+    heal_at_slot_level: object;
 
-    @Column("simple-json", { nullable: true })
-    area_of_effect: object
+    @Column('simple-json', { nullable: true })
+    area_of_effect: object;
 
     @Column({
         transformer: {
-            to: (value: object|string) => {
-                if (typeof value === "string") {
+            to: (value: object | string) => {
+                if (typeof value === 'string') {
                     return value;
                 }
-                return value["index"];
+                return value['index'];
             },
             from: (value: string) => {
                 return value;
             }
         }
     })
-    school: string
+    school: string;
 }

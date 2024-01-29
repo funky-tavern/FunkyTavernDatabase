@@ -1,80 +1,79 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class MagicItem {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column({
         transformer: {
-            to: (value: object|string) => {
-                if (typeof value === "string") {
+            to: (value: object | string) => {
+                if (typeof value === 'string') {
                     return value;
                 }
-                return value["index"];
+                return value['index'];
             },
             from: (value: string) => {
                 return value;
             }
         }
     })
-    equipment_category: string
+    equipment_category: string;
 
     @Column({
         transformer: {
-            to: (value: object|string) => {
-                if (typeof value === "string") {
+            to: (value: object | string) => {
+                if (typeof value === 'string') {
                     return value;
                 }
-                return value["name"];
+                return value['name'];
             },
             from: (value: string) => {
                 return value;
             }
         }
     })
-    rarity: string
+    rarity: string;
 
     @Column({
         transformer: {
-            to: (values: object[]|string[]) => {
+            to: (values: object[] | string[]) => {
                 if (!values || values.length === 0) {
                     return null;
                 }
 
-                if (typeof values[0] === "string") {
-                    return values.join("$");
+                if (typeof values[0] === 'string') {
+                    return values.join('$');
                 }
 
-                return values.map((value) => value["index"]).join("$");
+                return values.map((value) => value['index']).join('$');
             },
             from: (value: string) => {
                 if (value && value.length > 0) {
-                    return value.split("$");
+                    return value.split('$');
                 }
                 return null;
             }
         },
         nullable: true
     })
-    variants: string
+    variants: string;
 
     @Column()
-    variant: boolean
+    variant: boolean;
 
     @Column({
         transformer: {
             to: (value: string[]) => {
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    desc: string
+    desc: string;
 }

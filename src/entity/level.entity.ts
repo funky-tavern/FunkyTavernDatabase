@@ -1,70 +1,72 @@
-import {Entity, PrimaryColumn, Column} from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class Level {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column({
         transformer: {
             to: (value: object | string) => {
-                if (typeof value === "string") {
+                if (typeof value === 'string') {
                     return value;
                 }
-                return value["index"];
+                return value['index'];
             },
             from: (value: string) => {
                 return value;
             }
         }
     })
-    class: string
+    class: string;
 
     @Column({
-        nullable: true, transformer: {
+        nullable: true,
+        transformer: {
             to: (value: object | string) => {
                 if (!value) {
                     return null;
                 }
-                if (typeof value === "string") {
+                if (typeof value === 'string') {
                     return value;
                 }
-                return value["index"];
+                return value['index'];
             },
             from: (value: string) => {
                 return value;
             }
         }
     })
-    subclass: string
+    subclass: string;
 
     @Column()
-    level: number
+    level: number;
 
-    @Column({nullable: true})
-    ability_score_bonuses: number
+    @Column({ nullable: true })
+    ability_score_bonuses: number;
 
-    @Column({nullable: true})
-    prof_bonus: number
+    @Column({ nullable: true })
+    prof_bonus: number;
 
     @Column({
         transformer: {
             to: (values: object[] | string[]) => {
-                return values.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
-                    return value["index"];
-                }).join("$");
+                return values
+                    .map((value) => {
+                        if (typeof value === 'string') {
+                            return value;
+                        }
+                        return value['index'];
+                    })
+                    .join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    features: string
+    features: string;
 
-    @Column("simple-json", {nullable: true})
-    class_specific: string
+    @Column('simple-json', { nullable: true })
+    class_specific: string;
 }

@@ -1,66 +1,69 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class Trait {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column({
         transformer: {
             to: (value: string[]) => {
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    desc: string
+    desc: string;
 
     @Column({
         transformer: {
-            to: (value: object[]|string[]) => {
+            to: (value: object[] | string[]) => {
                 if (!value || value.length === 0) {
                     return null;
                 }
 
-                return value.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
+                return value
+                    .map((value) => {
+                        if (typeof value === 'string') {
+                            return value;
+                        }
 
-                    return value["index"];
-                }).join("$");
+                        return value['index'];
+                    })
+                    .join('$');
             },
             from: (value: string) => {
                 if (!value) {
                     return null;
                 }
-                return value.split("$");
+                return value.split('$');
             }
         },
         nullable: true
     })
-    proficiencies: string
+    proficiencies: string;
 
-    @Column("simple-json",{
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
                 if (!value) {
                     return null;
                 }
 
-                value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
+                value['from']['options'] = value['from']['options'].map(
+                    (option) => {
+                        if (typeof option === 'string') {
+                            return option;
+                        }
 
-                    return option["item"]["index"];
-                });
+                        return option['item']['index'];
+                    }
+                );
 
                 return value;
             },
@@ -70,21 +73,23 @@ export class Trait {
         },
         nullable: true
     })
-    proficiency_choices: object
+    proficiency_choices: object;
 
-    @Column("simple-json",{
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
-                if (!value || !value["spell_options"]) {
+                if (!value || !value['spell_options']) {
                     return null;
                 }
 
-                value["spell_options"]["from"]["options"] = value["spell_options"]["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
+                value['spell_options']['from']['options'] = value[
+                    'spell_options'
+                ]['from']['options'].map((option) => {
+                    if (typeof option === 'string') {
                         return option;
                     }
 
-                    return option["item"]["index"];
+                    return option['item']['index'];
                 });
 
                 return value;
@@ -95,22 +100,24 @@ export class Trait {
         },
         nullable: true
     })
-    trait_specific: object
+    trait_specific: object;
 
-    @Column("simple-json",{
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
                 if (!value) {
                     return null;
                 }
 
-                value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
+                value['from']['options'] = value['from']['options'].map(
+                    (option) => {
+                        if (typeof option === 'string') {
+                            return option;
+                        }
 
-                    return option["item"]["index"];
-                });
+                        return option['item']['index'];
+                    }
+                );
 
                 return value;
             },
@@ -120,5 +127,5 @@ export class Trait {
         },
         nullable: true
     })
-    language_options: object
+    language_options: object;
 }

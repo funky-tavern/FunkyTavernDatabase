@@ -1,45 +1,44 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class Feat {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
                 return values.map((value: any) => {
                     if (!value || !value.ability_score) {
-                        return null
+                        return null;
                     }
 
-                    if (typeof value.ability_score !== "string") {
-                        value.ability_score = value.ability_score.index
+                    if (typeof value.ability_score !== 'string') {
+                        value.ability_score = value.ability_score.index;
                     }
 
-                    return value
+                    return value;
                 });
             },
             from: (values: object[]) => {
-                return values
+                return values;
             }
         }
     })
-    prerequisites: string
+    prerequisites: string;
 
     @Column({
         transformer: {
             to: (value: string[]) => {
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    desc: string
+    desc: string;
 }

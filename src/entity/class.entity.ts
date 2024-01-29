@@ -1,33 +1,32 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class Class {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column()
-    hit_die: string
+    hit_die: string;
 
     @Column({
         transformer: {
-            to: (value: string[]|object[]) => {
-                if (typeof value[0] === "string") {
-                    return value.join("$");
+            to: (value: string[] | object[]) => {
+                if (typeof value[0] === 'string') {
+                    return value.join('$');
                 }
-                return value.map(value => value["index"]).join("$");
+                return value.map((value) => value['index']).join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    proficiencies: string
+    proficiencies: string;
 
-    @Column("simple-json",{
+    @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
                 if (!values) {
@@ -35,24 +34,28 @@ export class Class {
                 }
 
                 for (let value of values) {
-                    value["from"]["options"] = value["from"]["options"].map((option) => {
-                        if (typeof option === "string") {
-                            return option;
-                        }
+                    value['from']['options'] = value['from']['options'].map(
+                        (option) => {
+                            if (typeof option === 'string') {
+                                return option;
+                            }
 
-                        if (option["option_type"] === "choice") {
-                            const choices = option["choice"]
-                            choices["from"]["options"] = choices["from"]["options"].map((choice) => {
-                                if (typeof choice === "string") {
-                                    return option;
-                                }
-                                return choice["item"]["index"];
-                            });
-                            return option;
-                        }
+                            if (option['option_type'] === 'choice') {
+                                const choices = option['choice'];
+                                choices['from']['options'] = choices['from'][
+                                    'options'
+                                ].map((choice) => {
+                                    if (typeof choice === 'string') {
+                                        return option;
+                                    }
+                                    return choice['item']['index'];
+                                });
+                                return option;
+                            }
 
-                        return option["item"]["index"];
-                    });
+                            return option['item']['index'];
+                        }
+                    );
                 }
 
                 return values;
@@ -63,5 +66,5 @@ export class Class {
         },
         nullable: true
     })
-    proficiency_choices: string
+    proficiency_choices: string;
 }

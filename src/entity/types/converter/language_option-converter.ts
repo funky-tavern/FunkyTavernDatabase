@@ -1,8 +1,7 @@
-import { BaseConverter } from "./converter";
-import {LanguageOption} from "../options/language_option.interface";
+import { BaseConverter } from './converter';
+import { LanguageOption } from '../options/language_option.interface';
 
-import {Value} from '@sinclair/typebox/value'
-
+import { Value } from '@sinclair/typebox/value';
 
 class LanguageOptionConverter implements BaseConverter<LanguageOption> {
     to = (value: any): LanguageOption => {
@@ -11,9 +10,9 @@ class LanguageOptionConverter implements BaseConverter<LanguageOption> {
         }
 
         return LanguageOption[value];
-    }
+    };
 
     from = (value: LanguageOption): LanguageOption => {
         return value;
-    }
+    };
 }

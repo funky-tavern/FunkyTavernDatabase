@@ -1,65 +1,64 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class Monster {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
-    @Column({nullable: true})
-    desc: string
-
-    @Column()
-    size: string
+    @Column({ nullable: true })
+    desc: string;
 
     @Column()
-    type: string
-
-    @Column({nullable: true})
-    subtype: string
+    size: string;
 
     @Column()
-    alignment: string
+    type: string;
 
-    @Column("simple-json")
-    armor_class: string
-
-    hit_points: number
-
-    hit_dice: string
-
-    hit_points_roll: string
-
-    @Column("simple-json")
-    speed: string
+    @Column({ nullable: true })
+    subtype: string;
 
     @Column()
-    strength: number
+    alignment: string;
+
+    @Column('simple-json')
+    armor_class: string;
+
+    hit_points: number;
+
+    hit_dice: string;
+
+    hit_points_roll: string;
+
+    @Column('simple-json')
+    speed: string;
 
     @Column()
-    dexterity: number
+    strength: number;
 
     @Column()
-    constitution: number
+    dexterity: number;
 
     @Column()
-    intelligence: number
+    constitution: number;
 
     @Column()
-    wisdom: number
+    intelligence: number;
 
     @Column()
-    charisma: number
+    wisdom: number;
 
-    @Column("simple-json",{
+    @Column()
+    charisma: number;
+
+    @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
                 return values.map((value) => {
-                    if (!value["proficiency"]["index"]) {
-                        value["proficiency"] = value["proficiency"]["index"];
+                    if (!value['proficiency']['index']) {
+                        value['proficiency'] = value['proficiency']['index'];
                     }
 
                     return value;
@@ -70,77 +69,79 @@ export class Monster {
             }
         }
     })
-    proficiencies: string
+    proficiencies: string;
 
     @Column({
         transformer: {
             to: (value: string[]) => {
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    damage_vulnerabilities: string
+    damage_vulnerabilities: string;
 
     @Column({
         transformer: {
             to: (value: string[]) => {
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    damage_resistances: string
+    damage_resistances: string;
 
     @Column({
         transformer: {
             to: (value: string[]) => {
-                return value.join("$");
+                return value.join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    damage_immunities: string
+    damage_immunities: string;
 
     @Column({
         transformer: {
-            to: (values: object[]|string[]) => {
-                return values.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
-                    return value["index"];
-                }).join("$");
+            to: (values: object[] | string[]) => {
+                return values
+                    .map((value) => {
+                        if (typeof value === 'string') {
+                            return value;
+                        }
+                        return value['index'];
+                    })
+                    .join('$');
             },
             from: (value: string) => {
-                return value.split("$");
+                return value.split('$');
             }
         }
     })
-    condition_immunities: string
+    condition_immunities: string;
 
-    @Column("simple-json")
-    senses: string
-
-    @Column()
-    languages: string
+    @Column('simple-json')
+    senses: string;
 
     @Column()
-    challenge_rating: string
+    languages: string;
 
     @Column()
-    proficiency_bonus: number
+    challenge_rating: string;
 
     @Column()
-    xp: number
+    proficiency_bonus: number;
 
-    @Column("simple-json", {
+    @Column()
+    xp: number;
+
+    @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
                 if (!values || values.length === 0) {
@@ -148,13 +149,14 @@ export class Monster {
                 }
 
                 return values.map((value) => {
-                    if (value["damage"] && value["damage"].length !== 0) {
-                        value["damage"].forEach((damage) => {
-                            if (damage["damage_type"]["index"]) {
-                                damage["damage_type"] = damage["damage_type"]["index"];
+                    if (value['damage'] && value['damage'].length !== 0) {
+                        value['damage'].forEach((damage) => {
+                            if (damage['damage_type']['index']) {
+                                damage['damage_type'] =
+                                    damage['damage_type']['index'];
                             }
                             return damage;
-                        })
+                        });
                     }
 
                     return value;
@@ -166,9 +168,9 @@ export class Monster {
         },
         nullable: true
     })
-    special_abilities: string
+    special_abilities: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
                 if (!values || values.length === 0) {
@@ -176,13 +178,17 @@ export class Monster {
                 }
 
                 return values.map((value) => {
-                    if (value["damage"] && value["damage"].length !== 0) {
-                        value["damage"].forEach((damage) => {
-                            if (damage["damage_type"] && damage["damage_type"]["index"]) {
-                                damage["damage_type"] = damage["damage_type"]["index"];
+                    if (value['damage'] && value['damage'].length !== 0) {
+                        value['damage'].forEach((damage) => {
+                            if (
+                                damage['damage_type'] &&
+                                damage['damage_type']['index']
+                            ) {
+                                damage['damage_type'] =
+                                    damage['damage_type']['index'];
                             }
                             return damage;
-                        })
+                        });
                     }
 
                     return value;
@@ -194,5 +200,5 @@ export class Monster {
         },
         nullable: true
     })
-    actions: string
+    actions: string;
 }

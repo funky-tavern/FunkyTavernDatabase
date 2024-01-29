@@ -6,6 +6,7 @@
    "devDependencies": {
       "@types/node": "^16.11.10",
       "node-fetch": "^2.7.0",
+      "prettier": "^3.2.4",
       "ts-node": "10.7.0",
       "typescript": "4.5.2"
    },
@@ -18,6 +19,7 @@
    "scripts": {
       "clean": "rm -rf lib src/db",
       "build": "rm -rf lib src/db && ts-node src/build.ts && tsc && cp src/db lib/db -r && cp package.json lib/ && cp README.md lib/",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "typeorm": "typeorm-ts-node-commonjs",
+      "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
    }
 }

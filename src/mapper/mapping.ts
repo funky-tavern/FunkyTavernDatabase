@@ -1,49 +1,48 @@
-import {AbilityScore} from "../entity/ability-score.entity";
-import {Alignment} from "../entity/alignment.entity";
-import {RuleSection} from "../entity/rule-section.entity";
-import {Rules} from "../entity/rules.entity";
-import {DamageType} from "../entity/damage-type.entity";
-import {EquipmentCategory} from "../entity/equipment-categories.entity";
-import {WeaponProperty} from "../entity/weapon-property.entity";
-import {Equipment} from "../entity/equipment.entity";
-import {MagicItem} from "../entity/magic-item.entity";
-import {Proficiency} from "../entity/proficiency.entity";
-import {Language} from "../entity/language.entity";
-import {Race} from "../entity/race.entity";
-import {MagicSchool} from "../entity/magic-school.entity";
-import {Trait} from "../entity/trait";
-import {Spell} from "../entity/spell.entity";
-import {Background} from "../entity/background.entity";
-import {Condition} from "../entity/condition.entity";
-import {Feat} from "../entity/feat.entity";
-import {Monster} from "../entity/monster.entity";
-import {SubClass} from "../entity/subclass.entity";
-import {SubRace} from "../entity/subrace.entity";
-import {Skill} from "../entity/skill.entity";
-import {Level} from "../entity/level.entity";
-import {Feature} from "../entity/feature.entity";
-import {Class} from "../entity/class.entity";
+import { AbilityScore } from '../entity/ability-score.entity';
+import { Alignment } from '../entity/alignment.entity';
+import { RuleSection } from '../entity/rule-section.entity';
+import { Rules } from '../entity/rules.entity';
+import { DamageType } from '../entity/damage-type.entity';
+import { EquipmentCategory } from '../entity/equipment-categories.entity';
+import { WeaponProperty } from '../entity/weapon-property.entity';
+import { Equipment } from '../entity/equipment.entity';
+import { MagicItem } from '../entity/magic-item.entity';
+import { Proficiency } from '../entity/proficiency.entity';
+import { Language } from '../entity/language.entity';
+import { Race } from '../entity/race.entity';
+import { MagicSchool } from '../entity/magic-school.entity';
+import { Trait } from '../entity/trait';
+import { Spell } from '../entity/spell.entity';
+import { Background } from '../entity/background.entity';
+import { Condition } from '../entity/condition.entity';
+import { Feat } from '../entity/feat.entity';
+import { Monster } from '../entity/monster.entity';
+import { SubClass } from '../entity/subclass.entity';
+import { SubRace } from '../entity/subrace.entity';
+import { Skill } from '../entity/skill.entity';
+import { Level } from '../entity/level.entity';
+import { Feature } from '../entity/feature.entity';
+import { Class } from '../entity/class.entity';
 
-
-const API_BASE_URL = "https://www.dnd5eapi.co/api";
+const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
 type ParentMapping = {
     parent: any;
     path: string;
-}
+};
 
 type EntityMapping = {
     entity: any;
     path?: string;
     parents?: ParentMapping[];
     subpath?: string;
-}
+};
 
 const ENTITY_MAPPINGS: EntityMapping[] = [
     // {entity: AbilityScore, path: `${API_BASE_URL}/ability-scores`},
     // {entity: Alignment, path: `${API_BASE_URL}/alignments`},
     // {entity: Background, path: `${API_BASE_URL}/backgrounds`},
-    {entity: Class, path: `${API_BASE_URL}/classes`},
+    { entity: Class, path: `${API_BASE_URL}/classes` },
     // {entity: Condition, path: `${API_BASE_URL}/conditions`},
     // {entity: DamageType, path: `${API_BASE_URL}/damage-types`},
     // {entity: Equipment, path: `${API_BASE_URL}/equipment`},
@@ -61,7 +60,7 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     // {entity: Spell, path: `${API_BASE_URL}/spells`},
     // {entity: SubClass, path: `${API_BASE_URL}/subclasses`},
     // {entity: SubRace, path: `${API_BASE_URL}/subraces`},
-    {entity: Trait, path: `${API_BASE_URL}/traits`},
+    { entity: Trait, path: `${API_BASE_URL}/traits` }
     // {entity: WeaponProperty, path: `${API_BASE_URL}/weapon-properties`},
     // {entity: MagicSchool, path: `${API_BASE_URL}/magic-schools`},
     // {
@@ -72,10 +71,8 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     // },
 ];
 
-const ENTITIES = ENTITY_MAPPINGS.map(
-    (entityMapping) => entityMapping.entity
-);
+const ENTITIES = ENTITY_MAPPINGS.map((entityMapping) => entityMapping.entity);
 
-export type {EntityMapping};
-export {ENTITY_MAPPINGS};
-export {ENTITIES};
+export type { EntityMapping };
+export { ENTITY_MAPPINGS };
+export { ENTITIES };

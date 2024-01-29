@@ -1,47 +1,46 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class Equipment {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column({
         transformer: {
             to: (value: object) => {
-                return value["index"];
+                return value['index'];
             },
             from: (value: string) => {
                 return value;
             }
         }
     })
-    equipment_category: string
+    equipment_category: string;
 
     @Column({ nullable: true })
-    weapon_category: string
+    weapon_category: string;
 
     @Column({ nullable: true })
-    weapon_range: string
+    weapon_range: string;
 
     @Column({ nullable: true })
-    category_range: string
+    category_range: string;
 
-    @Column("simple-json")
-    cost: object
+    @Column('simple-json')
+    cost: object;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
-                if (!value || !value["damage_type"]) {
+                if (!value || !value['damage_type']) {
                     return null;
                 }
 
-                if (value["damage_type"]["index"]) {
-                    value["damage_type"] = value["damage_type"]["index"];
+                if (value['damage_type']['index']) {
+                    value['damage_type'] = value['damage_type']['index'];
                 }
 
                 return value;
@@ -52,50 +51,50 @@ export class Equipment {
         },
         nullable: true
     })
-    damage: object
+    damage: object;
 
-    @Column("simple-json", { nullable: true })
-    range: object
+    @Column('simple-json', { nullable: true })
+    range: object;
 
     @Column({ nullable: true })
-    weight: number
+    weight: number;
 
     @Column({
         transformer: {
-            to: (values: object[]|string[]) => {
+            to: (values: object[] | string[]) => {
                 if (!values || values.length === 0) {
                     return null;
                 }
 
-                if (typeof values[0] === "string") {
-                    return values.join("$");
+                if (typeof values[0] === 'string') {
+                    return values.join('$');
                 }
 
-                return values.map(property => property["index"]).join("$");
+                return values.map((property) => property['index']).join('$');
             },
             from: (value: string) => {
                 if (!value || value.length === 0) {
                     return null;
                 }
-                return value.split("$");
+                return value.split('$');
             }
         },
         nullable: true
     })
-    properties: string
+    properties: string;
 
-    @Column("simple-json", { nullable: true })
-    throw_range: object
+    @Column('simple-json', { nullable: true })
+    throw_range: object;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
-                if (!value || !value["damage_type"]) {
-                    return null
+                if (!value || !value['damage_type']) {
+                    return null;
                 }
 
-                if (value["damage_type"]["index"]) {
-                    value["damage_type"] = value["damage_type"]["index"];
+                if (value['damage_type']['index']) {
+                    value['damage_type'] = value['damage_type']['index'];
                 }
 
                 return value;
@@ -106,5 +105,5 @@ export class Equipment {
         },
         nullable: true
     })
-    two_handed_damage: object
+    two_handed_damage: object;
 }

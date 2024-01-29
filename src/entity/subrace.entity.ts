@@ -1,33 +1,32 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class SubRace {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column({
         transformer: {
-            to: (value: object|string) => {
-                if (typeof value === "string") {
-                    return value
+            to: (value: object | string) => {
+                if (typeof value === 'string') {
+                    return value;
                 }
-                return value["index"]
+                return value['index'];
             },
             from: (value: string) => {
-                return value
+                return value;
             }
         }
     })
-    race: string
+    race: string;
 
     @Column()
-    desc: string
+    desc: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
                 if (!values || values.length === 0) {
@@ -35,95 +34,105 @@ export class SubRace {
                 }
 
                 return values.map((value) => {
-                    if (typeof value["ability_score"] !== "string") {
-                        value["ability_score"] = value["ability_score"]["index"]
+                    if (typeof value['ability_score'] !== 'string') {
+                        value['ability_score'] =
+                            value['ability_score']['index'];
                     }
 
-                    return value
+                    return value;
                 });
             },
             from: (value: object) => {
-                return value
+                return value;
             }
         }
     })
-    ability_bonuses: string
+    ability_bonuses: string;
 
     @Column({
         transformer: {
-            to: (values: object[]|string[]) => {
+            to: (values: object[] | string[]) => {
                 if (!values || values.length === 0) {
                     return null;
                 }
 
-                return values.map((value) => {
-                    if (typeof value !== "string") {
-                        value = value["index"]
-                    }
+                return values
+                    .map((value) => {
+                        if (typeof value !== 'string') {
+                            value = value['index'];
+                        }
 
-                    return value
-                }).join("$");
+                        return value;
+                    })
+                    .join('$');
             },
             from: (value: string) => {
                 if (!value) {
                     return null;
                 }
-                return value.split("$")
+                return value.split('$');
             }
         },
         nullable: true
     })
-    starting_proficiencies: string
+    starting_proficiencies: string;
 
     @Column({
         transformer: {
-            to: (values: object[]|string[]) => {
+            to: (values: object[] | string[]) => {
                 if (!values || values.length === 0) {
                     return null;
                 }
 
-                return values.map((value) => {
-                    if (typeof value !== "string") {
-                        value = value["index"]
-                    }
+                return values
+                    .map((value) => {
+                        if (typeof value !== 'string') {
+                            value = value['index'];
+                        }
 
-                    return value
-                }).join("$");
+                        return value;
+                    })
+                    .join('$');
             },
             from: (value: string) => {
                 if (!value) {
                     return null;
                 }
-                return value.split("$")
+                return value.split('$');
             }
         },
         nullable: true
     })
-    languages: string
+    languages: string;
 
-    @Column("simple-json", {
+    @Column('simple-json', {
         transformer: {
             to: (value: object) => {
-                if (!value || !value["from"]["options"] || value["from"]["options"].length === 0) {
+                if (
+                    !value ||
+                    !value['from']['options'] ||
+                    value['from']['options'].length === 0
+                ) {
                     return null;
                 }
 
-                if (value["type"]) {
-                    delete value["type"];
+                if (value['type']) {
+                    delete value['type'];
                 }
 
-                value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
+                value['from']['options'] = value['from']['options'].map(
+                    (option) => {
+                        if (typeof option === 'string') {
+                            return option;
+                        }
 
-                    if (option && option["index"]) {
-                        return option["index"];
+                        if (option && option['index']) {
+                            return option['index'];
+                        }
                     }
-                });
+                );
 
                 return value;
-
             },
             from: (value: object) => {
                 return value;
@@ -131,27 +140,29 @@ export class SubRace {
         },
         nullable: true
     })
-    language_options: string
+    language_options: string;
 
     @Column({
         transformer: {
-            to: (values: object[]|string[]) => {
+            to: (values: object[] | string[]) => {
                 if (!values || values.length === 0) {
                     return null;
                 }
 
-                return values.map((value) => {
-                    if (typeof value !== "string") {
-                        value = value["index"]
-                    }
+                return values
+                    .map((value) => {
+                        if (typeof value !== 'string') {
+                            value = value['index'];
+                        }
 
-                    return value
-                }).join("$");
+                        return value;
+                    })
+                    .join('$');
             },
             from: (value: string) => {
-                return value.split("$")
+                return value.split('$');
             }
         }
     })
-    racial_traits: string
+    racial_traits: string;
 }

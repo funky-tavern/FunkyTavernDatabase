@@ -1,29 +1,28 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class SubClass {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column({
         transformer: {
-            to: (value: object|string) => {
+            to: (value: object | string) => {
                 if (typeof value === 'string') {
-                    return value
+                    return value;
                 }
-                return value["index"]
+                return value['index'];
             },
             from: (value: string) => value
         }
     })
-    class: string
+    class: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column()
-    subclass_flavor: string
+    subclass_flavor: string;
 
     @Column({
         transformer: {
@@ -31,5 +30,5 @@ export class SubClass {
             from: (value: string) => value.split('$')
         }
     })
-    desc: string
+    desc: string;
 }
