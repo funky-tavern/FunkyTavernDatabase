@@ -30,6 +30,7 @@ AppDataSource.initialize().then(async () => {
         populateTable(entityMapping).then((numberOfResources) => {
             console.log(`${entityMapping.entity.name}: ${numberOfResources} saved;`);
         }).catch((error) => {
+            console.debug(error)
             console.log(`${entityMapping.entity.name}: failed;`);
         });
 
