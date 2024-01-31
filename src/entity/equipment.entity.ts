@@ -15,8 +15,8 @@ export class Equipment {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     equipment_category: string;
 
@@ -47,9 +47,9 @@ export class Equipment {
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     damage: object;
 
@@ -70,16 +70,16 @@ export class Equipment {
                     return values.join('$');
                 }
 
-                return values.map((property) => property['index']).join('$');
+                return values.map(property => property['index']).join('$');
             },
             from: (value: string) => {
                 if (!value || value.length === 0) {
                     return null;
                 }
                 return value.split('$');
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     properties: string;
 
@@ -101,9 +101,9 @@ export class Equipment {
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     two_handed_damage: object;
 }

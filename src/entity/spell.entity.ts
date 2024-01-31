@@ -15,8 +15,8 @@ export class Spell {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 
@@ -34,9 +34,9 @@ export class Spell {
                     return null;
                 }
                 return value.split('$');
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     higher_level: string;
 
@@ -50,8 +50,8 @@ export class Spell {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     components: string;
 
@@ -91,9 +91,9 @@ export class Spell {
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     damage: object;
 
@@ -112,9 +112,9 @@ export class Spell {
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     dc: object;
 
@@ -134,8 +134,8 @@ export class Spell {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     school: string;
 }

@@ -13,8 +13,8 @@ export class SubClass {
                 }
                 return value['index'];
             },
-            from: (value: string) => value
-        }
+            from: (value: string) => value,
+        },
     })
     class: string;
 
@@ -27,8 +27,8 @@ export class SubClass {
     @Column({
         transformer: {
             to: (values: string[]) => values.join('$'),
-            from: (value: string) => value.split('$')
-        }
+            from: (value: string) => value.split('$'),
+        },
     })
     desc: string;
 }

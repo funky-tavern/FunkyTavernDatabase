@@ -18,8 +18,8 @@ export class SubRace {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     race: string;
 
@@ -33,7 +33,7 @@ export class SubRace {
                     return null;
                 }
 
-                return values.map((value) => {
+                return values.map(value => {
                     if (typeof value['ability_score'] !== 'string') {
                         value['ability_score'] =
                             value['ability_score']['index'];
@@ -44,8 +44,8 @@ export class SubRace {
             },
             from: (value: object) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     ability_bonuses: string;
 
@@ -57,7 +57,7 @@ export class SubRace {
                 }
 
                 return values
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value !== 'string') {
                             value = value['index'];
                         }
@@ -71,9 +71,9 @@ export class SubRace {
                     return null;
                 }
                 return value.split('$');
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     starting_proficiencies: string;
 
@@ -85,7 +85,7 @@ export class SubRace {
                 }
 
                 return values
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value !== 'string') {
                             value = value['index'];
                         }
@@ -99,9 +99,9 @@ export class SubRace {
                     return null;
                 }
                 return value.split('$');
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     languages: string;
 
@@ -121,7 +121,7 @@ export class SubRace {
                 }
 
                 value['from']['options'] = value['from']['options'].map(
-                    (option) => {
+                    option => {
                         if (typeof option === 'string') {
                             return option;
                         }
@@ -129,16 +129,16 @@ export class SubRace {
                         if (option && option['index']) {
                             return option['index'];
                         }
-                    }
+                    },
                 );
 
                 return value;
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     language_options: string;
 
@@ -150,7 +150,7 @@ export class SubRace {
                 }
 
                 return values
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value !== 'string') {
                             value = value['index'];
                         }
@@ -161,8 +161,8 @@ export class SubRace {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     racial_traits: string;
 }

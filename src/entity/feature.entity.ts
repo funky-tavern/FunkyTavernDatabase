@@ -15,8 +15,8 @@ export class Feature {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     class: string;
 
@@ -43,8 +43,8 @@ export class Feature {
             },
             from: (values: object[]) => {
                 return values;
-            }
-        }
+            },
+        },
     })
     prerequisites: string;
 
@@ -55,8 +55,8 @@ export class Feature {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 }

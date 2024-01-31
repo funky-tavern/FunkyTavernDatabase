@@ -15,8 +15,8 @@ export class Level {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     class: string;
 
@@ -34,8 +34,8 @@ export class Level {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     subclass: string;
 
@@ -52,7 +52,7 @@ export class Level {
         transformer: {
             to: (values: object[] | string[]) => {
                 return values
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value === 'string') {
                             return value;
                         }
@@ -62,8 +62,8 @@ export class Level {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     features: string;
 

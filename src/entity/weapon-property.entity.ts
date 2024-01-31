@@ -15,8 +15,8 @@ export class WeaponProperty {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 }

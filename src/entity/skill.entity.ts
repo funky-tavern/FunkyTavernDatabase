@@ -15,8 +15,8 @@ export class Skill {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 
@@ -30,8 +30,8 @@ export class Skill {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     ability_score: string;
 }

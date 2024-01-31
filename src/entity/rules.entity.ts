@@ -21,12 +21,12 @@ export class Rules {
                 if (typeof values[0] === 'string') {
                     return values.join('$');
                 }
-                return values.map((section) => section['index']).join('$');
+                return values.map(section => section['index']).join('$');
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     subsections: string;
 }

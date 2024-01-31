@@ -42,7 +42,7 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     // {entity: AbilityScore, path: `${API_BASE_URL}/ability-scores`},
     // {entity: Alignment, path: `${API_BASE_URL}/alignments`},
     // {entity: Background, path: `${API_BASE_URL}/backgrounds`},
-    { entity: Class, path: `${API_BASE_URL}/classes` },
+    // {entity: Class, path: `${API_BASE_URL}/classes`},
     // {entity: Condition, path: `${API_BASE_URL}/conditions`},
     // {entity: DamageType, path: `${API_BASE_URL}/damage-types`},
     // {entity: Equipment, path: `${API_BASE_URL}/equipment`},
@@ -60,7 +60,7 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     // {entity: Spell, path: `${API_BASE_URL}/spells`},
     // {entity: SubClass, path: `${API_BASE_URL}/subclasses`},
     // {entity: SubRace, path: `${API_BASE_URL}/subraces`},
-    { entity: Trait, path: `${API_BASE_URL}/traits` }
+    // { entity: Trait, path: `${API_BASE_URL}/traits` },
     // {entity: WeaponProperty, path: `${API_BASE_URL}/weapon-properties`},
     // {entity: MagicSchool, path: `${API_BASE_URL}/magic-schools`},
     // {
@@ -71,7 +71,7 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     // },
 ];
 
-const ENTITIES = ENTITY_MAPPINGS.map((entityMapping) => entityMapping.entity);
+const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
 
 export type { EntityMapping };
 export { ENTITY_MAPPINGS };

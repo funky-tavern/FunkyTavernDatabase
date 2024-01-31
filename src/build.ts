@@ -14,8 +14,8 @@ async function populateTable(mapping: EntityMapping): Promise<number> {
                 ...data,
                 ...(await mapper.mapFromParent(
                     mapping.subpath,
-                    parentMapping.path
-                ))
+                    parentMapping.path,
+                )),
             ];
         }
     } else if (!!mapping.path) {
@@ -29,17 +29,17 @@ async function populateTable(mapping: EntityMapping): Promise<number> {
 
 AppDataSource.initialize()
     .then(async () => {
-        ENTITY_MAPPINGS.forEach((entityMapping) => {
+        ENTITY_MAPPINGS.forEach(entityMapping => {
             populateTable(entityMapping)
-                .then((numberOfResources) => {
+                .then(numberOfResources => {
                     console.log(
-                        `${entityMapping.entity.name}: ${numberOfResources} saved;`
+                        `${entityMapping.entity.name}: ${numberOfResources} saved;`,
                     );
                 })
-                .catch((error) => {
+                .catch(error => {
                     console.debug(error);
                     console.log(`${entityMapping.entity.name}: failed;`);
                 });
         });
     })
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error));

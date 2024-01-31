@@ -18,7 +18,7 @@ export class Race {
                     return null;
                 }
 
-                return values.map((value) => {
+                return values.map(value => {
                     if (typeof value['ability_score'] === 'string') {
                         return value;
                     }
@@ -29,8 +29,8 @@ export class Race {
             },
             from: (values: object) => {
                 return values;
-            }
-        }
+            },
+        },
     })
     ability_bonuses: string;
 
@@ -48,7 +48,7 @@ export class Race {
                 }
 
                 return values
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value === 'string') {
                             return value;
                         }
@@ -62,9 +62,9 @@ export class Race {
                     return null;
                 }
                 return values.split('$');
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     starting_proficiencies: string;
 
@@ -84,7 +84,7 @@ export class Race {
                 }
 
                 value['from']['options'] = value['from']['options'].map(
-                    (option) => {
+                    option => {
                         if (typeof option === 'string') {
                             return option;
                         }
@@ -92,16 +92,16 @@ export class Race {
                         if (option && option['index']) {
                             return option['index'];
                         }
-                    }
+                    },
                 );
 
                 return value;
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     starting_proficiency_options: string;
 
@@ -113,7 +113,7 @@ export class Race {
                 }
 
                 return values
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value === 'string') {
                             return value;
                         }
@@ -124,8 +124,8 @@ export class Race {
             },
             from: (values: string) => {
                 return values.split('$');
-            }
-        }
+            },
+        },
     })
     languages: string;
 
@@ -145,7 +145,7 @@ export class Race {
                 }
 
                 value['from']['options'] = value['from']['options'].map(
-                    (option) => {
+                    option => {
                         if (typeof option === 'string') {
                             return option;
                         }
@@ -153,16 +153,16 @@ export class Race {
                         if (option && option['index']) {
                             return option['index'];
                         }
-                    }
+                    },
                 );
 
                 return value;
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     language_options: string;
 
@@ -177,7 +177,7 @@ export class Race {
                 }
 
                 return values
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value === 'string') {
                             return value;
                         }
@@ -191,9 +191,9 @@ export class Race {
                     return null;
                 }
                 return values.split('$');
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     traits: string;
 }

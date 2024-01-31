@@ -16,7 +16,7 @@ export class Background {
                 }
 
                 return values
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value === 'string') {
                             return value;
                         }
@@ -31,9 +31,9 @@ export class Background {
                 }
 
                 return values.split('$');
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     starting_proficiencies: string;
 
@@ -56,15 +56,15 @@ export class Background {
             },
             from: (value: object[]) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     language_options: string;
 
     @Column('simple-json', {
         transformer: {
             to: (values: object[]) => {
-                return values.map((value) => {
+                return values.map(value => {
                     if (typeof value['equipment'] !== 'string') {
                         value['equipment'] = value['equipment']['index'];
                     }
@@ -74,8 +74,8 @@ export class Background {
             },
             from: (value: object[]) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     starting_equipment: string;
 
@@ -86,7 +86,7 @@ export class Background {
                     return null;
                 }
 
-                return values.map((value) => {
+                return values.map(value => {
                     if (value['type']) {
                         delete value['type'];
                     }
@@ -103,9 +103,9 @@ export class Background {
             },
             from: (value: object[]) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     starting_equipment_options: string;
 
@@ -120,9 +120,9 @@ export class Background {
             },
             from: (value: object[]) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     feature: string;
 
@@ -141,8 +141,8 @@ export class Background {
             },
             from: (value: object[]) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     personality_traits: string;
 
@@ -157,13 +157,13 @@ export class Background {
                     delete value['type'];
                 }
 
-                value['from']['options'].forEach((option) => {
+                value['from']['options'].forEach(option => {
                     if (option['option_type']) {
                         delete option['option_type'];
                     }
 
                     option['alignments'] = option['alignments'].map(
-                        (alignment) => {
+                        alignment => {
                             if (!alignment) return null;
 
                             if (typeof alignment === 'string') {
@@ -173,7 +173,7 @@ export class Background {
                             return !alignment['index']
                                 ? alignment['index']
                                 : null;
-                        }
+                        },
                     );
                 });
 
@@ -181,8 +181,8 @@ export class Background {
             },
             from: (value: object[]) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     ideals: string;
 
@@ -201,8 +201,8 @@ export class Background {
             },
             from: (value: object[]) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     bonds: string;
 
@@ -221,8 +221,8 @@ export class Background {
             },
             from: (value: object[]) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     flaws: string;
 }

@@ -17,12 +17,12 @@ export class Class {
                 if (typeof value[0] === 'string') {
                     return value.join('$');
                 }
-                return value.map((value) => value['index']).join('$');
+                return value.map(value => value['index']).join('$');
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     proficiencies: string;
 
@@ -35,7 +35,7 @@ export class Class {
 
                 for (let value of values) {
                     value['from']['options'] = value['from']['options'].map(
-                        (option) => {
+                        option => {
                             if (typeof option === 'string') {
                                 return option;
                             }
@@ -44,7 +44,7 @@ export class Class {
                                 const choices = option['choice'];
                                 choices['from']['options'] = choices['from'][
                                     'options'
-                                ].map((choice) => {
+                                ].map(choice => {
                                     if (typeof choice === 'string') {
                                         return option;
                                     }
@@ -54,7 +54,7 @@ export class Class {
                             }
 
                             return option['item']['index'];
-                        }
+                        },
                     );
                 }
 
@@ -62,9 +62,9 @@ export class Class {
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     proficiency_choices: string;
 }

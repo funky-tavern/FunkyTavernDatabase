@@ -25,8 +25,8 @@ export class Feat {
             },
             from: (values: object[]) => {
                 return values;
-            }
-        }
+            },
+        },
     })
     prerequisites: string;
 
@@ -37,8 +37,8 @@ export class Feat {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 }

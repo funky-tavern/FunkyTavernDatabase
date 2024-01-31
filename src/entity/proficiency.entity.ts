@@ -31,8 +31,8 @@ export class Proficiency {
             },
             from: (value: object) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     reference: object;
 }

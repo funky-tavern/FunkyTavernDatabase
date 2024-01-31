@@ -6,7 +6,7 @@ import * as path from 'path';
 export const DATABASE_FILE_PATH = path.join(
     __dirname,
     'db',
-    'funky-tavern.database'
+    'funky-tavern.database',
 );
 
 export const AppDataSource = new DataSource({
@@ -16,5 +16,5 @@ export const AppDataSource = new DataSource({
     logging: false,
     entities: ENTITIES,
     migrations: [],
-    subscribers: []
+    subscribers: [],
 });

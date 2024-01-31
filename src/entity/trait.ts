@@ -1,4 +1,8 @@
 import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { LanguageOption } from './types/options/language-option.interface';
+import { LanguageOptionConverter } from './types/converter/language-option-converter';
+import { TraitSpecificConverter } from './types/converter/trait-converter';
+import { TraitSpecific } from './types/options/trait-specific';
 
 @Entity()
 export class Trait {
@@ -15,8 +19,8 @@ export class Trait {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 
@@ -28,7 +32,7 @@ export class Trait {
                 }
 
                 return value
-                    .map((value) => {
+                    .map(value => {
                         if (typeof value === 'string') {
                             return value;
                         }
@@ -42,9 +46,9 @@ export class Trait {
                     return null;
                 }
                 return value.split('$');
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     proficiencies: string;
 
@@ -56,76 +60,40 @@ export class Trait {
                 }
 
                 value['from']['options'] = value['from']['options'].map(
-                    (option) => {
+                    option => {
                         if (typeof option === 'string') {
                             return option;
                         }
 
                         return option['item']['index'];
-                    }
+                    },
                 );
 
                 return value;
             },
             from: (value: object) => {
                 return value;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     proficiency_choices: object;
 
     @Column('simple-json', {
         transformer: {
-            to: (value: object) => {
-                if (!value || !value['spell_options']) {
-                    return null;
-                }
-
-                value['spell_options']['from']['options'] = value[
-                    'spell_options'
-                ]['from']['options'].map((option) => {
-                    if (typeof option === 'string') {
-                        return option;
-                    }
-
-                    return option['item']['index'];
-                });
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
+            to: TraitSpecificConverter.to,
+            from: TraitSpecificConverter.from,
         },
-        nullable: true
+        nullable: true,
     })
-    trait_specific: object;
+    trait_specific: TraitSpecific;
 
     @Column('simple-json', {
         transformer: {
-            to: (value: object) => {
-                if (!value) {
-                    return null;
-                }
-
-                value['from']['options'] = value['from']['options'].map(
-                    (option) => {
-                        if (typeof option === 'string') {
-                            return option;
-                        }
-
-                        return option['item']['index'];
-                    }
-                );
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
+            to: LanguageOptionConverter.to,
+            from: LanguageOptionConverter.from,
         },
-        nullable: true
+        nullable: true,
     })
-    language_options: object;
+    language_options: LanguageOption;
 }

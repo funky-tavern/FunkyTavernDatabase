@@ -18,8 +18,8 @@ export class MagicItem {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     equipment_category: string;
 
@@ -33,8 +33,8 @@ export class MagicItem {
             },
             from: (value: string) => {
                 return value;
-            }
-        }
+            },
+        },
     })
     rarity: string;
 
@@ -49,16 +49,16 @@ export class MagicItem {
                     return values.join('$');
                 }
 
-                return values.map((value) => value['index']).join('$');
+                return values.map(value => value['index']).join('$');
             },
             from: (value: string) => {
                 if (value && value.length > 0) {
                     return value.split('$');
                 }
                 return null;
-            }
+            },
         },
-        nullable: true
+        nullable: true,
     })
     variants: string;
 
@@ -72,8 +72,8 @@ export class MagicItem {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 }

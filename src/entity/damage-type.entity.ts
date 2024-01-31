@@ -15,8 +15,8 @@ export class DamageType {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 }

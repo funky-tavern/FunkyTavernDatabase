@@ -18,8 +18,8 @@ export class AbilityScore {
             },
             from: (value: string) => {
                 return value.split('$');
-            }
-        }
+            },
+        },
     })
     desc: string;
 }

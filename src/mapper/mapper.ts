@@ -10,7 +10,7 @@ export class Mapper<T> {
 
     public async mapFromParent(
         subpath: string,
-        parentPath: string
+        parentPath: string,
     ): Promise<T[]> {
         const data = await this.extractDataFromParent(subpath, parentPath);
 
@@ -26,10 +26,10 @@ export class Mapper<T> {
     private parseData(data: object[]): T[] {
         const columnNames = this.getColumnNames();
 
-        return data.map((row) => {
+        return data.map(row => {
             const entity = new this.class();
 
-            columnNames.forEach((columnName) => {
+            columnNames.forEach(columnName => {
                 entity[columnName] = row[columnName];
             });
 
@@ -39,13 +39,13 @@ export class Mapper<T> {
 
     private getColumnNames(): string[] {
         return AppDataSource.getMetadata(this.class).ownColumns.map(
-            (column) => column.propertyName
+            column => column.propertyName,
         );
     }
 
     private async extractDataFromParent(
         subpath: string,
-        parentPath: string
+        parentPath: string,
     ): Promise<object[]> {
         const parentIndexes = await this.getIndexes(parentPath);
 
@@ -54,7 +54,7 @@ export class Mapper<T> {
             const res = await fetch(`${parentPath}/${parentIndex}/${subpath}`);
             if (res.ok === false) {
                 throw new Error(
-                    `Failed to fetch data from ${parentPath}/${parentIndex}/${subpath}`
+                    `Failed to fetch data from ${parentPath}/${parentIndex}/${subpath}`,
                 );
             }
 
@@ -84,12 +84,12 @@ export class Mapper<T> {
 
         const data = (await response.json())['results'];
 
-        return data.map((row) => row['index']);
+        return data.map(row => row['index']);
     }
 
     private async getDataFromIndex(
         urlPath: string,
-        index: string
+        index: string,
     ): Promise<object> {
         const response = await fetch(`${urlPath}/${index}`);
 
