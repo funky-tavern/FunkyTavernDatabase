@@ -18,6 +18,9 @@ export class CLanguageOptionConverter implements BaseConverter<LanguageOption> {
         }
 
         value.from.options = value.from.options.map((option: any) => {
+            if (typeof option === 'string') {
+                return option;
+            }
             return option.item.index;
         });
 

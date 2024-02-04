@@ -24,6 +24,9 @@ const parseTraitSpell = (value: any): TraitSpell => {
     }
 
     value.from.options = value.from.options.map((option: any) => {
+        if (typeof option === 'string') {
+            return option;
+        }
         return option.item.index;
     });
 
@@ -45,6 +48,9 @@ const parseTraitSubOption = (value: any): TraitSubOption => {
     }
 
     value.from.options = value.from.options.map((option: any) => {
+        if (typeof option === 'string') {
+            return option;
+        }
         return option.item.index;
     });
 

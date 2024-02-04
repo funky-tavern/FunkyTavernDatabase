@@ -24,7 +24,7 @@ export type OptionCountedReference = Static<typeof OptionCountedReference>;
 export const OptionChoice = Options(OptionReference);
 export type OptionChoice = Static<typeof OptionChoice>;
 
-const OptionSet = Type.Union([
+export const OptionSet = Type.Union([
     OptionReference,
     OptionCountedReference,
     OptionChoice,

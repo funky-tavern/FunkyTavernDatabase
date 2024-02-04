@@ -60,7 +60,7 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     // {entity: Spell, path: `${API_BASE_URL}/spells`},
     // {entity: SubClass, path: `${API_BASE_URL}/subclasses`},
     // {entity: SubRace, path: `${API_BASE_URL}/subraces`},
-    // { entity: Trait, path: `${API_BASE_URL}/traits` },
+    { entity: Trait, path: `${API_BASE_URL}/traits` },
     // {entity: WeaponProperty, path: `${API_BASE_URL}/weapon-properties`},
     // {entity: MagicSchool, path: `${API_BASE_URL}/magic-schools`},
     // {
