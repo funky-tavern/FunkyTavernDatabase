@@ -9,21 +9,25 @@ export class CLanguageOptionConverter implements BaseConverter<LanguageOption> {
             return <LanguageOption>(<unknown>value);
         }
 
-        if (
-            !value?.from ||
-            !value.from?.options ||
-            value.from.options.length === 0
-        ) {
+        if (!value?.from) {
             return null;
         }
 
-        value.from.options = value.from.options.map((option: any) => {
-            if (typeof option === 'string') {
-                return option;
-            }
-            return option.item.index;
-        });
+        if (!value.from?.options) {
+            value.from = {
+                any: true
+            };
+            return <LanguageOption>value;
+        }
 
+        value.from = {
+            options: value.from.options.map((option: any) => {
+                if (typeof option === 'string') {
+                    return option;
+                }
+                return option.item.index;
+            })
+        };
         return <LanguageOption>value;
     }
 

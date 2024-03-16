@@ -7,7 +7,8 @@ export const Options = <T extends TSchema>(T: T) =>
         type: Type.String(),
         choose: Type.Number(),
         from: Type.Object({
-            options: Type.Array(T),
+            options: Type.Optional(Type.Array(T)),
+            any: Type.Optional(Type.Boolean())
         }),
     });
 

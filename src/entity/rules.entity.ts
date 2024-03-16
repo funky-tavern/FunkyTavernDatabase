@@ -18,6 +18,8 @@ export class Rules {
                     return null;
                 }
 
+                console.log(values[0])
+
                 if (typeof values[0] === 'string') {
                     return values.join('$');
                 }

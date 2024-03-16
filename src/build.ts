@@ -1,30 +1,32 @@
 import { AppDataSource } from './data-source';
-import { Mapper } from './mapper/mapper';
+import { DataFetcher } from './mapper/dataFetcher';
 import { ENTITY_MAPPINGS, EntityMapping } from './mapper/mapping';
 
 async function populateTable(mapping: EntityMapping): Promise<number> {
     const Repository = AppDataSource.getRepository(mapping.entity);
 
-    const mapper = new Mapper(mapping.entity);
+    let entityMapper = new mapping.mapper(Repository);
 
     let data = [];
     if (!!mapping.parents && mapping.parents.length > 0 && !!mapping.subpath) {
         for (let parentMapping of mapping.parents) {
             data = [
                 ...data,
-                ...(await mapper.mapFromParent(
+                ...(await DataFetcher.fromParentUrl(
                     mapping.subpath,
                     parentMapping.path,
                 )),
             ];
         }
     } else if (!!mapping.path) {
-        data = [...(await mapper.mapFromUrl(mapping.path))];
+        data = [...(await DataFetcher.fromUrl(mapping.path))];
     } else {
         throw new Error('No path or parents provided');
     }
 
-    return (await Repository.save(data)).length;
+    return (await Repository.save(
+        data.map((entity: any) => entityMapper.map(entity))
+    )).length;
 }
 
 AppDataSource.initialize()

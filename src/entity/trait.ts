@@ -54,33 +54,6 @@ export class Trait {
 
     @Column('simple-json', {
         transformer: {
-            to: (value: object) => {
-                if (!value) {
-                    return null;
-                }
-
-                value['from']['options'] = value['from']['options'].map(
-                    option => {
-                        if (typeof option === 'string') {
-                            return option;
-                        }
-
-                        return option['item']['index'];
-                    },
-                );
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            },
-        },
-        nullable: true,
-    })
-    proficiency_choices: object;
-
-    @Column('simple-json', {
-        transformer: {
             to: TraitSpecificConverter.to,
             from: TraitSpecificConverter.from,
         },

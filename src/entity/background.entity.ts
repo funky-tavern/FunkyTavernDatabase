@@ -1,4 +1,6 @@
 import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { LanguageOptionConverter } from './types/converter/language-option-converter';
+import { LanguageOption } from './types/options/language-option.interface';
 
 @Entity()
 export class Background {
@@ -39,27 +41,11 @@ export class Background {
 
     @Column('simple-json', {
         transformer: {
-            to: (value: object) => {
-                if (!value || !value['from']) {
-                    return null;
-                }
-
-                if (value['type']) {
-                    delete value['type'];
-                }
-
-                if (value['from']['resource_list_url']) {
-                    delete value['from']['resource_list_url'];
-                }
-
-                return value;
-            },
-            from: (value: object[]) => {
-                return value;
-            },
+            to: LanguageOptionConverter.to,
+            from: LanguageOptionConverter.from,
         },
     })
-    language_options: string;
+    language_options: LanguageOption;
 
     @Column('simple-json', {
         transformer: {
