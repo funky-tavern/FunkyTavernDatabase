@@ -8,15 +8,6 @@ export class Condition {
     @Column()
     name: string;
 
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join('$');
-            },
-            from: (value: string) => {
-                return value.split('$');
-            },
-        },
-    })
+    @Column()
     desc: string;
 }
