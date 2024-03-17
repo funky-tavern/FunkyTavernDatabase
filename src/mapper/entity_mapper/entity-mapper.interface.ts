@@ -1,11 +1,12 @@
 import { Repository } from 'typeorm';
+import { ObjectLiteral } from 'typeorm/browser';
 
-export default abstract class EntityMapper<T> {
-    protected entityRepository: Repository<T>;
+export default abstract class EntityMapper<Entity extends ObjectLiteral> {
+    protected entityRepository: Repository<Entity>;
 
-    constructor(repository: Repository<T>) {
-        this.entityRepository = repository;
+    constructor(entityRepository: Repository<Entity>) {
+        this.entityRepository = entityRepository;
     }
 
-    abstract map(data: any): T;
+    abstract map(data: any): Entity;
 }

@@ -8,6 +8,6 @@ export class DamageType {
     @Column()
     name: string;
 
-    @Column()
+    @Column({ nullable: true })
     desc: string;
 }

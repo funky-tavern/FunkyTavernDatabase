@@ -31,17 +31,16 @@ async function populateTable(mapping: EntityMapping): Promise<number> {
 
 AppDataSource.initialize()
     .then(async () => {
-        ENTITY_MAPPINGS.forEach(entityMapping => {
-            populateTable(entityMapping)
-                .then(numberOfResources => {
-                    console.log(
-                        `${entityMapping.entity.name}: ${numberOfResources} saved;`,
-                    );
-                })
-                .catch(error => {
-                    console.debug(error);
-                    console.log(`${entityMapping.entity.name}: failed;`);
-                });
-        });
+        for (const entityMapping of ENTITY_MAPPINGS) {
+            try {
+                let numberOfResources = await populateTable(entityMapping)
+                console.log(
+                    `${entityMapping.entity.name}: ${numberOfResources} saved;`,
+                );
+            } catch (error) {
+                console.debug(error);
+                console.log(`${entityMapping.entity.name}: failed;`);
+            }
+        }
     })
     .catch(error => console.log(error));

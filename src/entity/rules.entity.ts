@@ -1,4 +1,6 @@
-import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { Entity, PrimaryColumn, Column, JoinTable } from 'typeorm';
+import { RuleSection } from './rule-section.entity';
+import { ManyToMany } from 'typeorm';
 
 @Entity()
 export class Rules {
@@ -11,24 +13,7 @@ export class Rules {
     @Column()
     desc: string;
 
-    @Column({
-        transformer: {
-            to: (values: object[] | string[]) => {
-                if (values.length === 0) {
-                    return null;
-                }
-
-                console.log(values[0])
-
-                if (typeof values[0] === 'string') {
-                    return values.join('$');
-                }
-                return values.map(section => section['index']).join('$');
-            },
-            from: (value: string) => {
-                return value.split('$');
-            },
-        },
-    })
-    subsections: string;
+    @ManyToMany(() => RuleSection)
+    @JoinTable()
+    subsections: RuleSection[];
 }

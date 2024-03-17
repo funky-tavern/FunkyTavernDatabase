@@ -1,4 +1,8 @@
-import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
+import { EquipmentCategory } from './equipment-categories.entity';
+import { DamageType } from './damage-type.entity';
+import { WeaponProperty } from './weapon-property.entity';
+
 
 @Entity()
 export class Equipment {
@@ -8,20 +12,17 @@ export class Equipment {
     @Column()
     name: string;
 
-    @Column({
-        transformer: {
-            to: (value: object) => {
-                return value['index'];
-            },
-            from: (value: string) => {
-                return value;
-            },
-        },
-    })
-    equipment_category: string;
+    @Column()
+    desc: string;
 
-    @Column({ nullable: true })
-    weapon_category: string;
+    @ManyToOne(() => EquipmentCategory)
+    equipment_category: EquipmentCategory;
+
+    @ManyToOne(() => EquipmentCategory, { nullable: true })
+    gear_category: EquipmentCategory;
+
+    @ManyToOne(() => EquipmentCategory, { nullable: true })
+    weapon_category: EquipmentCategory;
 
     @Column({ nullable: true })
     weapon_range: string;
@@ -32,26 +33,11 @@ export class Equipment {
     @Column('simple-json')
     cost: object;
 
-    @Column('simple-json', {
-        transformer: {
-            to: (value: object) => {
-                if (!value || !value['damage_type']) {
-                    return null;
-                }
+    @Column({ nullable: true })
+    damage_dice: string;
 
-                if (value['damage_type']['index']) {
-                    value['damage_type'] = value['damage_type']['index'];
-                }
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            },
-        },
-        nullable: true,
-    })
-    damage: object;
+    @ManyToOne(() => DamageType, { nullable: true })
+    damage_type: DamageType;
 
     @Column('simple-json', { nullable: true })
     range: object;
@@ -59,51 +45,16 @@ export class Equipment {
     @Column({ nullable: true })
     weight: number;
 
-    @Column({
-        transformer: {
-            to: (values: object[] | string[]) => {
-                if (!values || values.length === 0) {
-                    return null;
-                }
-
-                if (typeof values[0] === 'string') {
-                    return values.join('$');
-                }
-
-                return values.map(property => property['index']).join('$');
-            },
-            from: (value: string) => {
-                if (!value || value.length === 0) {
-                    return null;
-                }
-                return value.split('$');
-            },
-        },
-        nullable: true,
-    })
-    properties: string;
+    @ManyToMany(() => WeaponProperty, { nullable: true })
+    @JoinTable()
+    properties: WeaponProperty[];
 
     @Column('simple-json', { nullable: true })
     throw_range: object;
 
-    @Column('simple-json', {
-        transformer: {
-            to: (value: object) => {
-                if (!value || !value['damage_type']) {
-                    return null;
-                }
+    @Column({ nullable: true })
+    two_handed_damage_dice: string;
 
-                if (value['damage_type']['index']) {
-                    value['damage_type'] = value['damage_type']['index'];
-                }
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            },
-        },
-        nullable: true,
-    })
-    two_handed_damage: object;
+    @ManyToOne(() => DamageType, { nullable: true })
+    two_handed_damage_type: DamageType;
 }

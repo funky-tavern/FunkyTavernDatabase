@@ -10,6 +10,16 @@ import { Condition } from '../entity/condition.entity';
 import ConditionMapper from './entity_mapper/condition.mapper';
 import { DamageType } from '../entity/damage-type.entity';
 import DamageTypeMapper from './entity_mapper/damage-type.mapper';
+import EquipmentCategoryMapper from './entity_mapper/equipment-category.mapper';
+import { EquipmentCategory } from '../entity/equipment-categories.entity';
+import { RuleSection } from '../entity/rule-section.entity';
+import RuleSectionMapper from './entity_mapper/rule-sections.mapper';
+import { Rules } from '../entity/rules.entity';
+import RulesMapper from './entity_mapper/rules.mapper';
+import { WeaponProperty } from '../entity/weapon-property.entity';
+import WeaponPropertyMapper from './entity_mapper/weapon-property.mapper';
+import { Equipment } from '../entity/equipment.entity';
+import EquipmentMapper from './entity_mapper/equipment.mapper';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
@@ -33,6 +43,11 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     {entity: Alignment, mapper: AlignmentMapper, path: `${API_BASE_URL}/alignments`},
     {entity: Condition, mapper: ConditionMapper, path: `${API_BASE_URL}/conditions`},
     {entity: DamageType, mapper: DamageTypeMapper, path: `${API_BASE_URL}/damage-types`},
+    {entity: EquipmentCategory, mapper: EquipmentCategoryMapper, path: `${API_BASE_URL}/equipment-categories`},
+    {entity: RuleSection, mapper: RuleSectionMapper, path: `${API_BASE_URL}/rule-sections`},
+    {entity: Rules, mapper: RulesMapper, path: `${API_BASE_URL}/rules`},
+    {entity: WeaponProperty, mapper: WeaponPropertyMapper, path: `${API_BASE_URL}/weapon-properties`},
+    {entity: Equipment, mapper: EquipmentMapper, path: `${API_BASE_URL}/equipment`},
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
