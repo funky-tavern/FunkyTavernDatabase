@@ -1,8 +1,14 @@
-import { Entity, PrimaryColumn, Column, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
+import {
+    Entity,
+    PrimaryColumn,
+    Column,
+    ManyToOne,
+    ManyToMany,
+    JoinTable,
+} from 'typeorm';
 import { EquipmentCategory } from './equipment-categories.entity';
 import { DamageType } from './damage-type.entity';
 import { WeaponProperty } from './weapon-property.entity';
-
 
 @Entity()
 export class Equipment {

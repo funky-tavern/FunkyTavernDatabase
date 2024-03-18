@@ -3,7 +3,6 @@ import { ProficiencyChoices } from '../options/proficiency-choices';
 import { Options } from '../options/option.interface';
 import { Value } from '@sinclair/typebox/value';
 
-
 const parseOptionReference = (value: any): ProficiencyChoices => {
     if (Value.Check(Options(ProficiencyChoices), value)) {
         return <ProficiencyChoices>(<unknown>value);
@@ -26,8 +25,9 @@ const parseOptionReference = (value: any): ProficiencyChoices => {
     return value;
 };
 
-
-export class CProficiencyChoicesConverter implements BaseConverter<ProficiencyChoices> {
+export class CProficiencyChoicesConverter
+    implements BaseConverter<ProficiencyChoices>
+{
     to(value: any): ProficiencyChoices {
         if (!!value?.from) {
             return parseOptionReference(value);

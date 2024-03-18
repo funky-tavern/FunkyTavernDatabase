@@ -15,7 +15,7 @@ export class CLanguageOptionConverter implements BaseConverter<LanguageOption> {
 
         if (!value.from?.options) {
             value.from = {
-                any: true
+                any: true,
             };
             return <LanguageOption>value;
         }
@@ -26,7 +26,7 @@ export class CLanguageOptionConverter implements BaseConverter<LanguageOption> {
                     return option;
                 }
                 return option.item.index;
-            })
+            }),
         };
         return <LanguageOption>value;
     }

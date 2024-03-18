@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 
 export class DataFetcher {
-
     public static async fromParentUrl(
         subpath: string,
         parentPath: string,
@@ -34,7 +33,9 @@ export class DataFetcher {
         return data;
     }
 
-    private static async _extractDataFromUrl(urlPath: string): Promise<object[]> {
+    private static async _extractDataFromUrl(
+        urlPath: string,
+    ): Promise<object[]> {
         const indexes = await DataFetcher._getIndexes(urlPath);
 
         const data = [];

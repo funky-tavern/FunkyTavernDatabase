@@ -24,16 +24,18 @@ async function populateTable(mapping: EntityMapping): Promise<number> {
         throw new Error('No path or parents provided');
     }
 
-    return (await Repository.save(
-        data.map((entity: any) => entityMapper.map(entity))
-    )).length;
+    return (
+        await Repository.save(
+            data.map((entity: any) => entityMapper.map(entity)),
+        )
+    ).length;
 }
 
 AppDataSource.initialize()
     .then(async () => {
         for (const entityMapping of ENTITY_MAPPINGS) {
             try {
-                let numberOfResources = await populateTable(entityMapping)
+                let numberOfResources = await populateTable(entityMapping);
                 console.log(
                     `${entityMapping.entity.name}: ${numberOfResources} saved;`,
                 );

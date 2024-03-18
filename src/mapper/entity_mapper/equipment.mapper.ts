@@ -1,7 +1,6 @@
 import EntityMapper from './entity-mapper.interface';
 import { Equipment } from '../../entity/equipment.entity';
 
-
 export default class EquipmentMapper extends EntityMapper<Equipment> {
     map(obj: any): Equipment {
         return this.entityRepository.create({
