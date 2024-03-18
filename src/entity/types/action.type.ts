@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
-export const Action = Type.Object({
+export const ActionType = Type.Object({
     name: Type.String(),
     multiattack_type: Type.Optional(Type.String()),
     desc: Type.String(),
@@ -20,4 +20,4 @@ export const Action = Type.Object({
         type: Type.String(),
     })),
 });
-export type Action = Static<typeof Action>;
+export type ActionType = Static<typeof ActionType>;
