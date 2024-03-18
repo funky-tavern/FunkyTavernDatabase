@@ -1,6 +1,6 @@
 import { Options, OptionReference } from './option.interface';
 
-import { AREA_OF_EFFECT, DAMAGE, DC, USAGE } from '../common';
+import { AREA_OF_EFFECT, DAMAGE, DC, USAGE } from '../area-of-effect.type';
 
 import { Type, type Static } from '@sinclair/typebox';
 

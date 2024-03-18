@@ -1,8 +1,8 @@
 import { AbilityScore } from '../../entity/ability-score.entity';
 import EntityMapper from './entity-mapper.interface';
 import { Monster } from '../../entity/monster.entity';
-import { SpecialAbility } from '../../entity/types/special_ability';
-import { Action } from '../../entity/types/action';
+import { SpecialAbility } from '../../entity/types/special_ability.type';
+import { ActionType } from '../../entity/types/action.type';
 
 export default class MonsterMapper extends EntityMapper<Monster> {
     map(obj: any): Monster {
@@ -62,7 +62,7 @@ export default class MonsterMapper extends EntityMapper<Monster> {
         });
     }
 
-    private parseActions(obj: any): Action[] {
+    private parseActions(obj: any): ActionType[] {
         return obj.actions?.map((action: any) => {
             let mappedAction = {
                 name: action.name,

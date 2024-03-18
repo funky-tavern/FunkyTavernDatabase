@@ -3,12 +3,12 @@ import {
     PrimaryColumn,
     Column, ManyToMany, JoinTable,
 } from 'typeorm';
-import { ArmorClass } from './types/armor-class';
-import { Speed } from './types/speed';
-import { ProficiencyValue } from './types/proficiency-value';
+import { ArmorClassType } from './types/armor-class.type';
+import { SpeedType } from './types/speed.type';
+import { ProficiencyValueType } from './types/proficiency-value.type';
 import { Condition } from './condition.entity';
-import { SpecialAbility } from './types/special_ability';
-import { Action } from './types/action';
+import { SpecialAbility } from './types/special_ability.type';
+import { ActionType } from './types/action.type';
 
 @Entity()
 export class Monster {
@@ -34,7 +34,7 @@ export class Monster {
     alignment: string;
 
     @Column('simple-json')
-    armor_class: ArmorClass[];
+    armor_class: ArmorClassType[];
 
     hit_points: number;
 
@@ -43,7 +43,7 @@ export class Monster {
     hit_points_roll: string;
 
     @Column('simple-json')
-    speed: Speed;
+    speed: SpeedType;
 
     @Column()
     strength: number;
@@ -64,7 +64,7 @@ export class Monster {
     charisma: number;
 
     @Column("simple-json")
-    proficiencies: ProficiencyValue[];
+    proficiencies: ProficiencyValueType[];
 
     @Column("simple-array", { nullable: true })
     damage_vulnerabilities: string[];
@@ -98,5 +98,5 @@ export class Monster {
     special_abilities: SpecialAbility[];
 
     @Column('simple-json')
-    actions: Action[];
+    actions: ActionType[];
 }

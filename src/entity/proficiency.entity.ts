@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, ManyToOne } from 'typeorm';
-import ProficiencyReferenceType from './types/proficiency-type';
+import ProficiencyReferenceType from './types/proficiency-type.type';
 import { Skill } from './skill.entity';
 import { AbilityScore } from './ability-score.entity';
 import { EquipmentCategory } from './equipment-categories.entity';

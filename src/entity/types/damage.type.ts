@@ -1,25 +1,5 @@
 import { type Static, Type } from '@sinclair/typebox';
 
-export const DC = Type.Object({
-    dc_type: Type.String(),
-    success_type: Type.Union([
-        Type.Literal('none'),
-        Type.Literal('half'),
-        Type.Literal('full'),
-    ]),
-});
-export type DC = Static<typeof DC>;
-
-export const USAGE = Type.Object({
-    type: Type.Union([
-        Type.Literal('at_will'),
-        Type.Literal('per_day'),
-        Type.Literal('per_rest'),
-    ]),
-    rest_type: Type.Union([Type.Literal('short'), Type.Literal('long')]),
-    times: Type.Number(),
-});
-export type USAGE = Static<typeof USAGE>;
 
 export const DAMAGE = Type.Object({
     damage_type: Type.String(),
@@ -47,16 +27,3 @@ export const DAMAGE = Type.Object({
     }),
 });
 export type DAMAGE = Static<typeof DAMAGE>;
-
-export const AREA_OF_EFFECT = Type.Object({
-    type: Type.Union([
-        Type.Literal('cone'),
-        Type.Literal('cube'),
-        Type.Literal('cylinder'),
-        Type.Literal('line'),
-        Type.Literal('sphere'),
-    ]),
-    size: Type.Number(),
-    size_unit: Type.Union([Type.Literal('feet'), Type.Literal('meters')]),
-});
-export type AREA_OF_EFFECT = Static<typeof AREA_OF_EFFECT>;
