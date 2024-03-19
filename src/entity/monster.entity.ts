@@ -1,198 +1,102 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import {
+    Entity,
+    PrimaryColumn,
+    Column, ManyToMany, JoinTable,
+} from 'typeorm';
+import { ArmorClassType } from './types/armor-class.type';
+import { SpeedType } from './types/speed.type';
+import { ProficiencyValueType } from './types/proficiency-value.type';
+import { Condition } from './condition.entity';
+import { SpecialAbility } from './types/special_ability.type';
+import { ActionType } from './types/action.type';
 
 @Entity()
 export class Monster {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
-    @Column({nullable: true})
-    desc: string
-
-    @Column()
-    size: string
+    @Column({ nullable: true })
+    desc: string;
 
     @Column()
-    type: string
-
-    @Column({nullable: true})
-    subtype: string
+    size: string;
 
     @Column()
-    alignment: string
+    type: string;
+
+    @Column({ nullable: true })
+    subtype: string;
+
+    @Column()
+    alignment: string;
+
+    @Column('simple-json')
+    armor_class: ArmorClassType[];
+
+    hit_points: number;
+
+    hit_dice: string;
+
+    hit_points_roll: string;
+
+    @Column('simple-json')
+    speed: SpeedType;
+
+    @Column()
+    strength: number;
+
+    @Column()
+    dexterity: number;
+
+    @Column()
+    constitution: number;
+
+    @Column()
+    intelligence: number;
+
+    @Column()
+    wisdom: number;
+
+    @Column()
+    charisma: number;
 
     @Column("simple-json")
-    armor_class: string
+    proficiencies: ProficiencyValueType[];
 
-    hit_points: number
+    @Column("simple-array", { nullable: true })
+    damage_vulnerabilities: string[];
 
-    hit_dice: string
+    @Column("simple-array", { nullable: true })
+    damage_resistances: string;
 
-    hit_points_roll: string
+    @Column("simple-array", { nullable: true })
+    damage_immunities: string;
 
-    @Column("simple-json")
-    speed: string
+    @ManyToMany(() => Condition, { nullable: true })
+    @JoinTable()
+    condition_immunities: Condition[];
 
-    @Column()
-    strength: number
-
-    @Column()
-    dexterity: number
-
-    @Column()
-    constitution: number
+    @Column('simple-json')
+    senses: string;
 
     @Column()
-    intelligence: number
+    languages: string;
 
     @Column()
-    wisdom: number
+    challenge_rating: string;
 
     @Column()
-    charisma: number
-
-    @Column("simple-json",{
-        transformer: {
-            to: (values: object[]) => {
-                return values.map((value) => {
-                    if (!value["proficiency"]["index"]) {
-                        value["proficiency"] = value["proficiency"]["index"];
-                    }
-
-                    return value;
-                });
-            },
-            from: (values: object[]) => {
-                return values;
-            }
-        }
-    })
-    proficiencies: string
-
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    damage_vulnerabilities: string
-
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    damage_resistances: string
-
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    damage_immunities: string
-
-    @Column({
-        transformer: {
-            to: (values: object[]|string[]) => {
-                return values.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
-                    return value["index"];
-                }).join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    condition_immunities: string
-
-    @Column("simple-json")
-    senses: string
+    proficiency_bonus: number;
 
     @Column()
-    languages: string
+    xp: number;
 
-    @Column()
-    challenge_rating: string
+    @Column('simple-json')
+    special_abilities: SpecialAbility[];
 
-    @Column()
-    proficiency_bonus: number
-
-    @Column()
-    xp: number
-
-    @Column("simple-json", {
-        transformer: {
-            to: (values: object[]) => {
-                if (!values || values.length === 0) {
-                    return null;
-                }
-
-                return values.map((value) => {
-                    if (value["damage"] && value["damage"].length !== 0) {
-                        value["damage"].forEach((damage) => {
-                            if (damage["damage_type"]["index"]) {
-                                damage["damage_type"] = damage["damage_type"]["index"];
-                            }
-                            return damage;
-                        })
-                    }
-
-                    return value;
-                });
-            },
-            from: (values: object[]) => {
-                return values;
-            }
-        },
-        nullable: true
-    })
-    special_abilities: string
-
-    @Column("simple-json", {
-        transformer: {
-            to: (values: object[]) => {
-                if (!values || values.length === 0) {
-                    return null;
-                }
-
-                return values.map((value) => {
-                    if (value["damage"] && value["damage"].length !== 0) {
-                        value["damage"].forEach((damage) => {
-                            if (damage["damage_type"] && damage["damage_type"]["index"]) {
-                                damage["damage_type"] = damage["damage_type"]["index"];
-                            }
-                            return damage;
-                        })
-                    }
-
-                    return value;
-                });
-            },
-            from: (values: object[]) => {
-                return values;
-            }
-        },
-        nullable: true
-    })
-    actions: string
+    @Column('simple-json')
+    actions: ActionType[];
 }

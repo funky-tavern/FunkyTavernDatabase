@@ -1,25 +1,48 @@
-import {AppDataSource} from "./data-source"
-import { Mapper } from "./mapper/mapper";
-import { ENTITY_MAPPINGS } from "./mapper/mapping";
+import { AppDataSource } from './data-source';
+import { DataFetcher } from './mapper/dataFetcher';
+import { ENTITY_MAPPINGS, EntityMapping } from './mapper/mapping';
 
+async function populateTable(mapping: EntityMapping): Promise<number> {
+    const Repository = AppDataSource.getRepository(mapping.entity);
 
-AppDataSource.initialize().then(async () => {
+    let entityMapper = new mapping.mapper(Repository);
 
+    let data = [];
+    if (!!mapping.parents && mapping.parents.length > 0 && !!mapping.subpath) {
+        for (let parentMapping of mapping.parents) {
+            data = [
+                ...data,
+                ...(await DataFetcher.fromParentUrl(
+                    mapping.subpath,
+                    parentMapping.path,
+                )),
+            ];
+        }
+    } else if (!!mapping.path) {
+        data = [...(await DataFetcher.fromUrl(mapping.path))];
+    } else {
+        throw new Error('No path or parents provided');
+    }
 
-    ENTITY_MAPPINGS.forEach((entityMapping) => {
-        const Repository = AppDataSource.getRepository(entityMapping.entity);
+    return (
+        await Repository.save(
+            data.map((entity: any) => entityMapper.map(entity)),
+        )
+    ).length;
+}
 
-        (new Mapper(entityMapping.entity)).map(entityMapping.path).then((data) => {
-            Repository.save(data);
-        });
-
-        Repository.find().then((entities) => {
-            console.log(`${entityMapping.entity.name}: ${entities.length};`);
-        }).catch((error) => {
-            console.log(`${entityMapping.entity.name}: failed;`);
-        }).finally(() => {
-            console.log(`${entityMapping.entity.name}: done;`);
-        });
-    });
-
-}).catch(error => console.log(error))
+AppDataSource.initialize()
+    .then(async () => {
+        for (const entityMapping of ENTITY_MAPPINGS) {
+            try {
+                let numberOfResources = await populateTable(entityMapping);
+                console.log(
+                    `${entityMapping.entity.name}: ${numberOfResources} saved;`,
+                );
+            } catch (error) {
+                console.debug(error);
+                console.log(`${entityMapping.entity.name}: failed;`);
+            }
+        }
+    })
+    .catch(error => console.log(error));

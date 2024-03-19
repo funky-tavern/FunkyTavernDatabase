@@ -1,33 +1,19 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Entity, PrimaryColumn, Column, JoinTable } from 'typeorm';
+import { RuleSection } from './rule-section.entity';
+import { ManyToMany } from 'typeorm';
 
 @Entity()
 export class Rules {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column()
-    desc: string
+    desc: string;
 
-    @Column({
-        transformer: {
-            to: (values: object[]|string[]) => {
-                if (values.length === 0) {
-                    return null;
-                }
-
-                if (typeof values[0] === "string") {
-                    return values.join("$");
-                }
-                return values.map(section => section["index"]).join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    subsections: string
+    @ManyToMany(() => RuleSection)
+    @JoinTable()
+    subsections: RuleSection[];
 }
