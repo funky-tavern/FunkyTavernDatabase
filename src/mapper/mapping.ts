@@ -24,6 +24,8 @@ import { Monster } from '../entity/monster.entity';
 import MonsterMapper from './entity_mapper/monster.mapper';
 import ProficiencyMapper from './entity_mapper/proficiency.mapper';
 import { Proficiency } from '../entity/proficiency.entity';
+import { Class } from '../entity/class.entity';
+import ClassMapper from './entity_mapper/class.mapper';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
@@ -97,6 +99,11 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
         entity: Monster,
         mapper: MonsterMapper,
         path: `${API_BASE_URL}/monsters`,
+    },
+    {
+        entity: Class,
+        mapper: ClassMapper,
+        path: `${API_BASE_URL}/classes`,
     },
 ];
 

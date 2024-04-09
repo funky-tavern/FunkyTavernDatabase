@@ -27,7 +27,7 @@ export default class MonsterMapper extends EntityMapper<Monster> {
             charisma: obj.charisma,
             proficiencies: obj.proficiencies.map((p: any) => {
                 return {
-                    proficiency: p.proficiency.index,
+                    proficiency: p.proficiency?.index,
                     value: p.value,
                 };
             }),
