@@ -1,6 +1,5 @@
 import { type Static, Type } from '@sinclair/typebox';
 
-
 export const USAGE = Type.Object({
     type: Type.Union([
         Type.Literal('at_will'),

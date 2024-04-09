@@ -32,7 +32,9 @@ export default class MonsterMapper extends EntityMapper<Monster> {
                 };
             }),
             damage_vulnerabilities: obj.damage_vulnerabilities,
-            condition_immunities: obj.condition_immunities?.map((c: any) => c.index),
+            condition_immunities: obj.condition_immunities?.map(
+                (c: any) => c.index,
+            ),
             senses: obj.senses,
             languages: obj.languages,
             challenge_rating: obj.challenge_rating,

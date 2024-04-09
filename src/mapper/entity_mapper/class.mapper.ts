@@ -14,11 +14,17 @@ export default class ClassMapper extends EntityMapper<Class> {
                     desc: p.desc,
                     choose: p.choose,
                     type: p.type,
-                    from: p.from.options?.map((o: { item: { index: any; }; }) => o.item?.index),
-                }
+                    from: p.from.options?.map(
+                        (o: { item: { index: any } }) => o.item?.index,
+                    ),
+                };
             }),
-            proficiencies: obj.proficiencies?.map((p: { index: any; }) => p.index),
-            saving_throws: obj.saving_throws?.map((s: { index: any; }) => s.index),
+            proficiencies: obj.proficiencies?.map(
+                (p: { index: any }) => p.index,
+            ),
+            saving_throws: obj.saving_throws?.map(
+                (s: { index: any }) => s.index,
+            ),
             starting_equipment: obj.starting_equipment?.map((e: any) => {
                 return {
                     equipment: e.equipment.index,
@@ -26,6 +32,12 @@ export default class ClassMapper extends EntityMapper<Class> {
                 };
             }),
             starting_equipment_options: this.parseStartingEquipment(obj),
+            multi_classing: obj.multi_classing?.prerequisites?.map((m: any) => {
+                return {
+                    ability_score: m.ability_score.index,
+                    minimum_score: m.minimum_score,
+                };
+            }),
         });
     }
 
@@ -48,8 +60,9 @@ export default class ClassMapper extends EntityMapper<Class> {
                                 choose: f.choice.choose,
                                 type: f.choice.type,
                                 from: {
-                                    equipment_category: f.choice.from.equipment_category?.index,
-                                }
+                                    equipment_category:
+                                        f.choice.from.equipment_category?.index,
+                                },
                             };
                     }
                 }),

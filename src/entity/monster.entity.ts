@@ -1,8 +1,4 @@
-import {
-    Entity,
-    PrimaryColumn,
-    Column, ManyToMany, JoinTable,
-} from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable } from 'typeorm';
 import { ArmorClassType } from './types/armor-class.type';
 import { SpeedType } from './types/speed.type';
 import { ProficiencyValueType } from './types/proficiency-value.type';
@@ -63,16 +59,16 @@ export class Monster {
     @Column()
     charisma: number;
 
-    @Column("simple-json")
+    @Column('simple-json')
     proficiencies: ProficiencyValueType[];
 
-    @Column("simple-array", { nullable: true })
+    @Column('simple-array', { nullable: true })
     damage_vulnerabilities: string[];
 
-    @Column("simple-array", { nullable: true })
+    @Column('simple-array', { nullable: true })
     damage_resistances: string;
 
-    @Column("simple-array", { nullable: true })
+    @Column('simple-array', { nullable: true })
     damage_immunities: string;
 
     @ManyToMany(() => Condition, { nullable: true })

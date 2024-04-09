@@ -1,4 +1,9 @@
-import { OptionArray, OptionChoice, OptionReference, Options } from './option.interface';
+import {
+    OptionArray,
+    OptionChoice,
+    OptionReference,
+    Options,
+} from './option.interface';
 
 import { Type, type Static } from '@sinclair/typebox';
 

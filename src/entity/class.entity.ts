@@ -4,6 +4,7 @@ import { AbilityScore } from './ability-score.entity';
 import { EQUIPMENT_QUANTITY_TYPE } from './types/equipment-quantity-type';
 import { ProficiencyChoices } from './types/options/proficiency-choices';
 import { StartingEquipmentOptions } from './types/options/starting-equipment-options';
+import { ClassPrerequisites } from './types/class_prerequisites.type';
 
 @Entity()
 export class Class {
@@ -21,12 +22,14 @@ export class Class {
     @Column('simple-json')
     proficiency_choices: ProficiencyChoices[];
 
-    @ManyToMany(() => Proficiency)
-    @JoinTable()
+    @Column('simple-json', {
+        nullable: true,
+    })
     proficiencies: Proficiency[];
 
-    @ManyToMany(() => AbilityScore)
-    @JoinTable()
+    @Column('simple-json', {
+        nullable: true,
+    })
     saving_throws: AbilityScore[];
 
     @Column('simple-json', {
@@ -35,5 +38,10 @@ export class Class {
     starting_equipment: EQUIPMENT_QUANTITY_TYPE[];
 
     @Column('simple-json')
-    starting_equipment_options: StartingEquipmentOptions[]
+    starting_equipment_options: StartingEquipmentOptions[];
+
+    @Column('simple-json', {
+        nullable: true,
+    })
+    multi_classing: ClassPrerequisites[];
 }

@@ -1,6 +1,5 @@
 import { type Static, Type } from '@sinclair/typebox';
 
-
 export const AREA_OF_EFFECT = Type.Object({
     type: Type.Union([
         Type.Literal('cone'),

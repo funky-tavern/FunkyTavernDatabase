@@ -1,7 +1,8 @@
 import {
     OptionArray,
     OptionChoice,
-    OptionCountedReference, OptionEquipmentCategory,
+    OptionCountedReference,
+    OptionEquipmentCategory,
     Options,
 } from './option.interface';
 
@@ -11,6 +12,6 @@ export const StartingEquipmentOptions = Options(
     Type.Union([
         OptionArray(OptionCountedReference),
         OptionChoice(OptionEquipmentCategory),
-    ])
+    ]),
 );
 export type StartingEquipmentOptions = Static<typeof StartingEquipmentOptions>;

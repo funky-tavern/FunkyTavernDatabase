@@ -1,6 +1,5 @@
 import { type Static, Type } from '@sinclair/typebox';
 
-
 export const DAMAGE = Type.Object({
     damage_type: Type.String(),
     damage_at_character_level: Type.Object({

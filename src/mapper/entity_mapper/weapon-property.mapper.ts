@@ -1,4 +1,3 @@
-import { AbilityScore } from '../../entity/ability-score.entity';
 import EntityMapper from './entity-mapper.interface';
 import { WeaponProperty } from '../../entity/weapon-property.entity';
 

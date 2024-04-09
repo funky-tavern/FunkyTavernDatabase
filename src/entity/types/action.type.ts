@@ -5,19 +5,27 @@ export const ActionType = Type.Object({
     multiattack_type: Type.Optional(Type.String()),
     desc: Type.String(),
     attack_bonus: Type.Optional(Type.Integer()),
-    dc: Type.Optional(Type.Object({
-        dc_type: Type.String(),
-        dc_value: Type.Integer(),
-        success_type: Type.String(),
-    })),
-    damage: Type.Optional(Type.Array(Type.Object({
-        damage_type: Type.String(),
-        damage_dice: Type.String(),
-    }))),
-    actions: Type.Array(Type.Object({
-        action_name: Type.String(),
-        count: Type.Integer(),
-        type: Type.String(),
-    })),
+    dc: Type.Optional(
+        Type.Object({
+            dc_type: Type.String(),
+            dc_value: Type.Integer(),
+            success_type: Type.String(),
+        }),
+    ),
+    damage: Type.Optional(
+        Type.Array(
+            Type.Object({
+                damage_type: Type.String(),
+                damage_dice: Type.String(),
+            }),
+        ),
+    ),
+    actions: Type.Array(
+        Type.Object({
+            action_name: Type.String(),
+            count: Type.Integer(),
+            type: Type.String(),
+        }),
+    ),
 });
 export type ActionType = Static<typeof ActionType>;
