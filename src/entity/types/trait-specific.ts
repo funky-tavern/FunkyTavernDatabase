@@ -1,11 +1,11 @@
-import { Options, OptionReference } from './option.interface';
+import { Options, OptionReference } from './options/option.interface';
 
-import { AREA_OF_EFFECT } from '../area-of-effect.type';
+import { AREA_OF_EFFECT } from './area-of-effect.type';
 
 import { Type, type Static } from '@sinclair/typebox';
-import { DAMAGE } from '../damage.type';
-import { DC } from '../dc.type';
-import { USAGE } from '../usage.type';
+import { DAMAGE } from './damage.type';
+import { DC } from './dc.type';
+import { USAGE } from './usage.type';
 
 export const TraitWeapon = Type.Object({
     name: Type.String(),

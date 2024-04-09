@@ -2,7 +2,7 @@ import { Entity, PrimaryColumn, Column } from 'typeorm';
 import { LanguageOption } from './types/options/language-option.interface';
 import { LanguageOptionConverter } from './types/converter/language-option-converter';
 import { TraitSpecificConverter } from './types/converter/trait-converter';
-import { TraitSpecific } from './types/options/trait-specific';
+import { TraitSpecific } from './types/trait-specific';
 
 @Entity()
 export class Trait {

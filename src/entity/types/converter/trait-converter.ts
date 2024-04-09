@@ -3,7 +3,7 @@ import {
     TraitSpell,
     TraitWeapon,
     TraitSubOption,
-} from '../options/trait-specific';
+} from '../trait-specific';
 
 import { BaseConverter } from './converter';
 
