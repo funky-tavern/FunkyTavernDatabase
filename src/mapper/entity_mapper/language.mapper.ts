@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { Language } from '../../entity/language.entity';
 
 export default class LanguageMapper extends EntityMapper<Language> {

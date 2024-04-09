@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { Condition } from '../../entity/condition.entity';
 
 export default class ConditionMapper extends EntityMapper<Condition> {

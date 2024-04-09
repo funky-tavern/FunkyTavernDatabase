@@ -1,5 +1,5 @@
 import { AbilityScore } from '../../entity/ability-score.entity';
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 
 export default class AbilityScoreMapper extends EntityMapper<AbilityScore> {
     map(obj: any): AbilityScore {

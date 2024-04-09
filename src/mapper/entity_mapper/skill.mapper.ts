@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { Skill } from '../../entity/skill.entity';
 
 export default class SkillMapper extends EntityMapper<Skill> {

@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { WeaponProperty } from '../../entity/weapon-property.entity';
 
 export default class WeaponPropertyMapper extends EntityMapper<WeaponProperty> {

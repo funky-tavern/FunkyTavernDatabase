@@ -1,5 +1,5 @@
 import { AbilityScore } from '../../entity/ability-score.entity';
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { Monster } from '../../entity/monster.entity';
 import { Proficiency } from '../../entity/proficiency.entity';
 import { match } from 'node:assert';

@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { Rules } from '../../entity/rules.entity';
 import { Class } from '../../entity/class.entity';
 import { StartingEquipmentOptions } from '../../entity/types/options/starting-equipment-options';

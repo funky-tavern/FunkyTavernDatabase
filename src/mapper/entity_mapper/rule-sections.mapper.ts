@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { Skill } from '../../entity/skill.entity';
 import { RuleSection } from '../../entity/rule-section.entity';
 import { DataSource } from 'typeorm';

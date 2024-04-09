@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { DamageType } from '../../entity/damage-type.entity';
 
 export default class DamageTypeMapper extends EntityMapper<DamageType> {

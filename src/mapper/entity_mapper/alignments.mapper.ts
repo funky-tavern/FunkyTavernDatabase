@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { Alignment } from '../../entity/alignment.entity';
 
 export default class AlignmentMapper extends EntityMapper<Alignment> {

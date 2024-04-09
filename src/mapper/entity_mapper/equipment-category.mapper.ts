@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { EquipmentCategory } from '../../entity/equipment-categories.entity';
 
 export default class EquipmentCategoryMapper extends EntityMapper<EquipmentCategory> {

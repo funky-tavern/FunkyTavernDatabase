@@ -1,4 +1,4 @@
-import EntityMapper from './entity-mapper.interface';
+import EntityMapper from './interface/entity-mapper.interface';
 import { Rules } from '../../entity/rules.entity';
 
 export default class RulesMapper extends EntityMapper<Rules> {
