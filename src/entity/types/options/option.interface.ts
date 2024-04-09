@@ -1,20 +1,29 @@
 import { Type, type Static, type TSchema } from '@sinclair/typebox';
 
-// Options Type Definition
+// Option Set Type Definition
+export const OptionArray = <T extends TSchema>(T: T) =>
+    Type.Object({
+        options: Type.Array(T),
+    });
+
+export const OptionEquipmentCategory = Type.Object({
+    equipment_category: Type.String(),
+});
+
+
+// Options Definition
 export const Options = <T extends TSchema>(T: T) =>
     Type.Object({
         desc: Type.String(),
         type: Type.String(),
         choose: Type.Number(),
-        from: Type.Object({
-            options: Type.Optional(Type.Array(T)),
-            any: Type.Optional(Type.Boolean()),
-        }),
+        from: T,
     });
 
 // OptionSet Type Definition
 export const OptionReference = Type.String();
 export type OptionReference = Static<typeof OptionReference>;
+
 
 export const OptionCountedReference = Type.Object({
     count: Type.Number(),
@@ -22,12 +31,5 @@ export const OptionCountedReference = Type.Object({
 });
 export type OptionCountedReference = Static<typeof OptionCountedReference>;
 
-export const OptionChoice = Options(OptionReference);
-export type OptionChoice = Static<typeof OptionChoice>;
 
-export const OptionSet = Type.Union([
-    OptionReference,
-    OptionCountedReference,
-    OptionChoice,
-]);
-export type OptionSet = Static<typeof OptionSet>;
+export const OptionChoice = <T extends TSchema>(T: T) => Options(T);
