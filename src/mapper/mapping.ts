@@ -26,6 +26,9 @@ import ProficiencyMapper from './entity_mapper/proficiency.mapper';
 import { Proficiency } from '../entity/proficiency.entity';
 import { Class } from '../entity/class.entity';
 import ClassMapper from './entity_mapper/class.mapper';
+import EntityMapper from './entity_mapper/interface/entity-mapper.interface';
+import { ObjectLiteral } from 'typeorm/browser';
+import { DataSource } from 'typeorm';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
@@ -35,8 +38,11 @@ type ParentMapping = {
 };
 
 type EntityMapping = {
-    entity: any;
-    mapper: any;
+    entity: new () => ObjectLiteral;
+    mapper: new (
+        entity: new () => ObjectLiteral,
+        dataSource: DataSource,
+    ) => EntityMapper<ObjectLiteral>;
     path?: string;
     parents?: ParentMapping[];
     subpath?: string;

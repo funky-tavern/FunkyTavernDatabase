@@ -5,7 +5,7 @@ import { ENTITY_MAPPINGS, EntityMapping } from './mapper/mapping';
 async function populateTable(mapping: EntityMapping): Promise<number> {
     const Repository = AppDataSource.getRepository(mapping.entity);
 
-    let entityMapper = new mapping.mapper(Repository);
+    let entityMapper = new mapping.mapper(mapping.entity, AppDataSource);
 
     let data = [];
     if (!!mapping.parents && mapping.parents.length > 0 && !!mapping.subpath) {
