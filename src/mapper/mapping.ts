@@ -37,11 +37,13 @@ import SubClassMapper from './entity_mapper/subclass.mapper';
 import { SubClass } from '../entity/subclass.entity';
 import { Feature } from '../entity/feature.entity';
 import FeatureMapper from './feature.mapper';
+import { Level } from '../entity/level.entity';
+import LevelMapper from './entity_mapper/level.mapper';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
 type ParentMapping = {
-    parent: any;
+    parent: new () => ObjectLiteral;
     path: string;
 };
 
@@ -139,6 +141,21 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
         mapper: FeatureMapper,
         path: `${API_BASE_URL}/features`,
     },
+    // {
+    //     entity: Level,
+    //     mapper: LevelMapper,
+    //     parents: [
+    //         {
+    //             parent: Class,
+    //             path: `${API_BASE_URL}/classes`
+    //         },
+    //         {
+    //             parent: SubClass,
+    //             path: `${API_BASE_URL}/subclasses`
+    //         }
+    //     ],
+    //     subpath: 'levels'
+    // }
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
