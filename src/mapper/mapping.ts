@@ -35,6 +35,8 @@ import MagicSchoolMapper from './entity_mapper/magic-school.mapper';
 import SpellMapper from './entity_mapper/spell.mapper';
 import SubClassMapper from './entity_mapper/subclass.mapper';
 import { SubClass } from '../entity/subclass.entity';
+import { Feature } from '../entity/feature.entity';
+import FeatureMapper from './feature.mapper';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
@@ -112,16 +114,16 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     //     mapper: MonsterMapper,
     //     path: `${API_BASE_URL}/monsters`,
     // },
-    {
-        entity: MagicSchool,
-        mapper: MagicSchoolMapper,
-        path: `${API_BASE_URL}/magic-schools`,
-    },
-    {
-        entity: Spell,
-        mapper: SpellMapper,
-        path: `${API_BASE_URL}/spells`,
-    },
+    // {
+    //     entity: MagicSchool,
+    //     mapper: MagicSchoolMapper,
+    //     path: `${API_BASE_URL}/magic-schools`,
+    // },
+    // {
+    //     entity: Spell,
+    //     mapper: SpellMapper,
+    //     path: `${API_BASE_URL}/spells`,
+    // },
     {
         entity: Class,
         mapper: ClassMapper,
@@ -131,7 +133,12 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
         entity: SubClass,
         mapper: SubClassMapper,
         path: `${API_BASE_URL}/subclasses`,
-    }
+    },
+    {
+        entity: Feature,
+        mapper: FeatureMapper,
+        path: `${API_BASE_URL}/features`,
+    },
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
