@@ -3,7 +3,7 @@ import { ArmorClassType } from './types/armor-class.type';
 import { SpeedType } from './types/speed.type';
 import { ProficiencyValueType } from './types/proficiency-value.type';
 import { Condition } from './condition.entity';
-import { SpecialAbility } from './types/special_ability.type';
+import { SpecialAbility } from './types/special-ability.type';
 import { ActionType } from './types/action.type';
 
 @Entity()

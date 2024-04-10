@@ -15,5 +15,5 @@ export class Skill {
 
     @ManyToOne(() => AbilityScore)
     @JoinColumn()
-    ability_score: AbilityScore;
+    ability_score: AbilityScore[];
 }

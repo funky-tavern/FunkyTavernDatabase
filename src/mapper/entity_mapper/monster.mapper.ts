@@ -1,7 +1,7 @@
 import { AbilityScore } from '../../entity/ability-score.entity';
 import EntityMapper from './interface/entity-mapper.interface';
 import { Monster } from '../../entity/monster.entity';
-import { SpecialAbility } from '../../entity/types/special_ability.type';
+import { SpecialAbility } from '../../entity/types/special-ability.type';
 import { ActionType } from '../../entity/types/action.type';
 
 export default class MonsterMapper extends EntityMapper<Monster> {

@@ -1,8 +1,8 @@
 import { type Static, Type } from '@sinclair/typebox';
 
 export const DAMAGE = Type.Object({
-    damage_type: Type.String(),
-    damage_at_character_level: Type.Object({
+    damage_type: Type.Optional(Type.String()),
+    damage_at_slot_level: Type.Object({
         1: Type.Optional(Type.String()),
         2: Type.Optional(Type.String()),
         3: Type.Optional(Type.String()),

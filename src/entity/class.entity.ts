@@ -4,7 +4,7 @@ import { AbilityScore } from './ability-score.entity';
 import { EQUIPMENT_QUANTITY_TYPE } from './types/equipment-quantity-type';
 import { ProficiencyChoices } from './types/options/proficiency-choices';
 import { StartingEquipmentOptions } from './types/options/starting-equipment-options';
-import { ClassPrerequisites } from './types/class_prerequisites.type';
+import { ClassPrerequisites } from './types/class-prerequisites.type';
 
 @Entity()
 export class Class {
