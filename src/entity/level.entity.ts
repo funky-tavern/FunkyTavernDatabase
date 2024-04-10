@@ -1,4 +1,13 @@
-import { Entity, PrimaryColumn, Column, ManyToMany, JoinColumn, OneToOne, ManyToOne, JoinTable } from 'typeorm';
+import {
+    Entity,
+    PrimaryColumn,
+    Column,
+    ManyToMany,
+    JoinColumn,
+    OneToOne,
+    ManyToOne,
+    JoinTable,
+} from 'typeorm';
 import { Class } from './class.entity';
 import { SubClass } from './subclass.entity';
 import { Feature } from './feature.entity';

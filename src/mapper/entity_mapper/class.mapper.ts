@@ -2,8 +2,21 @@ import EntityMapper from './interface/entity-mapper.interface';
 import { Rules } from '../../entity/rules.entity';
 import { Class } from '../../entity/class.entity';
 import { StartingEquipmentOptions } from '../../entity/types/options/starting-equipment-options';
+import { DataSource, Repository } from 'typeorm';
+import { Proficiency } from '../../entity/proficiency.entity';
+import { AbilityScore } from '../../entity/ability-score.entity';
 
 export default class ClassMapper extends EntityMapper<Class> {
+    protected proficiencyRepository: Repository<Proficiency>;
+    protected abilityScoreRepository: Repository<AbilityScore>;
+
+    constructor(entity: new () => Class, dataSource: DataSource) {
+        super(entity, dataSource);
+
+        this.proficiencyRepository = dataSource.getRepository(Proficiency);
+        this.abilityScoreRepository = dataSource.getRepository(AbilityScore);
+    }
+
     async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
@@ -19,12 +32,16 @@ export default class ClassMapper extends EntityMapper<Class> {
                     ),
                 };
             }),
-            proficiencies: obj.proficiencies?.map(
-                (p: { index: any }) => p.index,
-            ),
-            saving_throws: obj.saving_throws?.map(
-                (s: { index: any }) => s.index,
-            ),
+            proficiencies: !!obj.proficiencies
+                ? await this.parseProficiencies(
+                      obj.proficiencies.map(p => p.index),
+                  )
+                : null,
+            saving_throws: !!obj.saving_throws
+                ? await this.parseAbilityScores(
+                      obj.saving_throws.map(s => s.index),
+                  )
+                : null,
             starting_equipment: obj.starting_equipment?.map((e: any) => {
                 return {
                     equipment: e.equipment.index,
@@ -39,6 +56,14 @@ export default class ClassMapper extends EntityMapper<Class> {
                 };
             }),
         });
+    }
+
+    private async parseProficiencies(proficiencies: string[]) {
+        return await this.proficiencyRepository.findByIds(proficiencies);
+    }
+
+    private async parseAbilityScores(abilityScores: string[]) {
+        return await this.abilityScoreRepository.findByIds(abilityScores);
     }
 
     private parseStartingEquipment(obj: any): StartingEquipmentOptions[] {

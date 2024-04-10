@@ -1,7 +1,18 @@
 import EntityMapper from './interface/entity-mapper.interface';
 import { Equipment } from '../../entity/equipment.entity';
+import { DataSource, Repository } from 'typeorm';
+import { WeaponProperty } from '../../entity/weapon-property.entity';
 
 export default class EquipmentMapper extends EntityMapper<Equipment> {
+    protected weaponPropertyRepository: Repository<WeaponProperty>;
+
+    constructor(entity: new () => Equipment, dataSource: DataSource) {
+        super(entity, dataSource);
+
+        this.weaponPropertyRepository =
+            dataSource.getRepository(WeaponProperty);
+    }
+
     async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
@@ -17,10 +28,16 @@ export default class EquipmentMapper extends EntityMapper<Equipment> {
             damage_type: obj.damage?.damage_type?.index,
             range: obj.range,
             weight: obj.weight,
-            properties: obj.properties?.map(property => property.index),
+            properties: await this.parseWeaponProperties(
+                obj.properties?.map(property => property.index),
+            ),
             throw_range: obj.throw_range,
             two_handed_damage_dice: obj.two_handed_damage?.damage_dice,
             two_handed_damage_type: obj.two_handed_damage?.damage_type?.index,
         });
+    }
+
+    private async parseWeaponProperties(properties: string[]) {
+        return this.weaponPropertyRepository.findByIds(properties);
     }
 }

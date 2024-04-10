@@ -26,9 +26,7 @@ async function populateTable(mapping: EntityMapping): Promise<number> {
 
     let entities = await Promise.all(data.map(obj => entityMapper.map(obj)));
 
-    return (
-        await Repository.save(entities)
-    ).length;
+    return (await Repository.save(entities)).length;
 }
 
 AppDataSource.initialize()

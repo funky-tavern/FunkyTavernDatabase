@@ -4,7 +4,7 @@ import { DataSource, Repository } from 'typeorm';
 import { RuleSection } from '../../entity/rule-section.entity';
 
 export default class RulesMapper extends EntityMapper<Rules> {
-    protected subsectionRepository: Repository<RuleSection>
+    protected subsectionRepository: Repository<RuleSection>;
 
     constructor(entity: new () => Rules, dataSource: DataSource) {
         super(entity, dataSource);
@@ -18,12 +18,12 @@ export default class RulesMapper extends EntityMapper<Rules> {
             name: obj.name,
             desc: obj.desc,
             subsections: await this.mapSubsections(
-                obj.subsections.map(s => s.index)
-            )
+                obj.subsections.map(s => s.index),
+            ),
         });
     }
 
-    private async mapSubsections(subsections: string[]){
+    private async mapSubsections(subsections: string[]) {
         return await this.subsectionRepository.findByIds(subsections);
     }
 }

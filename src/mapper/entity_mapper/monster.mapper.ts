@@ -1,10 +1,19 @@
-import { AbilityScore } from '../../entity/ability-score.entity';
 import EntityMapper from './interface/entity-mapper.interface';
 import { Monster } from '../../entity/monster.entity';
 import { SpecialAbility } from '../../entity/types/special-ability.type';
 import { ActionType } from '../../entity/types/action.type';
+import { DataSource, Repository } from 'typeorm';
+import { Condition } from '../../entity/condition.entity';
 
 export default class MonsterMapper extends EntityMapper<Monster> {
+    protected conditionRepository: Repository<Condition>;
+
+    constructor(entity: new () => Monster, dataSource: DataSource) {
+        super(entity, dataSource);
+
+        this.conditionRepository = dataSource.getRepository(Condition);
+    }
+
     async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
@@ -32,9 +41,11 @@ export default class MonsterMapper extends EntityMapper<Monster> {
                 };
             }),
             damage_vulnerabilities: obj.damage_vulnerabilities,
-            condition_immunities: obj.condition_immunities?.map(
-                (c: any) => c.index,
-            ),
+            condition_immunities: !!obj.condition_immunities
+                ? await this.parseConditions(
+                      obj.condition_immunities.map(c => c.index),
+                  )
+                : [],
             senses: obj.senses,
             languages: obj.languages,
             challenge_rating: obj.challenge_rating,
@@ -43,6 +54,10 @@ export default class MonsterMapper extends EntityMapper<Monster> {
             special_abilities: this.parseSpecialAbilities(obj),
             actions: this.parseActions(obj),
         });
+    }
+
+    private async parseConditions(conditions: string[]) {
+        return this.conditionRepository.findByIds(conditions);
     }
 
     private parseSpecialAbilities(obj: any): SpecialAbility[] {

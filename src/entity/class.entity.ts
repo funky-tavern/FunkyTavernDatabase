@@ -1,4 +1,11 @@
-import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable, JoinColumn } from 'typeorm';
+import {
+    Entity,
+    PrimaryColumn,
+    Column,
+    ManyToMany,
+    JoinTable,
+    JoinColumn,
+} from 'typeorm';
 import { Proficiency } from './proficiency.entity';
 import { AbilityScore } from './ability-score.entity';
 import { EQUIPMENT_QUANTITY_TYPE } from './types/equipment-quantity-type';

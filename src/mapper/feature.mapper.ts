@@ -1,9 +1,8 @@
 import EntityMapper from './entity_mapper/interface/entity-mapper.interface';
 import { Feature } from '../entity/feature.entity';
 
-
 export default class FeatureMapper extends EntityMapper<Feature> {
-    map(obj: any): Feature {
+    async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
             name: obj.name,

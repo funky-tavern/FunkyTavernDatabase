@@ -18,19 +18,25 @@ export default class SpellMapper extends EntityMapper<Spell> {
             casting_time: obj.casting_time,
             level: obj.level,
             attack_type: obj.attack_type,
-            damage: !!obj.damage ? {
-                damage_type: obj.damage.damage_type?.index,
-                damage_at_slot_level: obj.damage.damage_at_slot_level,
-            } : null,
-            dc: !!obj.dc ? {
-                dc_type: obj.dc.dc_type.index,
-                success_type: obj.dc.dc_success,
-            } : null,
+            damage: !!obj.damage
+                ? {
+                      damage_type: obj.damage.damage_type?.index,
+                      damage_at_slot_level: obj.damage.damage_at_slot_level,
+                  }
+                : null,
+            dc: !!obj.dc
+                ? {
+                      dc_type: obj.dc.dc_type.index,
+                      success_type: obj.dc.dc_success,
+                  }
+                : null,
             heal_at_slot_level: obj.heal_at_slot_level,
-            area_of_effect: !!obj.area_of_effect ? {
-                type: obj.area_of_effect.type,
-                size: obj.area_of_effect.size,
-            } : null,
+            area_of_effect: !!obj.area_of_effect
+                ? {
+                      type: obj.area_of_effect.type,
+                      size: obj.area_of_effect.size,
+                  }
+                : null,
             school: obj.school.index,
         });
     }
