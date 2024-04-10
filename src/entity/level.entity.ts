@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, ManyToMany, JoinColumn, OneToOne } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToMany, JoinColumn, OneToOne, ManyToOne, JoinTable } from 'typeorm';
 import { Class } from './class.entity';
 import { SubClass } from './subclass.entity';
 import { Feature } from './feature.entity';
@@ -8,18 +8,17 @@ export class Level {
     @PrimaryColumn()
     index: string;
 
-    @OneToOne(() => Class)
-    @JoinColumn()
+    @ManyToOne(() => Class)
     class: Class;
 
-    @OneToOne(() => SubClass, { nullable: true })
-    @JoinColumn()
+    @ManyToOne(() => SubClass, { nullable: true })
     subclass: SubClass;
 
     @Column()
     level: number;
 
     @ManyToMany(() => Feature)
+    @JoinTable()
     features: Feature[];
 
     @Column({ nullable: true })

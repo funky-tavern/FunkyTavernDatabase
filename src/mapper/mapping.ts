@@ -59,73 +59,73 @@ type EntityMapping = {
 };
 
 const ENTITY_MAPPINGS: EntityMapping[] = [
-    // {
-    //     entity: AbilityScore,
-    //     mapper: AbilityScoreMapper,
-    //     path: `${API_BASE_URL}/ability-scores`,
-    // },
-    // { entity: Skill, mapper: SkillMapper, path: `${API_BASE_URL}/skills` },
-    // {
-    //     entity: Language,
-    //     mapper: LanguageMapper,
-    //     path: `${API_BASE_URL}/languages`,
-    // },
-    // {
-    //     entity: Alignment,
-    //     mapper: AlignmentMapper,
-    //     path: `${API_BASE_URL}/alignments`,
-    // },
-    // {
-    //     entity: Condition,
-    //     mapper: ConditionMapper,
-    //     path: `${API_BASE_URL}/conditions`,
-    // },
-    // {
-    //     entity: DamageType,
-    //     mapper: DamageTypeMapper,
-    //     path: `${API_BASE_URL}/damage-types`,
-    // },
-    // {
-    //     entity: EquipmentCategory,
-    //     mapper: EquipmentCategoryMapper,
-    //     path: `${API_BASE_URL}/equipment-categories`,
-    // },
-    // {
-    //     entity: RuleSection,
-    //     mapper: RuleSectionMapper,
-    //     path: `${API_BASE_URL}/rule-sections`,
-    // },
-    // { entity: Rules, mapper: RulesMapper, path: `${API_BASE_URL}/rules` },
-    // {
-    //     entity: WeaponProperty,
-    //     mapper: WeaponPropertyMapper,
-    //     path: `${API_BASE_URL}/weapon-properties`,
-    // },
-    // {
-    //     entity: Equipment,
-    //     mapper: EquipmentMapper,
-    //     path: `${API_BASE_URL}/equipment`,
-    // },
-    // {
-    //     entity: Proficiency,
-    //     mapper: ProficiencyMapper,
-    //     path: `${API_BASE_URL}/proficiencies`,
-    // },
-    // {
-    //     entity: Monster,
-    //     mapper: MonsterMapper,
-    //     path: `${API_BASE_URL}/monsters`,
-    // },
-    // {
-    //     entity: MagicSchool,
-    //     mapper: MagicSchoolMapper,
-    //     path: `${API_BASE_URL}/magic-schools`,
-    // },
-    // {
-    //     entity: Spell,
-    //     mapper: SpellMapper,
-    //     path: `${API_BASE_URL}/spells`,
-    // },
+    {
+        entity: AbilityScore,
+        mapper: AbilityScoreMapper,
+        path: `${API_BASE_URL}/ability-scores`,
+    },
+    { entity: Skill, mapper: SkillMapper, path: `${API_BASE_URL}/skills` },
+    {
+        entity: Language,
+        mapper: LanguageMapper,
+        path: `${API_BASE_URL}/languages`,
+    },
+    {
+        entity: Alignment,
+        mapper: AlignmentMapper,
+        path: `${API_BASE_URL}/alignments`,
+    },
+    {
+        entity: Condition,
+        mapper: ConditionMapper,
+        path: `${API_BASE_URL}/conditions`,
+    },
+    {
+        entity: DamageType,
+        mapper: DamageTypeMapper,
+        path: `${API_BASE_URL}/damage-types`,
+    },
+    {
+        entity: EquipmentCategory,
+        mapper: EquipmentCategoryMapper,
+        path: `${API_BASE_URL}/equipment-categories`,
+    },
+    {
+        entity: RuleSection,
+        mapper: RuleSectionMapper,
+        path: `${API_BASE_URL}/rule-sections`,
+    },
+    { entity: Rules, mapper: RulesMapper, path: `${API_BASE_URL}/rules` },
+    {
+        entity: WeaponProperty,
+        mapper: WeaponPropertyMapper,
+        path: `${API_BASE_URL}/weapon-properties`,
+    },
+    {
+        entity: Equipment,
+        mapper: EquipmentMapper,
+        path: `${API_BASE_URL}/equipment`,
+    },
+    {
+        entity: Proficiency,
+        mapper: ProficiencyMapper,
+        path: `${API_BASE_URL}/proficiencies`,
+    },
+    {
+        entity: Monster,
+        mapper: MonsterMapper,
+        path: `${API_BASE_URL}/monsters`,
+    },
+    {
+        entity: MagicSchool,
+        mapper: MagicSchoolMapper,
+        path: `${API_BASE_URL}/magic-schools`,
+    },
+    {
+        entity: Spell,
+        mapper: SpellMapper,
+        path: `${API_BASE_URL}/spells`,
+    },
     {
         entity: Class,
         mapper: ClassMapper,
@@ -141,21 +141,21 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
         mapper: FeatureMapper,
         path: `${API_BASE_URL}/features`,
     },
-    // {
-    //     entity: Level,
-    //     mapper: LevelMapper,
-    //     parents: [
-    //         {
-    //             parent: Class,
-    //             path: `${API_BASE_URL}/classes`
-    //         },
-    //         {
-    //             parent: SubClass,
-    //             path: `${API_BASE_URL}/subclasses`
-    //         }
-    //     ],
-    //     subpath: 'levels'
-    // }
+    {
+        entity: Level,
+        mapper: LevelMapper,
+        parents: [
+            {
+                parent: Class,
+                path: `${API_BASE_URL}/classes`
+            },
+            {
+                parent: SubClass,
+                path: `${API_BASE_URL}/subclasses`
+            }
+        ],
+        subpath: 'levels'
+    }
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);

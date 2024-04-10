@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable, JoinColumn } from 'typeorm';
 import { Proficiency } from './proficiency.entity';
 import { AbilityScore } from './ability-score.entity';
 import { EQUIPMENT_QUANTITY_TYPE } from './types/equipment-quantity-type';
@@ -22,14 +22,12 @@ export class Class {
     @Column('simple-json')
     proficiency_choices: ProficiencyChoices[];
 
-    @Column('simple-json', {
-        nullable: true,
-    })
+    @ManyToMany(() => Proficiency, { nullable: true })
+    @JoinTable()
     proficiencies: Proficiency[];
 
-    @Column('simple-json', {
-        nullable: true,
-    })
+    @ManyToMany(() => AbilityScore, { nullable: true })
+    @JoinTable()
     saving_throws: AbilityScore[];
 
     @Column('simple-json', {

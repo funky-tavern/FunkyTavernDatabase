@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, JoinColumn, ManyToOne } from 'typeorm';
+import { Entity, PrimaryColumn, Column, JoinColumn, ManyToOne, ManyToMany } from 'typeorm';
 import { OneToOne } from 'typeorm';
 import { AbilityScore } from './ability-score.entity';
 
@@ -14,6 +14,5 @@ export class Skill {
     desc: string;
 
     @ManyToOne(() => AbilityScore)
-    @JoinColumn()
-    ability_score: AbilityScore[];
+    ability_score: AbilityScore;
 }

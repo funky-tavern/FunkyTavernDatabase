@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable, JoinColumn } from 'typeorm';
 import { ArmorClassType } from './types/armor-class.type';
 import { SpeedType } from './types/speed.type';
 import { ProficiencyValueType } from './types/proficiency-value.type';
