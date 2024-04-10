@@ -29,6 +29,9 @@ import ClassMapper from './entity_mapper/class.mapper';
 import EntityMapper from './entity_mapper/interface/entity-mapper.interface';
 import { ObjectLiteral } from 'typeorm/browser';
 import { DataSource } from 'typeorm';
+import { Spell } from '../entity/.spell.entity';
+import { MagicSchool } from '../entity/magic-school.entity';
+import MagicSchoolMapper from './entity_mapper/magic-school.mapper';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
@@ -107,10 +110,20 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
     //     path: `${API_BASE_URL}/monsters`,
     // },
     {
-        entity: Class,
-        mapper: ClassMapper,
-        path: `${API_BASE_URL}/classes`,
-    },
+        entity: MagicSchool,
+        mapper: MagicSchoolMapper,
+        path: `${API_BASE_URL}/magic-schools`,
+    }
+    // {
+    //     entity: Spell,
+    //     mapper: SpellMapper,
+    //     path: `${API_BASE_URL}/spells`,
+    // }
+    // {
+    //     entity: Class,
+    //     mapper: ClassMapper,
+    //     path: `${API_BASE_URL}/classes`,
+    // },
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
