@@ -33,6 +33,8 @@ import { Spell } from '../entity/spell.entity';
 import { MagicSchool } from '../entity/magic-school.entity';
 import MagicSchoolMapper from './entity_mapper/magic-school.mapper';
 import SpellMapper from './entity_mapper/spell.mapper';
+import SubClassMapper from './entity_mapper/subclass.mapper';
+import { SubClass } from '../entity/subclass.entity';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
@@ -119,12 +121,17 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
         entity: Spell,
         mapper: SpellMapper,
         path: `${API_BASE_URL}/spells`,
+    },
+    {
+        entity: Class,
+        mapper: ClassMapper,
+        path: `${API_BASE_URL}/classes`,
+    },
+    {
+        entity: SubClass,
+        mapper: SubClassMapper,
+        path: `${API_BASE_URL}/subclasses`,
     }
-    // {
-    //     entity: Class,
-    //     mapper: ClassMapper,
-    //     path: `${API_BASE_URL}/classes`,
-    // },
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
