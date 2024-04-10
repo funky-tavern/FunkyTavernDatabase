@@ -3,7 +3,7 @@ import { Skill } from '../../entity/skill.entity';
 import { Spell } from '../../entity/spell.entity';
 
 export default class SpellMapper extends EntityMapper<Spell> {
-    map(obj: any): Spell {
+    async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
             name: obj.name,

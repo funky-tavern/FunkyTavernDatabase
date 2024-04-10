@@ -2,7 +2,7 @@ import EntityMapper from './interface/entity-mapper.interface';
 import { WeaponProperty } from '../../entity/weapon-property.entity';
 
 export default class WeaponPropertyMapper extends EntityMapper<WeaponProperty> {
-    map(obj: any): WeaponProperty {
+    async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
             name: obj.name,

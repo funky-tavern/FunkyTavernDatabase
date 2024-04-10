@@ -2,7 +2,7 @@ import EntityMapper from './interface/entity-mapper.interface';
 import { Equipment } from '../../entity/equipment.entity';
 
 export default class EquipmentMapper extends EntityMapper<Equipment> {
-    map(obj: any): Equipment {
+    async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
             name: obj.name,

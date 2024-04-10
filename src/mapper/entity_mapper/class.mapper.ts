@@ -4,7 +4,7 @@ import { Class } from '../../entity/class.entity';
 import { StartingEquipmentOptions } from '../../entity/types/options/starting-equipment-options';
 
 export default class ClassMapper extends EntityMapper<Class> {
-    map(obj: any): Class {
+    async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
             name: obj.name,

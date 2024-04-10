@@ -1,12 +1,9 @@
-import { AbilityScore } from '../../entity/ability-score.entity';
 import EntityMapper from './interface/entity-mapper.interface';
-import { Monster } from '../../entity/monster.entity';
 import { Proficiency } from '../../entity/proficiency.entity';
-import { match } from 'node:assert';
 import ProficiencyReferenceType from '../../entity/types/proficiency-type.type';
 
 export default class ProficiencyMapper extends EntityMapper<Proficiency> {
-    map(obj: any): Proficiency {
+    async map(obj: any) {
         let proficiencyType = obj.reference.url.split('/')[2];
 
         return this.entityRepository.create({

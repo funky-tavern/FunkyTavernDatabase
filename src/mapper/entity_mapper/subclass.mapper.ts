@@ -3,7 +3,7 @@ import { Skill } from '../../entity/skill.entity';
 import { SubClass } from '../../entity/subclass.entity';
 
 export default class SubClassMapper extends EntityMapper<SubClass> {
-    map(obj: any): SubClass {
+    async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
             class: obj.class.index,

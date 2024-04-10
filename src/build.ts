@@ -24,10 +24,10 @@ async function populateTable(mapping: EntityMapping): Promise<number> {
         throw new Error('No path or parents provided');
     }
 
+    let entities = await Promise.all(data.map(obj => entityMapper.map(obj)));
+
     return (
-        await Repository.save(
-            data.map((entity: any) => entityMapper.map(entity)),
-        )
+        await Repository.save(entities)
     ).length;
 }
 

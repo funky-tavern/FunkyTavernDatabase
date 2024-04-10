@@ -5,7 +5,7 @@ import { SpecialAbility } from '../../entity/types/special-ability.type';
 import { ActionType } from '../../entity/types/action.type';
 
 export default class MonsterMapper extends EntityMapper<Monster> {
-    map(obj: any): Monster {
+    async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
             name: obj.name,

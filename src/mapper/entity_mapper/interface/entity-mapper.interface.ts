@@ -10,5 +10,7 @@ export default abstract class EntityMapper<Entity extends ObjectLiteral> {
         this.entityRepository = dataSource.getRepository(entity);
     }
 
-    abstract map(data: any): Entity;
+    async map(data: any): Promise<Entity> {
+        throw new Error('Method not implemented.');
+    }
 }

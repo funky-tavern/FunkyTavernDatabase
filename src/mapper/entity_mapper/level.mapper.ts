@@ -3,7 +3,7 @@ import { Skill } from '../../entity/skill.entity';
 import { Level } from '../../entity/level.entity';
 
 export default class LevelMapper extends EntityMapper<Level> {
-    map(obj: any): Level {
+    async map(obj: any) {
         return this.entityRepository.create({
             index: obj.index,
             class: obj.class.index,

@@ -1,6 +1,5 @@
-import { Entity, PrimaryColumn, Column, JoinTable } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable } from 'typeorm';
 import { RuleSection } from './rule-section.entity';
-import { ManyToMany } from 'typeorm';
 
 @Entity()
 export class Rules {
