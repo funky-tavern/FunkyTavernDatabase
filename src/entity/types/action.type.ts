@@ -1,31 +1,29 @@
-import { Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const ActionType = Type.Object({
-    name: Type.String(),
-    multiattack_type: Type.Optional(Type.String()),
-    desc: Type.String(),
-    attack_bonus: Type.Optional(Type.Integer()),
-    dc: Type.Optional(
-        Type.Object({
-            dc_type: Type.String(),
-            dc_value: Type.Integer(),
-            success_type: Type.String(),
+
+export const ActionType = z.object({
+    name: z.string(),
+    multiattack_type: z.string().optional(),
+    desc: z.string(),
+    attack_bonus: z.number().optional(),
+    dc: z.object({
+        dc_type: z.string(),
+        dc_value: z.number(),
+        success_type: z.string(),
+    }).optional(),
+    damage: z.array(
+        z.object({
+            damage_type: z.string(),
+            damage_dice: z.string(),
         }),
-    ),
-    damage: Type.Optional(
-        Type.Array(
-            Type.Object({
-                damage_type: Type.String(),
-                damage_dice: Type.String(),
-            }),
-        ),
-    ),
-    actions: Type.Array(
-        Type.Object({
-            action_name: Type.String(),
-            count: Type.Integer(),
-            type: Type.String(),
+    ).optional(),
+    actions: z.array(
+        z.object({
+            action_name: z.string(),
+            count: z.number(),
+            type: z.string(),
         }),
     ),
 });
-export type ActionType = Static<typeof ActionType>;
+
+export type ActionType = z.infer<typeof ActionType>;

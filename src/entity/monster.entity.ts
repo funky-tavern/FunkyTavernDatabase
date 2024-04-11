@@ -4,7 +4,6 @@ import {
     Column,
     ManyToMany,
     JoinTable,
-    JoinColumn,
 } from 'typeorm';
 import { ArmorClassType } from './types/armor-class.type';
 import { SpeedType } from './types/speed.type';

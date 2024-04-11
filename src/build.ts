@@ -1,27 +1,40 @@
 import { AppDataSource } from './data-source';
 import { DataFetcher } from './mapper/dataFetcher';
-import { ENTITY_MAPPINGS, EntityMapping } from './mapper/mapping';
+import { ENTITY_MAPPINGS, EntityMapping, Mappings, ParentMapping } from './mapper/mapping';
 
-async function populateTable(mapping: EntityMapping): Promise<number> {
+
+async function getFromEntityMapping(mapping: EntityMapping): Promise<Object[]> {
+    return DataFetcher.fromUrl(mapping.path);
+}
+
+
+async function getFromParentMapping(mapping: ParentMapping): Promise<Object[]> {
+    let data = []
+    for (let parentMapping of mapping.parents) {
+        data = [
+            ...data,
+            ...(await DataFetcher.fromParentUrl(
+                mapping.subpath,
+                parentMapping.path,
+            )),
+        ];
+    }
+
+    return data;
+}
+
+async function populateTable(mapping: Mappings): Promise<number> {
     const Repository = AppDataSource.getRepository(mapping.entity);
 
     let entityMapper = new mapping.mapper(mapping.entity, AppDataSource);
 
     let data = [];
-    if (!!mapping.parents && mapping.parents.length > 0 && !!mapping.subpath) {
-        for (let parentMapping of mapping.parents) {
-            data = [
-                ...data,
-                ...(await DataFetcher.fromParentUrl(
-                    mapping.subpath,
-                    parentMapping.path,
-                )),
-            ];
-        }
-    } else if (!!mapping.path) {
-        data = [...(await DataFetcher.fromUrl(mapping.path))];
+    if (!!(<EntityMapping>mapping).path) {
+        data = await getFromEntityMapping(<EntityMapping>mapping);
+    } else if (!!(<ParentMapping>mapping).parents) {
+        data = await getFromParentMapping(<ParentMapping>mapping);
     } else {
-        throw new Error('No path or parents provided');
+        throw new Error('Invalid mapping');
     }
 
     let entities = await Promise.all(data.map(obj => entityMapper.map(obj)));

@@ -1,11 +1,13 @@
-import { type Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const DC = Type.Object({
-    dc_type: Type.String(),
-    success_type: Type.Union([
-        Type.Literal('none'),
-        Type.Literal('half'),
-        Type.Literal('full'),
+
+export const DC = z.object({
+    dc_type: z.string(),
+    success_type: z.union([
+        z.literal('none'),
+        z.literal('half'),
+        z.literal('full'),
     ]),
 });
-export type DC = Static<typeof DC>;
+
+export type DC = z.infer<typeof DC>;

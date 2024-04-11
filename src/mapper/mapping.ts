@@ -1,8 +1,8 @@
+import { ObjectLiteral, DataSource } from 'typeorm';
+
 import { RuleSection } from '../entity/rule-section.entity';
 import RuleSectionMapper from './entity_mapper/rule-sections.mapper';
 import EntityMapper from './entity_mapper/interface/entity-mapper.interface';
-import { ObjectLiteral } from 'typeorm/browser';
-import { DataSource } from 'typeorm';
 import { Rules } from '../entity/rules.entity';
 import RulesMapper from './entity_mapper/rules.mapper';
 import { AbilityScore } from '../entity/ability-score.entity';
@@ -40,25 +40,35 @@ import FeatureMapper from './feature.mapper';
 import { Level } from '../entity/level.entity';
 import LevelMapper from './entity_mapper/level.mapper';
 
+
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
-type ParentMapping = {
-    parent: new () => ObjectLiteral;
-    path: string;
-};
 
-type EntityMapping = {
+type BaseMapping = {
     entity: new () => ObjectLiteral;
     mapper: new (
         entity: new () => ObjectLiteral,
         dataSource: DataSource,
     ) => EntityMapper<ObjectLiteral>;
-    path?: string;
-    parents?: ParentMapping[];
-    subpath?: string;
+}
+
+type ParentMapping = BaseMapping & {
+    parents: {
+        parent: new () => ObjectLiteral;
+        path: string;
+    }[];
+    subpath: string;
 };
 
-const ENTITY_MAPPINGS: EntityMapping[] = [
+type EntityMapping = BaseMapping & {
+    path: string;
+};
+
+
+type Mappings = ParentMapping | EntityMapping;
+
+
+const ENTITY_MAPPINGS: Mappings[] = [
     {
         entity: AbilityScore,
         mapper: AbilityScoreMapper,
@@ -160,6 +170,6 @@ const ENTITY_MAPPINGS: EntityMapping[] = [
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
 
-export type { EntityMapping };
+export type { Mappings, EntityMapping, ParentMapping };
 export { ENTITY_MAPPINGS };
 export { ENTITIES };

@@ -1,17 +1,19 @@
-import { type Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const PREREQUISITES = Type.Union([
-    Type.Object({
-        type: Type.Literal('spell'),
-        spell: Type.String(),
+
+export const PREREQUISITES = z.union([
+    z.object({
+        type: z.literal('spell'),
+        spell: z.string(),
     }),
-    Type.Object({
-        type: Type.Literal('level'),
-        level: Type.Integer(),
+    z.object({
+        type: z.literal('level'),
+        level: z.number(),
     }),
-    Type.Object({
-        type: Type.Literal('feature'),
-        feature: Type.String(),
+    z.object({
+        type: z.literal('feature'),
+        feature: z.string(),
     }),
 ]);
-export type PREREQUISITES = Static<typeof PREREQUISITES>;
+
+export type PREREQUISITES = z.infer<typeof PREREQUISITES>;

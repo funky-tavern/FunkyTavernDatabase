@@ -1,28 +1,30 @@
-import { type Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const DAMAGE = Type.Object({
-    damage_type: Type.Optional(Type.String()),
-    damage_at_slot_level: Type.Object({
-        1: Type.Optional(Type.String()),
-        2: Type.Optional(Type.String()),
-        3: Type.Optional(Type.String()),
-        4: Type.Optional(Type.String()),
-        5: Type.Optional(Type.String()),
-        6: Type.Optional(Type.String()),
-        7: Type.Optional(Type.String()),
-        8: Type.Optional(Type.String()),
-        9: Type.Optional(Type.String()),
-        10: Type.Optional(Type.String()),
-        11: Type.Optional(Type.String()),
-        12: Type.Optional(Type.String()),
-        13: Type.Optional(Type.String()),
-        14: Type.Optional(Type.String()),
-        15: Type.Optional(Type.String()),
-        16: Type.Optional(Type.String()),
-        17: Type.Optional(Type.String()),
-        18: Type.Optional(Type.String()),
-        19: Type.Optional(Type.String()),
-        20: Type.Optional(Type.String()),
+
+export const DAMAGE = z.object({
+    damage_type: z.string().optional(),
+    damage_at_slot_level: z.object({
+        1: z.string().optional(),
+        2: z.string().optional(),
+        3: z.string().optional(),
+        4: z.string().optional(),
+        5: z.string().optional(),
+        6: z.string().optional(),
+        7: z.string().optional(),
+        8: z.string().optional(),
+        9: z.string().optional(),
+        10: z.string().optional(),
+        11: z.string().optional(),
+        12: z.string().optional(),
+        13: z.string().optional(),
+        14: z.string().optional(),
+        15: z.string().optional(),
+        16: z.string().optional(),
+        17: z.string().optional(),
+        18: z.string().optional(),
+        19: z.string().optional(),
+        20: z.string().optional(),
     }),
 });
-export type DAMAGE = Static<typeof DAMAGE>;
+
+export type DAMAGE = z.infer<typeof DAMAGE>;

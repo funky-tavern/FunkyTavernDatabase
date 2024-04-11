@@ -1,3 +1,5 @@
+import { z } from 'zod';
+
 import {
     OptionArray,
     OptionChoice,
@@ -6,12 +8,11 @@ import {
     Options,
 } from './option.interface';
 
-import { Type, type Static } from '@sinclair/typebox';
 
 export const StartingEquipmentOptions = Options(
-    Type.Union([
+    z.union([
         OptionArray(OptionCountedReference),
         OptionChoice(OptionEquipmentCategory),
     ]),
 );
-export type StartingEquipmentOptions = Static<typeof StartingEquipmentOptions>;
+export type StartingEquipmentOptions = z.infer<typeof StartingEquipmentOptions>;

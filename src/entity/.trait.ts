@@ -1,7 +1,5 @@
 import { Entity, PrimaryColumn, Column } from 'typeorm';
 import { LanguageOption } from './types/options/language-option.interface';
-import { LanguageOptionConverter } from './types/converter/language-option-converter';
-import { TraitSpecificConverter } from './types/converter/trait-converter';
 import { TraitSpecific } from './types/trait-specific';
 
 @Entity()
@@ -53,19 +51,11 @@ export class Trait {
     proficiencies: string;
 
     @Column('simple-json', {
-        transformer: {
-            to: TraitSpecificConverter.to,
-            from: TraitSpecificConverter.from,
-        },
         nullable: true,
     })
     trait_specific: TraitSpecific;
 
     @Column('simple-json', {
-        transformer: {
-            to: LanguageOptionConverter.to,
-            from: LanguageOptionConverter.from,
-        },
         nullable: true,
     })
     language_options: LanguageOption;

@@ -1,7 +1,9 @@
-import { Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const ProficiencyValueType = Type.Object({
-    value: Type.String(),
-    proficienty: Type.String(),
+
+export const ProficiencyValueType = z.object({
+    value: z.string(),
+    proficienty: z.string(),
 });
-export type ProficiencyValueType = Static<typeof ProficiencyValueType>;
+
+export type ProficiencyValueType = z.infer<typeof ProficiencyValueType>;

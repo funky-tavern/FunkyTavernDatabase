@@ -1,14 +1,16 @@
-import { type Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const AREA_OF_EFFECT = Type.Object({
-    type: Type.Union([
-        Type.Literal('cone'),
-        Type.Literal('cube'),
-        Type.Literal('cylinder'),
-        Type.Literal('line'),
-        Type.Literal('sphere'),
+
+export const AREA_OF_EFFECT = z.object({
+    type: z.union([
+        z.literal('cone'),
+        z.literal('cube'),
+        z.literal('cylinder'),
+        z.literal('line'),
+        z.literal('sphere'),
     ]),
-    size: Type.Number(),
-    size_unit: Type.Union([Type.Literal('feet'), Type.Literal('meters')]),
+    size: z.number(),
+    size_unit: z.union([z.literal('feet'), z.literal('meters')]),
 });
-export type AREA_OF_EFFECT = Static<typeof AREA_OF_EFFECT>;
+
+export type AREA_OF_EFFECT = z.infer<typeof AREA_OF_EFFECT>;

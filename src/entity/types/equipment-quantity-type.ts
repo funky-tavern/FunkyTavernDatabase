@@ -1,7 +1,9 @@
-import { type Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const EQUIPMENT_QUANTITY_TYPE = Type.Object({
-    quantity: Type.Number(),
-    equipment: Type.String(),
+
+export const EQUIPMENT_QUANTITY_TYPE = z.object({
+    quantity: z.number(),
+    equipment: z.string(),
 });
-export type EQUIPMENT_QUANTITY_TYPE = Static<typeof EQUIPMENT_QUANTITY_TYPE>;
+
+export type EQUIPMENT_QUANTITY_TYPE = z.infer<typeof EQUIPMENT_QUANTITY_TYPE>;

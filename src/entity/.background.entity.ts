@@ -1,5 +1,4 @@
 import { Entity, PrimaryColumn, Column } from 'typeorm';
-import { LanguageOptionConverter } from './types/converter/language-option-converter';
 import { LanguageOption } from './types/options/language-option.interface';
 
 @Entity()
@@ -39,12 +38,7 @@ export class Background {
     })
     starting_proficiencies: string;
 
-    @Column('simple-json', {
-        transformer: {
-            to: LanguageOptionConverter.to,
-            from: LanguageOptionConverter.from,
-        },
-    })
+    @Column('simple-json')
     language_options: LanguageOption;
 
     @Column('simple-json', {

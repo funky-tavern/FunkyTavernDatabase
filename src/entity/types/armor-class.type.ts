@@ -1,7 +1,9 @@
-import { Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const ArmorClassType = Type.Object({
-    type: Type.String(),
-    value: Type.Number(),
+
+export const ArmorClassType = z.object({
+    type: z.string(),
+    value: z.number(),
 });
-export type ArmorClassType = Static<typeof ArmorClassType>;
+
+export type ArmorClassType = z.infer<typeof ArmorClassType>;

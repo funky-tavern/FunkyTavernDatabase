@@ -1,7 +1,9 @@
-import { type Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const ClassPrerequisites = Type.Object({
-    ability_score: Type.String(),
-    minimum_score: Type.Number(),
+
+export const ClassPrerequisites = z.object({
+    ability_score: z.string(),
+    minimum_score: z.number(),
 });
-export type ClassPrerequisites = Static<typeof ClassPrerequisites>;
+
+export type ClassPrerequisites = z.infer<typeof ClassPrerequisites>;

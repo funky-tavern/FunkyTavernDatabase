@@ -1,14 +1,14 @@
-import { Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const SpecialAbility = Type.Object({
-    name: Type.String(),
-    desc: Type.String(),
-    dc: Type.Optional(
-        Type.Object({
-            dc_type: Type.String(),
-            dc_value: Type.Integer(),
-            success_type: Type.String(),
-        }),
-    ),
+
+export const SpecialAbility = z.object({
+    name: z.string(),
+    desc: z.string(),
+    dc: z.object({
+        dc_type: z.string(),
+        dc_value: z.number(),
+        success_type: z.string(),
+    }).optional(),
 });
-export type SpecialAbility = Static<typeof SpecialAbility>;
+
+export type SpecialAbility = z.infer<typeof SpecialAbility>;

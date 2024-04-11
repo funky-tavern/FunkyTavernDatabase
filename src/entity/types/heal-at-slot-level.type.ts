@@ -1,14 +1,16 @@
-import { type Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const HEAL_AT_SLOT_LEVEL = Type.Object({
-    1: Type.Optional(Type.String()),
-    2: Type.Optional(Type.String()),
-    3: Type.Optional(Type.String()),
-    4: Type.Optional(Type.String()),
-    5: Type.Optional(Type.String()),
-    6: Type.Optional(Type.String()),
-    7: Type.Optional(Type.String()),
-    8: Type.Optional(Type.String()),
-    9: Type.Optional(Type.String()),
+
+export const HEAL_AT_SLOT_LEVEL = z.object({
+    1: z.string().optional(),
+    2: z.string().optional(),
+    3: z.string().optional(),
+    4: z.string().optional(),
+    5: z.string().optional(),
+    6: z.string().optional(),
+    7: z.string().optional(),
+    8: z.string().optional(),
+    9: z.string().optional(),
 });
-export type HEAL_AT_SLOT_LEVEL = Static<typeof HEAL_AT_SLOT_LEVEL>;
+
+export type HEAL_AT_SLOT_LEVEL = z.infer<typeof HEAL_AT_SLOT_LEVEL>;

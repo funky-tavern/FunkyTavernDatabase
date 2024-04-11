@@ -1,32 +1,32 @@
-import { Type, type Static, type TSchema } from '@sinclair/typebox';
+import { z } from "zod";
 
 // Option Set Type Definition
-export const OptionArray = <T extends TSchema>(T: T) =>
-    Type.Object({
-        options: Type.Array(T),
+export const OptionArray = <T extends z.ZodType<any>>(T: T) =>
+    z.object({
+        options: z.array(T),
     });
 
-export const OptionEquipmentCategory = Type.Object({
-    equipment_category: Type.String(),
+export const OptionEquipmentCategory = z.object({
+    equipment_category: z.string(),
 });
 
-// Options Definition
-export const Options = <T extends TSchema>(T: T) =>
-    Type.Object({
-        desc: Type.String(),
-        type: Type.String(),
-        choose: Type.Number(),
+
+export const Options = <T extends z.ZodType<any>>(T: T) =>
+    z.object({
+        desc: z.string(),
+        type: z.string(),
+        choose: z.number(),
         from: T,
     });
 
 // OptionSet Type Definition
-export const OptionReference = Type.String();
-export type OptionReference = Static<typeof OptionReference>;
+export const OptionReference = z.string();
+export type OptionReference = z.infer<typeof OptionReference>;
 
-export const OptionCountedReference = Type.Object({
-    count: Type.Number(),
-    of: Type.String(),
+export const OptionCountedReference = z.object({
+    count: z.number(),
+    of: z.string(),
 });
-export type OptionCountedReference = Static<typeof OptionCountedReference>;
+export type OptionCountedReference = z.infer<typeof OptionCountedReference>;
 
-export const OptionChoice = <T extends TSchema>(T: T) => Options(T);
+export const OptionChoice = <T extends z.ZodType<any>>(T: T) => Options(T);

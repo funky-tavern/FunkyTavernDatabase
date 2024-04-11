@@ -1,7 +1,9 @@
-import { Static, Type } from '@sinclair/typebox';
+import { z } from "zod";
 
-export const SpeedType = Type.Object({
-    walk: Type.String(),
-    swim: Type.String(),
+
+export const SpeedType = z.object({
+    walk: z.string(),
+    swim: z.string(),
 });
-export type SpeedType = Static<typeof SpeedType>;
+
+export type SpeedType = z.infer<typeof SpeedType>;
