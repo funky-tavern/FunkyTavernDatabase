@@ -27,6 +27,11 @@ export class DataFetcher {
                 );
             }
 
+            const tmpData = await res.json();
+            if (!!tmpData.index) {
+                tmpData.index = parentIndex;
+            }
+
             data = [...data, ...(await res.json())];
         }
 

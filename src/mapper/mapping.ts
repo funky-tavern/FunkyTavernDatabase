@@ -39,6 +39,8 @@ import { Feature } from '../entity/feature.entity';
 import FeatureMapper from './feature.mapper';
 import { Level } from '../entity/level.entity';
 import LevelMapper from './entity_mapper/level.mapper';
+import { SpellList } from '../entity/spell-list.entity';
+import SpellListMapper from './entity_mapper/spell-list.mapper';
 
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
@@ -65,7 +67,7 @@ type EntityMapping = BaseMapping & {
 };
 
 
-type Mappings = ParentMapping | EntityMapping;
+type Mappings = EntityMapping | ParentMapping;
 
 
 const ENTITY_MAPPINGS: Mappings[] = [
@@ -166,6 +168,21 @@ const ENTITY_MAPPINGS: Mappings[] = [
         ],
         subpath: 'levels',
     },
+    {
+        entity: SpellList,
+        mapper: SpellListMapper,
+        parents: [
+            {
+                parent: Class,
+                path: `${API_BASE_URL}/classes`,
+            },
+            {
+                parent: SubClass,
+                path: `${API_BASE_URL}/subclasses`,
+            },
+        ],
+        subpath: 'spells',
+    }
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
