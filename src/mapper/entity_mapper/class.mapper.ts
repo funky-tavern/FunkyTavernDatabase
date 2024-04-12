@@ -5,16 +5,19 @@ import { StartingEquipmentOptions } from '../../entity/types/options/starting-eq
 import { DataSource, Repository } from 'typeorm';
 import { Proficiency } from '../../entity/proficiency.entity';
 import { AbilityScore } from '../../entity/ability-score.entity';
+import { Spell } from '../../entity/spell.entity';
 
 export default class ClassMapper extends EntityMapper<Class> {
     protected proficiencyRepository: Repository<Proficiency>;
     protected abilityScoreRepository: Repository<AbilityScore>;
+    protected spellRepository: Repository<Spell>;
 
     constructor(entity: new () => Class, dataSource: DataSource) {
         super(entity, dataSource);
 
         this.proficiencyRepository = dataSource.getRepository(Proficiency);
         this.abilityScoreRepository = dataSource.getRepository(AbilityScore);
+        this.spellRepository = dataSource.getRepository(Spell);
     }
 
     async map(obj: any) {
@@ -55,7 +58,20 @@ export default class ClassMapper extends EntityMapper<Class> {
                     minimum_score: m.minimum_score,
                 };
             }),
+            spellcasting_level: obj.spellcasting?.level,
+            spellcasting_ability: !!obj.spellcasting
+                ? await this.abilityScoreRepository.findOne({
+                      where: { index: obj.spellcasting?.spellcasting_ability.index },
+                  })
+                : null,
+            spells: !!obj.spellcasting ?
+                await this.parseSpells(obj.spells)
+                : null,
         });
+    }
+
+    private async parseSpells(spells: string[]) {
+        return await this.spellRepository.findByIds(spells);
     }
 
     private async parseProficiencies(proficiencies: string[]) {

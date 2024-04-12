@@ -64,6 +64,10 @@ type ParentMapping = BaseMapping & {
 
 type EntityMapping = BaseMapping & {
     path: string;
+    subresources?: {
+        path: string;
+        entity: new () => ObjectLiteral;
+    }[];
 };
 
 
@@ -142,6 +146,12 @@ const ENTITY_MAPPINGS: Mappings[] = [
         entity: Class,
         mapper: ClassMapper,
         path: `${API_BASE_URL}/classes`,
+        subresources: [
+            {
+                path: 'spells',
+                entity: SpellList,
+            }
+        ],
     },
     {
         entity: SubClass,
@@ -168,21 +178,6 @@ const ENTITY_MAPPINGS: Mappings[] = [
         ],
         subpath: 'levels',
     },
-    {
-        entity: SpellList,
-        mapper: SpellListMapper,
-        parents: [
-            {
-                parent: Class,
-                path: `${API_BASE_URL}/classes`,
-            },
-            {
-                parent: SubClass,
-                path: `${API_BASE_URL}/subclasses`,
-            },
-        ],
-        subpath: 'spells',
-    }
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);

@@ -4,7 +4,10 @@ import { ENTITY_MAPPINGS, EntityMapping, Mappings, ParentMapping } from './mappe
 
 
 async function getFromEntityMapping(mapping: EntityMapping): Promise<Object[]> {
-    return DataFetcher.fromUrl(mapping.path);
+    return DataFetcher.fromUrl(
+        mapping.path,
+        mapping.subresources?.map(subresource => subresource.path),
+    );
 }
 
 

@@ -4,7 +4,7 @@ import {
     Column,
     ManyToMany,
     JoinTable,
-    JoinColumn,
+    JoinColumn, ManyToOne,
 } from 'typeorm';
 import { Proficiency } from './proficiency.entity';
 import { AbilityScore } from './ability-score.entity';
@@ -12,6 +12,7 @@ import { EQUIPMENT_QUANTITY_TYPE } from './types/equipment-quantity-type';
 import { ProficiencyChoices } from './types/options/proficiency-choices';
 import { StartingEquipmentOptions } from './types/options/starting-equipment-options';
 import { ClassPrerequisites } from './types/class-prerequisites.type';
+import { Spell } from './spell.entity';
 
 @Entity()
 export class Class {
@@ -49,4 +50,16 @@ export class Class {
         nullable: true,
     })
     multi_classing: ClassPrerequisites[];
+
+    @Column({ nullable: true })
+    spellcasting_level: number;
+
+    @ManyToOne(() => AbilityScore, { nullable: true })
+    spellcasting_ability: AbilityScore;
+
+    @ManyToMany(() => Spell, { nullable: true })
+    @JoinTable()
+    spells: Spell[];
+
+
 }

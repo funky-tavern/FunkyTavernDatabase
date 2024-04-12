@@ -8,8 +8,8 @@ export class DataFetcher {
         return await DataFetcher._extractDataFromParent(subpath, parentPath);
     }
 
-    public static async fromUrl(urlPath: string): Promise<object[]> {
-        return await DataFetcher._extractDataFromUrl(urlPath);
+    public static async fromUrl(urlPath: string, subresources: string[]|undefined): Promise<object[]> {
+        return await DataFetcher._extractDataFromUrl(urlPath, subresources);
     }
 
     private static async _extractDataFromParent(
@@ -27,11 +27,6 @@ export class DataFetcher {
                 );
             }
 
-            const tmpData = await res.json();
-            if (!!tmpData.index) {
-                tmpData.index = parentIndex;
-            }
-
             data = [...data, ...(await res.json())];
         }
 
@@ -40,12 +35,23 @@ export class DataFetcher {
 
     private static async _extractDataFromUrl(
         urlPath: string,
+        subresourcesPath: string[]|undefined,
     ): Promise<object[]> {
         const indexes = await DataFetcher._getIndexes(urlPath);
 
         const data = [];
         for (let index of indexes) {
-            data.push(await DataFetcher._getDataFromIndex(urlPath, index));
+            let elementData = await DataFetcher._getDataFromIndex(urlPath, index);
+
+            if (!!subresourcesPath) {
+                for (let resource of subresourcesPath) {
+                    elementData[resource] = await DataFetcher._getIndexes(
+                        `${urlPath}/${index}/${resource}`
+                    );
+                }
+            }
+
+            data.push(elementData);
         }
 
         return data;
