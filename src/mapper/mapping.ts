@@ -41,6 +41,8 @@ import { Level } from '../entity/level.entity';
 import LevelMapper from './entity_mapper/level.mapper';
 import { SpellList } from '../entity/spell-list.entity';
 import SpellListMapper from './entity_mapper/spell-list.mapper';
+import { Feat } from '../entity/feat.entity';
+import FeatMapper from './entity_mapper/feat.mapper';
 
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
@@ -79,6 +81,11 @@ const ENTITY_MAPPINGS: Mappings[] = [
         entity: AbilityScore,
         mapper: AbilityScoreMapper,
         path: `${API_BASE_URL}/ability-scores`,
+    },
+    {
+        entity: Feat,
+        mapper: FeatMapper,
+        path: `${API_BASE_URL}/feats`,
     },
     { entity: Skill, mapper: SkillMapper, path: `${API_BASE_URL}/skills` },
     {
