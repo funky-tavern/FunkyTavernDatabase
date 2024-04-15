@@ -43,6 +43,8 @@ import { SpellList } from '../entity/spell-list.entity';
 import SpellListMapper from './entity_mapper/spell-list.mapper';
 import { Feat } from '../entity/feat.entity';
 import FeatMapper from './entity_mapper/feat.mapper';
+import { MagicItem } from '../entity/magic-item.entity';
+import MagicItemMapper from './entity_mapper/magic-item.mapper';
 
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
@@ -114,77 +116,82 @@ const ENTITY_MAPPINGS: Mappings[] = [
         path: `${API_BASE_URL}/equipment-categories`,
     },
     {
-        entity: RuleSection,
-        mapper: RuleSectionMapper,
-        path: `${API_BASE_URL}/rule-sections`,
+        entity: MagicItem,
+        mapper: MagicItemMapper,
+        path: `${API_BASE_URL}/magic-items`,
     },
-    { entity: Rules, mapper: RulesMapper, path: `${API_BASE_URL}/rules` },
-    {
-        entity: WeaponProperty,
-        mapper: WeaponPropertyMapper,
-        path: `${API_BASE_URL}/weapon-properties`,
-    },
-    {
-        entity: Equipment,
-        mapper: EquipmentMapper,
-        path: `${API_BASE_URL}/equipment`,
-    },
-    {
-        entity: Proficiency,
-        mapper: ProficiencyMapper,
-        path: `${API_BASE_URL}/proficiencies`,
-    },
-    {
-        entity: Monster,
-        mapper: MonsterMapper,
-        path: `${API_BASE_URL}/monsters`,
-    },
-    {
-        entity: MagicSchool,
-        mapper: MagicSchoolMapper,
-        path: `${API_BASE_URL}/magic-schools`,
-    },
-    {
-        entity: Spell,
-        mapper: SpellMapper,
-        path: `${API_BASE_URL}/spells`,
-    },
-    {
-        entity: Class,
-        mapper: ClassMapper,
-        path: `${API_BASE_URL}/classes`,
-        subresources: [
-            {
-                path: 'spells',
-                entity: SpellList,
-            }
-        ],
-    },
-    {
-        entity: SubClass,
-        mapper: SubClassMapper,
-        path: `${API_BASE_URL}/subclasses`,
-    },
-    {
-        entity: Feature,
-        mapper: FeatureMapper,
-        path: `${API_BASE_URL}/features`,
-    },
-    {
-        entity: Level,
-        mapper: LevelMapper,
-        parents: [
-            {
-                parent: Class,
-                path: `${API_BASE_URL}/classes`,
-            },
-            {
-                parent: SubClass,
-                path: `${API_BASE_URL}/subclasses`,
-            },
-        ],
-        subpath: 'levels',
-    },
+    // {
+    //     entity: RuleSection,
+    //     mapper: RuleSectionMapper,
+    //     path: `${API_BASE_URL}/rule-sections`,
+    // },
+    // { entity: Rules, mapper: RulesMapper, path: `${API_BASE_URL}/rules` },
+    // {
+    //     entity: WeaponProperty,
+    //     mapper: WeaponPropertyMapper,
+    //     path: `${API_BASE_URL}/weapon-properties`,
+    // },
+    // {
+    //     entity: Equipment,
+    //     mapper: EquipmentMapper,
+    //     path: `${API_BASE_URL}/equipment`,
+    // },
+    // {
+    //     entity: Proficiency,
+    //     mapper: ProficiencyMapper,
+    //     path: `${API_BASE_URL}/proficiencies`,
+    // },
+    // {
+    //     entity: Monster,
+    //     mapper: MonsterMapper,
+    //     path: `${API_BASE_URL}/monsters`,
+    // },
+    // {
+    //     entity: MagicSchool,
+    //     mapper: MagicSchoolMapper,
+    //     path: `${API_BASE_URL}/magic-schools`,
+    // },
+    // {
+    //     entity: Spell,
+    //     mapper: SpellMapper,
+    //     path: `${API_BASE_URL}/spells`,
+    // },
+    // {
+    //     entity: Class,
+    //     mapper: ClassMapper,
+    //     path: `${API_BASE_URL}/classes`,
+    //     subresources: [
+    //         {
+    //             path: 'spells',
+    //             entity: SpellList,
+    //         }
+    //     ],
+    // },
+    // {
+    //     entity: SubClass,
+    //     mapper: SubClassMapper,
+    //     path: `${API_BASE_URL}/subclasses`,
+    // },
+    // {
+    //     entity: Feature,
+    //     mapper: FeatureMapper,
+    //     path: `${API_BASE_URL}/features`,
+    // },
+    // {
+    //     entity: Level,
+    //     mapper: LevelMapper,
+    //     parents: [
+    //         {
+    //             parent: Class,
+    //             path: `${API_BASE_URL}/classes`,
+    //         },
+    //         {
+    //             parent: SubClass,
+    //             path: `${API_BASE_URL}/subclasses`,
+    //         },
+    //     ],
+    //     subpath: 'levels',
+    // },
 ];
 
 const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
