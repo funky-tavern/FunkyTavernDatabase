@@ -1,9 +1,8 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-
-export const EQUIPMENT_QUANTITY = z.object({
+export const TEquipmentQuantity = z.object({
     quantity: z.number(),
     equipment: z.string(),
 });
 
-export type EQUIPMENT_QUANTITY = z.infer<typeof EQUIPMENT_QUANTITY>;
+export type TEquipmentQuantity = z.infer<typeof TEquipmentQuantity>;

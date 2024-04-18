@@ -1,9 +1,8 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-
-export const ArmorClassType = z.object({
+export const TArmorClass = z.object({
     type: z.string(),
     value: z.number(),
 });
 
-export type ArmorClassType = z.infer<typeof ArmorClassType>;
+export type ArmorClass = z.infer<typeof TArmorClass>;

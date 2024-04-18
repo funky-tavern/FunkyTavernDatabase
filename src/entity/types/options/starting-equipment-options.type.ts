@@ -8,7 +8,6 @@ import {
     Options,
 } from './option.interface';
 
-
 export const StartingEquipmentOptions = Options(
     z.union([
         OptionArray(OptionCountedReference),

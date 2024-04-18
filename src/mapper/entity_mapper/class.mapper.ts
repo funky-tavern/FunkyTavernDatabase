@@ -60,11 +60,13 @@ export default class ClassMapper extends EntityMapper<Class> {
             spellcasting_level: obj.spellcasting?.level,
             spellcasting_ability: !!obj.spellcasting
                 ? await this.abilityScoreRepository.findOne({
-                      where: { index: obj.spellcasting?.spellcasting_ability.index },
+                      where: {
+                          index: obj.spellcasting?.spellcasting_ability.index,
+                      },
                   })
                 : null,
-            spells: !!obj.spellcasting ?
-                await this.parseSpells(obj.spells)
+            spells: !!obj.spellcasting
+                ? await this.parseSpells(obj.spells)
                 : null,
         });
     }

@@ -1,7 +1,6 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-
-export const USAGE = z.object({
+export const TUsage = z.object({
     type: z.union([
         z.literal('at_will'),
         z.literal('per_day'),
@@ -11,4 +10,4 @@ export const USAGE = z.object({
     times: z.number(),
 });
 
-export type USAGE = z.infer<typeof USAGE>;
+export type TUsage = z.infer<typeof TUsage>;

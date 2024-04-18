@@ -11,12 +11,14 @@ export default class SubClassMapper extends EntityMapper<SubClass> {
             desc: obj.desc.join('\n'),
             spells: obj.spells?.map((spell: any) => {
                 return {
-                    prerequisites: spell.prerequisites.map((prerequisite: any) => {
-                        return {
-                            type: prerequisite.type,
-                            index: prerequisite.index,
-                        }
-                    }),
+                    prerequisites: spell.prerequisites.map(
+                        (prerequisite: any) => {
+                            return {
+                                type: prerequisite.type,
+                                index: prerequisite.index,
+                            };
+                        },
+                    ),
                     spell: spell.spell.index,
                 };
             }),

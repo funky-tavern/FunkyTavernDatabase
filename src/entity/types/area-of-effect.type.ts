@@ -1,7 +1,6 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-
-export const AREA_OF_EFFECT = z.object({
+export const TAreaOfEffect = z.object({
     type: z.union([
         z.literal('cone'),
         z.literal('cube'),
@@ -13,4 +12,4 @@ export const AREA_OF_EFFECT = z.object({
     size_unit: z.union([z.literal('feet'), z.literal('meters')]),
 });
 
-export type AREA_OF_EFFECT = z.infer<typeof AREA_OF_EFFECT>;
+export type TAreaOfEffect = z.infer<typeof TAreaOfEffect>;

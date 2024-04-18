@@ -1,7 +1,7 @@
 import EntityMapper from './interface/entity-mapper.interface';
 import { Monster } from '../../entity/monster.entity';
-import { SpecialAbility } from '../../entity/types/special-ability.type';
-import { ActionType } from '../../entity/types/action.type';
+import { TSpecialAbility } from '../../entity/types/special-ability.type';
+import { TAction } from '../../entity/types/action.type';
 import { DataSource, Repository } from 'typeorm';
 import { Condition } from '../../entity/condition.entity';
 
@@ -60,7 +60,7 @@ export default class MonsterMapper extends EntityMapper<Monster> {
         return this.conditionRepository.findByIds(conditions);
     }
 
-    private parseSpecialAbilities(obj: any): SpecialAbility[] {
+    private parseSpecialAbilities(obj: any): TSpecialAbility[] {
         return obj.special_abilities?.map((ability: any) => {
             let mappedAbility = {
                 name: ability.name,
@@ -79,7 +79,7 @@ export default class MonsterMapper extends EntityMapper<Monster> {
         });
     }
 
-    private parseActions(obj: any): ActionType[] {
+    private parseActions(obj: any): TAction[] {
         return obj.actions?.map((action: any) => {
             let mappedAction = {
                 name: action.name,

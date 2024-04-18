@@ -1,8 +1,7 @@
-import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, PrimaryColumn } from 'typeorm';
 import { LanguageOption } from './types/options/language-option.type';
-import { TraitSpecific } from './types/trait-specific';
+import { TTraitSpecific } from './types/trait-specific.type';
 import { Proficiency } from './proficiency.entity';
-import { Spell } from './spell.entity';
 import { ProficiencyChoices } from './types/options/proficiency-choices.type';
 
 @Entity()
@@ -24,7 +23,7 @@ export class Trait {
     proficiency_choices: ProficiencyChoices;
 
     @Column('simple-json', { nullable: true })
-    trait_specific: TraitSpecific;
+    trait_specific: TTraitSpecific;
 
     @Column('simple-json', { nullable: true })
     language_options: LanguageOption;

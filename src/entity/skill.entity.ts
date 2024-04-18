@@ -1,9 +1,4 @@
-import {
-    Entity,
-    PrimaryColumn,
-    Column,
-    ManyToOne,
-} from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
 import { AbilityScore } from './ability-score.entity';
 
 @Entity()

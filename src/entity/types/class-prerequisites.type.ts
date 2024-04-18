@@ -1,9 +1,8 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-
-export const ClassPrerequisites = z.object({
+export const TClassPrerequisites = z.object({
     ability_score: z.string(),
     minimum_score: z.number(),
 });
 
-export type ClassPrerequisites = z.infer<typeof ClassPrerequisites>;
+export type TClassPrerequisites = z.infer<typeof TClassPrerequisites>;

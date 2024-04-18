@@ -1,6 +1,6 @@
 import EntityMapper from './interface/entity-mapper.interface';
 import { Proficiency } from '../../entity/proficiency.entity';
-import ProficiencyReferenceType from '../../entity/types/proficiency-type.type';
+import ProficiencyReferenceType from '../../entity/types/proficiency.type';
 
 export default class ProficiencyMapper extends EntityMapper<Proficiency> {
     async map(obj: any) {

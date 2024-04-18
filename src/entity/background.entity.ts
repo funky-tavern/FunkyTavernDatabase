@@ -1,6 +1,6 @@
-import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 import { LanguageOption } from './types/options/language-option.type';
-import { EQUIPMENT_QUANTITY } from './types/equipment-quantity-type';
+import { TEquipmentQuantity } from './types/equipment-quantity-type';
 import { PersonalityTraits } from './types/options/personality-traits-options.type';
 import { StartingEquipmentOptions } from './types/options/starting-equipment-options.type';
 import { StringTraits } from './types/options/string-options.type';
@@ -20,7 +20,7 @@ export class Background {
     language_options: LanguageOption;
 
     @Column('simple-json')
-    starting_equipment: EQUIPMENT_QUANTITY;
+    starting_equipment: TEquipmentQuantity;
 
     @Column('simple-json', { nullable: true })
     starting_equipment_options: StartingEquipmentOptions[];

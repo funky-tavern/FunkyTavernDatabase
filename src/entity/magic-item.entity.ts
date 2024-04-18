@@ -1,6 +1,13 @@
-import { Entity, PrimaryColumn, Column, ManyToOne, OneToMany, JoinTable, ManyToMany } from 'typeorm';
+import {
+    Column,
+    Entity,
+    JoinTable,
+    ManyToMany,
+    ManyToOne,
+    PrimaryColumn,
+} from 'typeorm';
 import { EquipmentCategory } from './equipment-categories.entity';
-import { ITEM_RARITY } from './types/item-rarity.type';
+import { TItemRarity } from './types/item-rarity.type';
 
 @Entity()
 export class MagicItem {
@@ -14,7 +21,7 @@ export class MagicItem {
     equipment_category: EquipmentCategory;
 
     @Column({ nullable: true })
-    rarity: ITEM_RARITY;
+    rarity: TItemRarity;
 
     @ManyToMany(() => MagicItem)
     @JoinTable()

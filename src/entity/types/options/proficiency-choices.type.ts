@@ -7,7 +7,6 @@ import {
     Options,
 } from './option.interface';
 
-
 export const ProficiencyChoices = Options(
     z.union([OptionArray(OptionReference), OptionChoice(OptionReference)]),
 );

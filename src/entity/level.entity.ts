@@ -1,12 +1,10 @@
 import {
-    Entity,
-    PrimaryColumn,
     Column,
-    ManyToMany,
-    JoinColumn,
-    OneToOne,
-    ManyToOne,
+    Entity,
     JoinTable,
+    ManyToMany,
+    ManyToOne,
+    PrimaryColumn,
 } from 'typeorm';
 import { Class } from './class.entity';
 import { SubClass } from './subclass.entity';

@@ -1,10 +1,10 @@
 import {
-    Entity,
-    PrimaryColumn,
     Column,
-    ManyToOne,
-    ManyToMany,
+    Entity,
     JoinTable,
+    ManyToMany,
+    ManyToOne,
+    PrimaryColumn,
 } from 'typeorm';
 import { EquipmentCategory } from './equipment-categories.entity';
 import { DamageType } from './damage-type.entity';

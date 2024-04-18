@@ -1,9 +1,8 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-
-export const SpeedType = z.object({
+export const TSpeed = z.object({
     walk: z.string(),
     swim: z.string(),
 });
 
-export type SpeedType = z.infer<typeof SpeedType>;
+export type TSpeed = z.infer<typeof TSpeed>;

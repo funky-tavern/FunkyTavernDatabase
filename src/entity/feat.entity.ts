@@ -1,5 +1,5 @@
-import { Entity, PrimaryColumn, Column } from 'typeorm';
-import { PREREQUISITES } from './types/prerequisites.type';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { TPrerequisites } from './types/prerequisites.type';
 
 @Entity()
 export class Feat {
@@ -10,7 +10,7 @@ export class Feat {
     name: string;
 
     @Column('simple-json')
-    prerequisites: PREREQUISITES[];
+    prerequisites: TPrerequisites[];
 
     @Column()
     desc: string;

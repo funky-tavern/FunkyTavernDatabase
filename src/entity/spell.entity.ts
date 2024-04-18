@@ -1,10 +1,9 @@
-import { Entity, PrimaryColumn, Column, ManyToMany, ManyToOne } from 'typeorm';
-import { DAMAGE } from './types/damage.type';
+import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { TDamage } from './types/damage.type';
 import { DC } from './types/dc.type';
-import { AREA_OF_EFFECT } from './types/area-of-effect.type';
-import { OneToMany } from 'typeorm/browser';
+import { TAreaOfEffect } from './types/area-of-effect.type';
 import { MagicSchool } from './magic-school.entity';
-import { HEAL_AT_SLOT_LEVEL } from './types/heal-at-slot-level.type';
+import { TSpellLevels } from './types/levels.type';
 
 @Entity()
 export class Spell {
@@ -48,16 +47,16 @@ export class Spell {
     attack_type: string;
 
     @Column('simple-json', { nullable: true })
-    damage: DAMAGE;
+    damage: TDamage;
 
     @Column('simple-json', { nullable: true })
     dc: DC;
 
     @Column('simple-json', { nullable: true })
-    heal_at_slot_level: HEAL_AT_SLOT_LEVEL;
+    heal_at_slot_level: TSpellLevels;
 
     @Column('simple-json', { nullable: true })
-    area_of_effect: AREA_OF_EFFECT;
+    area_of_effect: TAreaOfEffect;
 
     @ManyToOne(() => MagicSchool)
     school: MagicSchool;

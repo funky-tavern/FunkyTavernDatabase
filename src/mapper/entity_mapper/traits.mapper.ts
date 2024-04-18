@@ -2,7 +2,12 @@ import EntityMapper from './interface/entity-mapper.interface';
 import { Trait } from '../../entity/trait';
 import { DataSource, Repository } from 'typeorm';
 import { Proficiency } from '../../entity/proficiency.entity';
-import { TraitSpecific, TraitSpell, TraitSubOption, TraitWeapon } from '../../entity/types/trait-specific';
+import {
+    TTraitSpecific,
+    TTraitSpell,
+    TTraitSubOption,
+    TTraitWeapon,
+} from '../../entity/types/trait-specific.type';
 
 export default class TraitMapper extends EntityMapper<Trait> {
     private proficiencyRepository: Repository<Proficiency>;
@@ -18,24 +23,32 @@ export default class TraitMapper extends EntityMapper<Trait> {
             index: obj.index,
             name: obj.name,
             desc: obj.desc.join('\n'),
-            proficiencies: !!obj.proficiencies ?
-                await this.parseProficiencies(
-                    obj.proficiencies.map((p: any) => p.index),
-                ) : null,
-            proficiency_choices: !!obj.proficiency_choices ? {
-                choose: obj.proficiency_choices.choose,
-                from: obj.proficiency_choices.from.options.map((p: any) => {
-                    return p.item.index;
-                }),
-            } : null,
-            trait_specific: !!obj.trait_specific ? this.parseTraitSpecific(obj.trait_specific) : null,
-            language_options: !!obj.language_options ? {
-                choose: obj.language_options.choose,
-                from: obj.language_options.from.options.map((o: any) => {
-                    return o.item.index;
-                }),
-
-            } : null,
+            proficiencies: !!obj.proficiencies
+                ? await this.parseProficiencies(
+                      obj.proficiencies.map((p: any) => p.index),
+                  )
+                : null,
+            proficiency_choices: !!obj.proficiency_choices
+                ? {
+                      choose: obj.proficiency_choices.choose,
+                      from: obj.proficiency_choices.from.options.map(
+                          (p: any) => {
+                              return p.item.index;
+                          },
+                      ),
+                  }
+                : null,
+            trait_specific: !!obj.trait_specific
+                ? this.parseTraitSpecific(obj.trait_specific)
+                : null,
+            language_options: !!obj.language_options
+                ? {
+                      choose: obj.language_options.choose,
+                      from: obj.language_options.from.options.map((o: any) => {
+                          return o.item.index;
+                      }),
+                  }
+                : null,
         });
     }
 
@@ -43,7 +56,7 @@ export default class TraitMapper extends EntityMapper<Trait> {
         return this.proficiencyRepository.findByIds(proficiencies);
     }
 
-    private parseTraitSpecific(ts: any): TraitSpecific {
+    private parseTraitSpecific(ts: any): TTraitSpecific {
         if (!!ts.subtrait_options) {
             return this.parseSubtraitOptions(ts);
         } else if (!!ts.spell_options) {
@@ -53,7 +66,7 @@ export default class TraitMapper extends EntityMapper<Trait> {
         }
     }
 
-    private parseSubtraitOptions(ts: any): TraitSubOption {
+    private parseSubtraitOptions(ts: any): TTraitSubOption {
         return {
             type: 'subtrait',
             choose: ts.subtrait_options.choose,
@@ -63,7 +76,7 @@ export default class TraitMapper extends EntityMapper<Trait> {
         };
     }
 
-    private parseTraitSpellOptions(ts: any): TraitSpell {
+    private parseTraitSpellOptions(ts: any): TTraitSpell {
         return {
             type: 'spell',
             choose: ts.spell_options.choose,
@@ -73,7 +86,7 @@ export default class TraitMapper extends EntityMapper<Trait> {
         };
     }
 
-    private parseTraitWeapon(ts: any): TraitWeapon {
+    private parseTraitWeapon(ts: any): TTraitWeapon {
         return {
             name: ts.breath_weapon.name,
             desc: ts.breath_weapon.desc,
@@ -94,7 +107,7 @@ export default class TraitMapper extends EntityMapper<Trait> {
                     damage_type: d.damage_type.index,
                     damage_at_character_level: d.damage_at_character_level,
                 };
-            })
+            }),
         };
     }
 }

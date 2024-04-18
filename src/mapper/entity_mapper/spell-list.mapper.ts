@@ -15,9 +15,7 @@ export default class SpellListMapper extends EntityMapper<SpellList> {
     async map(obj: any): Promise<SpellList> {
         return this.entityRepository.create({
             index: obj.index,
-            spells: await this.mapSpells(
-                obj.results.map(s => s.index),
-            ),
+            spells: await this.mapSpells(obj.results.map(s => s.index)),
         });
     }
 

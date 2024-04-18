@@ -1,6 +1,6 @@
-import { Entity, PrimaryColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
 import { Class } from './class.entity';
-import { SpellPrerequisite } from './types/spell-prerequisite.type';
+import { TSpellPrerequisite } from './types/spell-prerequisite.type';
 
 @Entity()
 export class SubClass {
@@ -19,6 +19,6 @@ export class SubClass {
     @Column()
     desc: string;
 
-    @Column('simple-json', {nullable: true})
-    spells: SpellPrerequisite[];
+    @Column('simple-json', { nullable: true })
+    spells: TSpellPrerequisite[];
 }

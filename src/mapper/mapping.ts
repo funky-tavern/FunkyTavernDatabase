@@ -1,4 +1,4 @@
-import { ObjectLiteral, DataSource } from 'typeorm';
+import { DataSource, ObjectLiteral } from 'typeorm';
 
 import { RuleSection } from '../entity/rule-section.entity';
 import RuleSectionMapper from './entity_mapper/rule-sections.mapper';
@@ -25,22 +25,6 @@ import { Equipment } from '../entity/equipment.entity';
 import EquipmentMapper from './entity_mapper/equipment.mapper';
 import { Proficiency } from '../entity/proficiency.entity';
 import ProficiencyMapper from './entity_mapper/proficiency.mapper';
-import { Monster } from '../entity/monster.entity';
-import MonsterMapper from './entity_mapper/monster.mapper';
-import { MagicSchool } from '../entity/magic-school.entity';
-import MagicSchoolMapper from './entity_mapper/magic-school.mapper';
-import { Spell } from '../entity/spell.entity';
-import SpellMapper from './entity_mapper/spell.mapper';
-import { Class } from '../entity/class.entity';
-import ClassMapper from './entity_mapper/class.mapper';
-import { SubClass } from '../entity/subclass.entity';
-import SubClassMapper from './entity_mapper/subclass.mapper';
-import { Feature } from '../entity/feature.entity';
-import FeatureMapper from './entity_mapper/feature.mapper';
-import { Level } from '../entity/level.entity';
-import LevelMapper from './entity_mapper/level.mapper';
-import { SpellList } from '../entity/spell-list.entity';
-import SpellListMapper from './entity_mapper/spell-list.mapper';
 import { Feat } from '../entity/feat.entity';
 import FeatMapper from './entity_mapper/feat.mapper';
 import { MagicItem } from '../entity/magic-item.entity';
@@ -50,9 +34,7 @@ import BackgroundMapper from './entity_mapper/background.mapper';
 import { Trait } from '../entity/trait';
 import TraitMapper from './entity_mapper/traits.mapper';
 
-
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
-
 
 type BaseMapping = {
     entity: new () => ObjectLiteral;
@@ -60,7 +42,7 @@ type BaseMapping = {
         entity: new () => ObjectLiteral,
         dataSource: DataSource,
     ) => EntityMapper<ObjectLiteral>;
-}
+};
 
 type ParentMapping = BaseMapping & {
     parents: {
@@ -78,9 +60,7 @@ type EntityMapping = BaseMapping & {
     }[];
 };
 
-
 type Mappings = EntityMapping | ParentMapping;
-
 
 const ENTITY_MAPPINGS: Mappings[] = [
     {

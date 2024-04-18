@@ -1,5 +1,4 @@
 import EntityMapper from './interface/entity-mapper.interface';
-import { Skill } from '../../entity/skill.entity';
 import { Spell } from '../../entity/spell.entity';
 
 export default class SpellMapper extends EntityMapper<Spell> {

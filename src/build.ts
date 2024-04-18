@@ -1,7 +1,11 @@
 import { AppDataSource } from './data-source';
 import { DataFetcher } from './mapper/dataFetcher';
-import { ENTITY_MAPPINGS, EntityMapping, Mappings, ParentMapping } from './mapper/mapping';
-
+import {
+    ENTITY_MAPPINGS,
+    EntityMapping,
+    Mappings,
+    ParentMapping,
+} from './mapper/mapping';
 
 async function getFromEntityMapping(mapping: EntityMapping): Promise<Object[]> {
     return DataFetcher.fromUrl(
@@ -10,9 +14,8 @@ async function getFromEntityMapping(mapping: EntityMapping): Promise<Object[]> {
     );
 }
 
-
 async function getFromParentMapping(mapping: ParentMapping): Promise<Object[]> {
-    let data = []
+    let data = [];
     for (let parentMapping of mapping.parents) {
         data = [
             ...data,

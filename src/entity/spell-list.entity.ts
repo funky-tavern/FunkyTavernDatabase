@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, JoinTable, ManyToMany, PrimaryColumn } from 'typeorm';
 import { Spell } from './spell.entity';
 
 @Entity()

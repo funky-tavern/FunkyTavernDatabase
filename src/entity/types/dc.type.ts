@@ -1,5 +1,4 @@
-import { z } from "zod";
-
+import { z } from 'zod';
 
 export const DC = z.object({
     dc_type: z.string(),

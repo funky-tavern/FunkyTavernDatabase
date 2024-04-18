@@ -1,5 +1,4 @@
 import EntityMapper from './interface/entity-mapper.interface';
-import { Skill } from '../../entity/skill.entity';
 import { Level } from '../../entity/level.entity';
 import { DataSource, Repository } from 'typeorm';
 import { Feature } from '../../entity/feature.entity';
