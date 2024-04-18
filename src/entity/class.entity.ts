@@ -4,13 +4,13 @@ import {
     Column,
     ManyToMany,
     JoinTable,
-    JoinColumn, ManyToOne,
+    ManyToOne,
 } from 'typeorm';
 import { Proficiency } from './proficiency.entity';
 import { AbilityScore } from './ability-score.entity';
-import { EQUIPMENT_QUANTITY_TYPE } from './types/equipment-quantity-type';
-import { ProficiencyChoices } from './types/options/proficiency-choices';
-import { StartingEquipmentOptions } from './types/options/starting-equipment-options';
+import { EQUIPMENT_QUANTITY } from './types/equipment-quantity-type';
+import { ProficiencyChoices } from './types/options/proficiency-choices.type';
+import { StartingEquipmentOptions } from './types/options/starting-equipment-options.type';
 import { ClassPrerequisites } from './types/class-prerequisites.type';
 import { Spell } from './spell.entity';
 
@@ -41,7 +41,7 @@ export class Class {
     @Column('simple-json', {
         nullable: true,
     })
-    starting_equipment: EQUIPMENT_QUANTITY_TYPE[];
+    starting_equipment: EQUIPMENT_QUANTITY[];
 
     @Column('simple-json')
     starting_equipment_options: StartingEquipmentOptions[];

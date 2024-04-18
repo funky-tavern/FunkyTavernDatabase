@@ -2,11 +2,8 @@ import {
     Entity,
     PrimaryColumn,
     Column,
-    JoinColumn,
     ManyToOne,
-    ManyToMany,
 } from 'typeorm';
-import { OneToOne } from 'typeorm';
 import { AbilityScore } from './ability-score.entity';
 
 @Entity()

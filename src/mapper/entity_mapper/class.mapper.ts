@@ -1,7 +1,6 @@
 import EntityMapper from './interface/entity-mapper.interface';
-import { Rules } from '../../entity/rules.entity';
 import { Class } from '../../entity/class.entity';
-import { StartingEquipmentOptions } from '../../entity/types/options/starting-equipment-options';
+import { StartingEquipmentOptions } from '../../entity/types/options/starting-equipment-options.type';
 import { DataSource, Repository } from 'typeorm';
 import { Proficiency } from '../../entity/proficiency.entity';
 import { AbilityScore } from '../../entity/ability-score.entity';

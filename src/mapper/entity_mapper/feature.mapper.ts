@@ -1,5 +1,5 @@
-import EntityMapper from './entity_mapper/interface/entity-mapper.interface';
-import { Feature } from '../entity/feature.entity';
+import EntityMapper from './interface/entity-mapper.interface';
+import { Feature } from '../../entity/feature.entity';
 
 export default class FeatureMapper extends EntityMapper<Feature> {
     async map(obj: any) {

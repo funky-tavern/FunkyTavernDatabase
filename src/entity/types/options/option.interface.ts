@@ -6,6 +6,10 @@ export const OptionArray = <T extends z.ZodType<any>>(T: T) =>
         options: z.array(T),
     });
 
+export const OptionFromResourceList = (resource_list: string) => z.object({
+        resource_list: z.literal(resource_list),
+    });
+
 export const OptionEquipmentCategory = z.object({
     equipment_category: z.string(),
 });

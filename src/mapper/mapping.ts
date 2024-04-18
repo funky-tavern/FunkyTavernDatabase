@@ -36,7 +36,7 @@ import ClassMapper from './entity_mapper/class.mapper';
 import { SubClass } from '../entity/subclass.entity';
 import SubClassMapper from './entity_mapper/subclass.mapper';
 import { Feature } from '../entity/feature.entity';
-import FeatureMapper from './feature.mapper';
+import FeatureMapper from './entity_mapper/feature.mapper';
 import { Level } from '../entity/level.entity';
 import LevelMapper from './entity_mapper/level.mapper';
 import { SpellList } from '../entity/spell-list.entity';
@@ -45,6 +45,10 @@ import { Feat } from '../entity/feat.entity';
 import FeatMapper from './entity_mapper/feat.mapper';
 import { MagicItem } from '../entity/magic-item.entity';
 import MagicItemMapper from './entity_mapper/magic-item.mapper';
+import { Background } from '../entity/background.entity';
+import BackgroundMapper from './entity_mapper/background.mapper';
+import { Trait } from '../entity/trait';
+import TraitMapper from './entity_mapper/traits.mapper';
 
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
@@ -120,27 +124,37 @@ const ENTITY_MAPPINGS: Mappings[] = [
         mapper: MagicItemMapper,
         path: `${API_BASE_URL}/magic-items`,
     },
-    // {
-    //     entity: RuleSection,
-    //     mapper: RuleSectionMapper,
-    //     path: `${API_BASE_URL}/rule-sections`,
-    // },
-    // { entity: Rules, mapper: RulesMapper, path: `${API_BASE_URL}/rules` },
-    // {
-    //     entity: WeaponProperty,
-    //     mapper: WeaponPropertyMapper,
-    //     path: `${API_BASE_URL}/weapon-properties`,
-    // },
-    // {
-    //     entity: Equipment,
-    //     mapper: EquipmentMapper,
-    //     path: `${API_BASE_URL}/equipment`,
-    // },
-    // {
-    //     entity: Proficiency,
-    //     mapper: ProficiencyMapper,
-    //     path: `${API_BASE_URL}/proficiencies`,
-    // },
+    {
+        entity: Background,
+        mapper: BackgroundMapper,
+        path: `${API_BASE_URL}/backgrounds`,
+    },
+    {
+        entity: RuleSection,
+        mapper: RuleSectionMapper,
+        path: `${API_BASE_URL}/rule-sections`,
+    },
+    { entity: Rules, mapper: RulesMapper, path: `${API_BASE_URL}/rules` },
+    {
+        entity: WeaponProperty,
+        mapper: WeaponPropertyMapper,
+        path: `${API_BASE_URL}/weapon-properties`,
+    },
+    {
+        entity: Equipment,
+        mapper: EquipmentMapper,
+        path: `${API_BASE_URL}/equipment`,
+    },
+    {
+        entity: Proficiency,
+        mapper: ProficiencyMapper,
+        path: `${API_BASE_URL}/proficiencies`,
+    },
+    {
+        entity: Trait,
+        mapper: TraitMapper,
+        path: `${API_BASE_URL}/traits`,
+    },
     // {
     //     entity: Monster,
     //     mapper: MonsterMapper,

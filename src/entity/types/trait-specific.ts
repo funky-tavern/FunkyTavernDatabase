@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { Options, OptionReference } from './options/option.interface';
+import { Options, OptionReference, OptionArray } from './options/option.interface';
 import { AREA_OF_EFFECT } from './area-of-effect.type';
 import { DAMAGE } from './damage.type';
 import { DC } from './dc.type';
@@ -18,11 +18,11 @@ export const TraitWeapon = z.object({
 export type TraitWeapon = z.infer<typeof TraitWeapon>;
 
 
-export const TraitSubOption = Options(OptionReference);
+export const TraitSubOption = Options(OptionArray(OptionReference));
 export type TraitSubOption = z.infer<typeof TraitSubOption>;
 
 
-export const TraitSpell = Options(OptionReference);
+export const TraitSpell = Options(OptionArray(OptionReference));
 export type TraitSpell = z.infer<typeof TraitSpell>;
 
 
