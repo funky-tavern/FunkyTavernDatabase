@@ -1,11 +1,10 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class EquipmentCategory {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 }

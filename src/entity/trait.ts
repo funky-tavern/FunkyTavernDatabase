@@ -1,124 +1,30 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Column, Entity, JoinTable, ManyToMany, PrimaryColumn } from 'typeorm';
+import { LanguageOption } from './types/options/language-option.type';
+import { TTraitSpecific } from './types/trait-specific.type';
+import { Proficiency } from './proficiency.entity';
+import { ProficiencyChoices } from './types/options/proficiency-choices.type';
 
 @Entity()
 export class Trait {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    desc: string
+    @Column()
+    desc: string;
 
-    @Column({
-        transformer: {
-            to: (value: object[]|string[]) => {
-                if (!value || value.length === 0) {
-                    return null;
-                }
+    @ManyToMany(() => Proficiency)
+    @JoinTable()
+    proficiencies: Proficiency[];
 
-                return value.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
+    @Column('simple-json', { nullable: true })
+    proficiency_choices: ProficiencyChoices;
 
-                    return value["index"];
-                }).join("$");
-            },
-            from: (value: string) => {
-                if (!value) {
-                    return null;
-                }
-                return value.split("$");
-            }
-        },
-        nullable: true
-    })
-    proficiencies: string
+    @Column('simple-json', { nullable: true })
+    trait_specific: TTraitSpecific;
 
-    @Column("simple-json",{
-        transformer: {
-            to: (value: object) => {
-                if (!value) {
-                    return null;
-                }
-
-                value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
-
-                    return option["item"]["index"];
-                });
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
-        },
-        nullable: true
-    })
-    proficiency_choices: object
-
-    @Column("simple-json",{
-        transformer: {
-            to: (value: object) => {
-                if (!value || !value["spell_options"]) {
-                    return null;
-                }
-
-                value["spell_options"]["from"]["options"] = value["spell_options"]["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
-
-                    return option["item"]["index"];
-                });
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
-        },
-        nullable: true
-    })
-    trait_specific: object
-
-    @Column("simple-json",{
-        transformer: {
-            to: (value: object) => {
-                if (!value) {
-                    return null;
-                }
-
-                value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
-
-                    return option["item"]["index"];
-                });
-
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
-        },
-        nullable: true
-    })
-    language_options: object
+    @Column('simple-json', { nullable: true })
+    language_options: LanguageOption;
 }

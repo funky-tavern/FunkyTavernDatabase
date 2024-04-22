@@ -1,14 +1,13 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class MagicSchool {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column()
-    desc: string
+    desc: string;
 }

@@ -1,17 +1,16 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Language {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
     @Column({ nullable: true })
-    desc: string
+    desc: string;
 
     @Column()
-    type: string
+    type: string;
 }

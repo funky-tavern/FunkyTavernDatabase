@@ -1,39 +1,33 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Skill } from './skill.entity';
+import { AbilityScore } from './ability-score.entity';
+import { EquipmentCategory } from './equipment-categories.entity';
+import { Equipment } from './equipment.entity';
+import { TProficiencyType } from './types/proficiency.type';
 
 @Entity()
 export class Proficiency {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    type: string
+    type: string;
 
     @Column()
-    name: string
+    name: string;
 
-    @Column("simple-json", {
-        transformer: {
-            to: (value: object) => {
-                if (!value) {
-                    return null;
-                }
+    @Column()
+    reference_type: TProficiencyType;
 
-                if (value["url"]) {
-                    value["type"] = value["url"].split("/")[2];
-                    delete value["url"];
-                }
+    @ManyToOne(() => Equipment, { nullable: true })
+    equipment: Equipment;
 
-                if (value["name"]) {
-                    delete value["name"];
-                }
+    @ManyToOne(() => EquipmentCategory, { nullable: true })
+    equipment_categories: EquipmentCategory;
 
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
-        }
-    })
-    reference: object
+    @ManyToOne(() => AbilityScore, { nullable: true })
+    ability_scores: AbilityScore;
+
+    @ManyToOne(() => Skill, { nullable: true })
+    skills: Skill;
 }

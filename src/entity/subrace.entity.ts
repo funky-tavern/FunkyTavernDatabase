@@ -1,157 +1,47 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import {
+    Column,
+    Entity,
+    JoinTable,
+    ManyToMany,
+    ManyToOne,
+    PrimaryColumn,
+} from 'typeorm';
+import { Race } from './race.entity';
+import { TAbilityBonus } from './types/ability-bonus.type';
+import { Proficiency } from './proficiency.entity';
+import { Language } from './language.entity';
+import { LanguageOption } from './types/options/language-option.type';
+import { Trait } from './trait';
 
 @Entity()
 export class SubRace {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
-    @Column({
-        transformer: {
-            to: (value: object|string) => {
-                if (typeof value === "string") {
-                    return value
-                }
-                return value["index"]
-            },
-            from: (value: string) => {
-                return value
-            }
-        }
-    })
-    race: string
+    @ManyToOne(() => Race)
+    race: Race;
 
     @Column()
-    desc: string
+    desc: string;
 
-    @Column("simple-json", {
-        transformer: {
-            to: (values: object[]) => {
-                if (!values || values.length === 0) {
-                    return null;
-                }
+    @Column('simple-json')
+    ability_bonuses: TAbilityBonus[];
 
-                return values.map((value) => {
-                    if (typeof value["ability_score"] !== "string") {
-                        value["ability_score"] = value["ability_score"]["index"]
-                    }
+    @ManyToMany(() => Proficiency)
+    @JoinTable()
+    starting_proficiencies: Proficiency[];
 
-                    return value
-                });
-            },
-            from: (value: object) => {
-                return value
-            }
-        }
-    })
-    ability_bonuses: string
+    @ManyToMany(() => Language)
+    @JoinTable()
+    languages: Language[];
 
-    @Column({
-        transformer: {
-            to: (values: object[]|string[]) => {
-                if (!values || values.length === 0) {
-                    return null;
-                }
+    @Column('simple-json', { nullable: true })
+    language_options: LanguageOption;
 
-                return values.map((value) => {
-                    if (typeof value !== "string") {
-                        value = value["index"]
-                    }
-
-                    return value
-                }).join("$");
-            },
-            from: (value: string) => {
-                if (!value) {
-                    return null;
-                }
-                return value.split("$")
-            }
-        },
-        nullable: true
-    })
-    starting_proficiencies: string
-
-    @Column({
-        transformer: {
-            to: (values: object[]|string[]) => {
-                if (!values || values.length === 0) {
-                    return null;
-                }
-
-                return values.map((value) => {
-                    if (typeof value !== "string") {
-                        value = value["index"]
-                    }
-
-                    return value
-                }).join("$");
-            },
-            from: (value: string) => {
-                if (!value) {
-                    return null;
-                }
-                return value.split("$")
-            }
-        },
-        nullable: true
-    })
-    languages: string
-
-    @Column("simple-json", {
-        transformer: {
-            to: (value: object) => {
-                if (!value || !value["from"]["options"] || value["from"]["options"].length === 0) {
-                    return null;
-                }
-
-                if (value["type"]) {
-                    delete value["type"];
-                }
-
-                value["from"]["options"] = value["from"]["options"].map((option) => {
-                    if (typeof option === "string") {
-                        return option;
-                    }
-
-                    if (option && option["index"]) {
-                        return option["index"];
-                    }
-                });
-
-                return value;
-
-            },
-            from: (value: object) => {
-                return value;
-            }
-        },
-        nullable: true
-    })
-    language_options: string
-
-    @Column({
-        transformer: {
-            to: (values: object[]|string[]) => {
-                if (!values || values.length === 0) {
-                    return null;
-                }
-
-                return values.map((value) => {
-                    if (typeof value !== "string") {
-                        value = value["index"]
-                    }
-
-                    return value
-                }).join("$");
-            },
-            from: (value: string) => {
-                return value.split("$")
-            }
-        }
-    })
-    racial_traits: string
+    @ManyToMany(() => Trait)
+    @JoinTable()
+    racial_traits: Trait[];
 }

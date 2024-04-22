@@ -1,52 +1,39 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import {
+    Column,
+    Entity,
+    JoinTable,
+    ManyToMany,
+    ManyToOne,
+    PrimaryColumn,
+} from 'typeorm';
+import { Class } from './class.entity';
+import { SubClass } from './subclass.entity';
+import { Feature } from './feature.entity';
 
 @Entity()
 export class Level {
     @PrimaryColumn()
-    index: string
+    index: string;
 
-    @Column({
-        transformer: {
-            to: (value: object|string) => {
-                if (typeof value === "string") {
-                    return value;
-                }
-                return value["index"];
-            },
-            from: (value: string) => {
-                return value;
-            }
-        }
-    })
-    class: string
+    @ManyToOne(() => Class)
+    class: Class;
+
+    @ManyToOne(() => SubClass, { nullable: true })
+    subclass: SubClass;
 
     @Column()
-    level: number
+    level: number;
 
-    @Column({nullable: true})
-    ability_score_bonuses: number
+    @ManyToMany(() => Feature)
+    @JoinTable()
+    features: Feature[];
 
-    @Column({nullable: true})
-    prof_bonus: number
+    @Column({ nullable: true })
+    ability_score_bonuses: number;
 
-    @Column({
-        transformer: {
-            to: (values: object[]|string[]) => {
-                return values.map((value) => {
-                    if (typeof value === "string") {
-                        return value;
-                    }
-                    return value["index"];
-                }).join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    features: string
+    @Column({ nullable: true })
+    prof_bonus: number;
 
-    @Column("simple-json", {nullable: true})
-    class_specific: string
+    @Column('simple-json', { nullable: true })
+    class_specific: string;
 }

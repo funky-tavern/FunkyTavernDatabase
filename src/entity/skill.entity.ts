@@ -1,38 +1,17 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { AbilityScore } from './ability-score.entity';
 
 @Entity()
 export class Skill {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    desc: string
+    @Column()
+    desc: string;
 
-    @Column({
-        transformer: {
-            to: (value: object|string) => {
-                if (typeof value === "string") {
-                    return value
-                }
-                return value["index"]
-            },
-            from: (value: string) => {
-                return value
-            }
-        }
-    })
-    ability_score: string
+    @ManyToOne(() => AbilityScore)
+    ability_score: AbilityScore;
 }

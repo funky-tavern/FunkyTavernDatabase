@@ -1,25 +1,70 @@
-import {AppDataSource} from "./data-source"
-import { Mapper } from "./mapper/mapper";
-import { ENTITY_MAPPINGS } from "./mapper/mapping";
+import { AppDataSource } from './data-source';
+import { DataFetcher } from './mapper/dataFetcher';
+import {
+    ENTITY_MAPPINGS,
+    EntityMapping,
+    Mappings,
+    ParentMapping,
+} from './mapper/mapping';
+import { ObjectLiteral } from 'typeorm';
 
+async function getFromEntityMapping(
+    mapping: EntityMapping,
+): Promise<ObjectLiteral[]> {
+    return DataFetcher.fromUrl(
+        mapping.path,
+        mapping.subresources?.map(subresource => subresource.path),
+    );
+}
 
-AppDataSource.initialize().then(async () => {
+async function getFromParentMapping(
+    mapping: ParentMapping,
+): Promise<ObjectLiteral[]> {
+    let data = [];
+    for (const parentMapping of mapping.parents) {
+        data = [
+            ...data,
+            ...(await DataFetcher.fromParentUrl(
+                mapping.subpath,
+                parentMapping.path,
+            )),
+        ];
+    }
 
+    return data;
+}
 
-    ENTITY_MAPPINGS.forEach((entityMapping) => {
-        const Repository = AppDataSource.getRepository(entityMapping.entity);
+async function populateTable(mapping: Mappings): Promise<number> {
+    const Repository = AppDataSource.getRepository(mapping.entity);
 
-        (new Mapper(entityMapping.entity)).map(entityMapping.path).then((data) => {
-            Repository.save(data);
-        });
+    const entityMapper = new mapping.mapper(mapping.entity, AppDataSource);
 
-        Repository.find().then((entities) => {
-            console.log(`${entityMapping.entity.name}: ${entities.length};`);
-        }).catch((error) => {
-            console.log(`${entityMapping.entity.name}: failed;`);
-        }).finally(() => {
-            console.log(`${entityMapping.entity.name}: done;`);
-        });
-    });
+    let data = [];
+    if ((<EntityMapping>mapping).path) {
+        data = await getFromEntityMapping(<EntityMapping>mapping);
+    } else if ((<ParentMapping>mapping).parents) {
+        data = await getFromParentMapping(<ParentMapping>mapping);
+    } else {
+        throw new Error('Invalid mapping');
+    }
 
-}).catch(error => console.log(error))
+    const entities = await Promise.all(data.map(obj => entityMapper.map(obj)));
+
+    return (await Repository.save(entities)).length;
+}
+
+AppDataSource.initialize()
+    .then(async () => {
+        for (const entityMapping of ENTITY_MAPPINGS) {
+            try {
+                const numberOfResources = await populateTable(entityMapping);
+                console.log(
+                    `${entityMapping.entity.name}: ${numberOfResources} saved;`,
+                );
+            } catch (error) {
+                console.debug(error);
+                console.log(`${entityMapping.entity.name}: failed;`);
+            }
+        }
+    })
+    .catch(error => console.log(error));

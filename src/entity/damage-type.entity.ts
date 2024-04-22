@@ -1,23 +1,13 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class DamageType {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
+    name: string;
 
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    desc: string
+    @Column({ nullable: true })
+    desc: string;
 }

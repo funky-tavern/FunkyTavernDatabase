@@ -1,142 +1,63 @@
-import { Entity, PrimaryColumn, Column } from "typeorm"
-
+import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { TDamage } from './types/damage.type';
+import { DC } from './types/dc.type';
+import { TAreaOfEffect } from './types/area-of-effect.type';
+import { MagicSchool } from './magic-school.entity';
+import { TSpellLevels } from './types/levels.type';
 
 @Entity()
 export class Spell {
     @PrimaryColumn()
-    index: string
+    index: string;
 
     @Column()
-    name: string
-
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    desc: string
-
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                if (!value || value.length === 0) {
-                    return null;
-                }
-
-                return value.join("$");
-            },
-            from: (value: string) => {
-                if (!value) {
-                    return null;
-                }
-                return value.split("$");
-            }
-        },
-        nullable: true
-    })
-    higher_level: string
+    name: string;
 
     @Column()
-    range: string
-
-    @Column({
-        transformer: {
-            to: (value: string[]) => {
-                return value.join("$");
-            },
-            from: (value: string) => {
-                return value.split("$");
-            }
-        }
-    })
-    components: string
-
-    @Column({nullable: true})
-    material: string
-
-    @Column()
-    ritual: boolean
-
-    @Column()
-    duration: string
-
-    @Column()
-    concentration: boolean
-
-    @Column()
-    casting_time: string
-
-    @Column()
-    level: number
+    desc: string;
 
     @Column({ nullable: true })
-    attack_type: string
+    higher_level: string;
 
-    @Column("simple-json", {
-        transformer: {
-            to: (value: object) => {
-                if (!value || !value["damage_type"]) {
-                    return null;
-                }
+    @Column()
+    range: string;
 
-                if (value["damage_type"]["index"]) {
-                    value["damage_type"] = value["damage_type"]["index"];
-                }
+    @Column()
+    components: string;
 
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
-        },
-        nullable: true
-    })
-    damage: object
+    @Column({ nullable: true })
+    material: string;
 
-    @Column("simple-json", {
-        transformer: {
-            to: (value: object) => {
-                if (!value) {
-                    return null;
-                }
+    @Column()
+    ritual: boolean;
 
-                if (value["dc_type"]["index"]) {
-                    value["dc_type"] = value["dc_type"]["index"];
-                }
+    @Column()
+    duration: string;
 
-                return value;
-            },
-            from: (value: object) => {
-                return value;
-            }
-        },
-        nullable: true
-    })
-    dc: object
+    @Column()
+    concentration: boolean;
 
-    @Column("simple-json", { nullable: true })
-    heal_at_slot_level: object
+    @Column()
+    casting_time: string;
 
-    @Column("simple-json", { nullable: true })
-    area_of_effect: object
+    @Column()
+    level: number;
 
-    @Column({
-        transformer: {
-            to: (value: object|string) => {
-                if (typeof value === "string") {
-                    return value;
-                }
-                return value["index"];
-            },
-            from: (value: string) => {
-                return value;
-            }
-        }
-    })
-    school: string
+    @Column({ nullable: true })
+    attack_type: string;
+
+    @Column('simple-json', { nullable: true })
+    damage: TDamage;
+
+    @Column('simple-json', { nullable: true })
+    dc: DC;
+
+    @Column('simple-json', { nullable: true })
+    heal_at_slot_level: TSpellLevels;
+
+    @Column('simple-json', { nullable: true })
+    area_of_effect: TAreaOfEffect;
+
+    @ManyToOne(() => MagicSchool)
+    school: MagicSchool;
 }
