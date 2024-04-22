@@ -41,7 +41,7 @@ export default class MonsterMapper extends EntityMapper<Monster> {
                 };
             }),
             damage_vulnerabilities: obj.damage_vulnerabilities,
-            condition_immunities: !!obj.condition_immunities
+            condition_immunities: obj.condition_immunities
                 ? await this.parseConditions(
                       obj.condition_immunities.map(c => c.index),
                   )
@@ -62,12 +62,12 @@ export default class MonsterMapper extends EntityMapper<Monster> {
 
     private parseSpecialAbilities(obj: any): TSpecialAbility[] {
         return obj.special_abilities?.map((ability: any) => {
-            let mappedAbility = {
+            const mappedAbility = {
                 name: ability.name,
                 desc: ability.desc,
             };
 
-            if (!!ability?.dc) {
+            if (ability?.dc) {
                 mappedAbility['dc'] = {
                     dc_type: ability.dc.dc_type.index,
                     dc_success: ability.dc.dc_success,
@@ -81,7 +81,7 @@ export default class MonsterMapper extends EntityMapper<Monster> {
 
     private parseActions(obj: any): TAction[] {
         return obj.actions?.map((action: any) => {
-            let mappedAction = {
+            const mappedAction = {
                 name: action.name,
                 multiattack_type: action.multiattack_type,
                 desc: action.desc,
@@ -89,7 +89,7 @@ export default class MonsterMapper extends EntityMapper<Monster> {
                 actions: action.actions,
             };
 
-            if (!!action?.dc) {
+            if (action?.dc) {
                 mappedAction['dc'] = {
                     dc_type: action.dc.dc_type.index,
                     dc_success: action.dc.dc_success,
@@ -97,7 +97,7 @@ export default class MonsterMapper extends EntityMapper<Monster> {
                 };
             }
 
-            if (!!action?.damage) {
+            if (action?.damage) {
                 mappedAction['damage'] = action.damage.map((d: any) => {
                     return {
                         damage_type: d.damage_type?.index,

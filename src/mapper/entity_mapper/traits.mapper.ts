@@ -23,12 +23,12 @@ export default class TraitMapper extends EntityMapper<Trait> {
             index: obj.index,
             name: obj.name,
             desc: obj.desc.join('\n'),
-            proficiencies: !!obj.proficiencies
+            proficiencies: obj.proficiencies
                 ? await this.parseProficiencies(
                       obj.proficiencies.map((p: any) => p.index),
                   )
                 : null,
-            proficiency_choices: !!obj.proficiency_choices
+            proficiency_choices: obj.proficiency_choices
                 ? {
                       choose: obj.proficiency_choices.choose,
                       from: obj.proficiency_choices.from.options.map(
@@ -38,10 +38,10 @@ export default class TraitMapper extends EntityMapper<Trait> {
                       ),
                   }
                 : null,
-            trait_specific: !!obj.trait_specific
+            trait_specific: obj.trait_specific
                 ? this.parseTraitSpecific(obj.trait_specific)
                 : null,
-            language_options: !!obj.language_options
+            language_options: obj.language_options
                 ? {
                       choose: obj.language_options.choose,
                       from: obj.language_options.from.options.map((o: any) => {
@@ -57,9 +57,9 @@ export default class TraitMapper extends EntityMapper<Trait> {
     }
 
     private parseTraitSpecific(ts: any): TTraitSpecific {
-        if (!!ts.subtrait_options) {
+        if (ts.subtrait_options) {
             return this.parseSubtraitOptions(ts);
-        } else if (!!ts.spell_options) {
+        } else if (ts.spell_options) {
             return this.parseTraitSpellOptions(ts);
         } else {
             return this.parseTraitWeapon(ts);

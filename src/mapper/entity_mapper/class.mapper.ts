@@ -34,12 +34,12 @@ export default class ClassMapper extends EntityMapper<Class> {
                     ),
                 };
             }),
-            proficiencies: !!obj.proficiencies
+            proficiencies: obj.proficiencies
                 ? await this.parseProficiencies(
                       obj.proficiencies.map(p => p.index),
                   )
                 : null,
-            saving_throws: !!obj.saving_throws
+            saving_throws: obj.saving_throws
                 ? await this.parseAbilityScores(
                       obj.saving_throws.map(s => s.index),
                   )
@@ -58,14 +58,14 @@ export default class ClassMapper extends EntityMapper<Class> {
                 };
             }),
             spellcasting_level: obj.spellcasting?.level,
-            spellcasting_ability: !!obj.spellcasting
+            spellcasting_ability: obj.spellcasting
                 ? await this.abilityScoreRepository.findOne({
                       where: {
                           index: obj.spellcasting?.spellcasting_ability.index,
                       },
                   })
                 : null,
-            spells: !!obj.spellcasting
+            spells: obj.spellcasting
                 ? await this.parseSpells(obj.spells)
                 : null,
         });

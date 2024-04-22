@@ -22,7 +22,7 @@ export class DataFetcher {
         const parentIndexes = await DataFetcher._getIndexes(parentPath);
 
         let data = [];
-        for (let parentIndex of parentIndexes) {
+        for (const parentIndex of parentIndexes) {
             const res = await fetch(`${parentPath}/${parentIndex}/${subpath}`);
             if (res.ok === false) {
                 throw new Error(
@@ -43,14 +43,14 @@ export class DataFetcher {
         const indexes = await DataFetcher._getIndexes(urlPath);
 
         const data = [];
-        for (let index of indexes) {
-            let elementData = await DataFetcher._getDataFromIndex(
+        for (const index of indexes) {
+            const elementData = await DataFetcher._getDataFromIndex(
                 urlPath,
                 index,
             );
 
-            if (!!subresourcesPath) {
-                for (let resource of subresourcesPath) {
+            if (subresourcesPath) {
+                for (const resource of subresourcesPath) {
                     elementData[resource] = await DataFetcher._getIndexes(
                         `${urlPath}/${index}/${resource}`,
                     );

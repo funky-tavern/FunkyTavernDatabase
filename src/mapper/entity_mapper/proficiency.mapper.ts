@@ -4,7 +4,7 @@ import ProficiencyReferenceType from '../../entity/types/proficiency.type';
 
 export default class ProficiencyMapper extends EntityMapper<Proficiency> {
     async map(obj: any) {
-        let proficiencyType = obj.reference.url.split('/')[2];
+        const proficiencyType = obj.reference.url.split('/')[2];
 
         return this.entityRepository.create({
             index: obj.index,
@@ -19,7 +19,7 @@ export default class ProficiencyMapper extends EntityMapper<Proficiency> {
         proficiencyType: ProficiencyReferenceType,
         mapObject: any,
     ): object {
-        let value = mapObject.reference.index;
+        const value = mapObject.reference.index;
 
         switch (proficiencyType) {
             case ProficiencyReferenceType.EQUIPMENT:

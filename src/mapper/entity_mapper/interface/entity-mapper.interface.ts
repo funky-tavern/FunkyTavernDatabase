@@ -10,6 +10,7 @@ export default abstract class EntityMapper<Entity extends ObjectLiteral> {
         this.entityRepository = dataSource.getRepository(entity);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async map(data: any): Promise<Entity> {
         throw new Error('Method not implemented.');
     }

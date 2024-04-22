@@ -11,14 +11,17 @@ export default class FeatureMapper extends EntityMapper<Feature> {
             level: obj.level,
             prerequisites: obj.prerequisites.map((prereq: any) => {
                 switch (prereq.type) {
-                    case 'level':
+                    case 'level': {
                         return { type: prereq.type, level: prereq.level };
-                    case 'spell':
-                        let spell_index = prereq.spell.split('/').pop();
+                    }
+                    case 'spell': {
+                        const spell_index = prereq.spell.split('/').pop();
                         return { type: prereq.type, spell: spell_index };
-                    case 'feature':
-                        let feature_index = prereq.feature.split('/').pop();
+                    }
+                    case 'feature': {
+                        const feature_index = prereq.feature.split('/').pop();
                         return { type: prereq.type, feature: feature_index };
+                    }
                 }
             }),
             desc: obj.desc.join('\n'),
