@@ -1,6 +1,6 @@
 import EntityMapper from './interface/entity-mapper.interface';
 import { Proficiency } from '../../entity/proficiency.entity';
-import ProficiencyReferenceType from '../../entity/types/proficiency.type';
+import { TProficiencyType } from '../../entity/types/proficiency.type';
 
 export default class ProficiencyMapper extends EntityMapper<Proficiency> {
     async map(obj: any) {
@@ -16,25 +16,25 @@ export default class ProficiencyMapper extends EntityMapper<Proficiency> {
     }
 
     private mapToProficiencyType(
-        proficiencyType: ProficiencyReferenceType,
+        proficiencyType: TProficiencyType,
         mapObject: any,
     ): object {
         const value = mapObject.reference.index;
 
         switch (proficiencyType) {
-            case ProficiencyReferenceType.EQUIPMENT:
+            case 'equipment':
                 return {
                     equipment: value,
                 };
-            case ProficiencyReferenceType.EQUIPMENT_CATEGORIES:
+            case 'equipment-categories':
                 return {
                     equipment_categories: value,
                 };
-            case ProficiencyReferenceType.ABILITY_SCORES:
+            case 'ability-scores':
                 return {
                     ability_scores: value,
                 };
-            case ProficiencyReferenceType.SKILLS:
+            case 'skills':
                 return {
                     skills: value,
                 };

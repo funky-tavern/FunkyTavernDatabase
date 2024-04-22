@@ -1,7 +1,7 @@
 import { Column, Entity, JoinTable, ManyToMany, PrimaryColumn } from 'typeorm';
 import { TArmorClass } from './types/armor-class.type';
 import { TSpeed } from './types/speed.type';
-import { ProficiencyValueType } from './types/proficiency-value.type';
+import { TProficiencyValue } from './types/t-proficiency.value';
 import { Condition } from './condition.entity';
 import { TSpecialAbility } from './types/special-ability.type';
 import { TAction } from './types/action.type';
@@ -60,7 +60,7 @@ export class Monster {
     charisma: number;
 
     @Column('simple-json')
-    proficiencies: ProficiencyValueType[];
+    proficiencies: TProficiencyValue[];
 
     @Column('simple-array', { nullable: true })
     damage_vulnerabilities: string[];

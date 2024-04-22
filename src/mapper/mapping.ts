@@ -33,6 +33,10 @@ import { Background } from '../entity/background.entity';
 import BackgroundMapper from './entity_mapper/background.mapper';
 import { Trait } from '../entity/trait';
 import TraitMapper from './entity_mapper/traits.mapper';
+import { Race } from '../entity/race.entity';
+import RaceMapper from './entity_mapper/race.mapper';
+import { SubRace } from '../entity/subrace.entity';
+import SubRaceMapper from './entity_mapper/subrace.mapper';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
@@ -62,7 +66,7 @@ type EntityMapping = BaseMapping & {
 
 type Mappings = EntityMapping | ParentMapping;
 
-const ENTITY_MAPPINGS: Mappings[] = [
+export const ENTITY_MAPPINGS: Mappings[] = [
     {
         entity: AbilityScore,
         mapper: AbilityScoreMapper,
@@ -135,61 +139,20 @@ const ENTITY_MAPPINGS: Mappings[] = [
         mapper: TraitMapper,
         path: `${API_BASE_URL}/traits`,
     },
-    // {
-    //     entity: Monster,
-    //     mapper: MonsterMapper,
-    //     path: `${API_BASE_URL}/monsters`,
-    // },
-    // {
-    //     entity: MagicSchool,
-    //     mapper: MagicSchoolMapper,
-    //     path: `${API_BASE_URL}/magic-schools`,
-    // },
-    // {
-    //     entity: Spell,
-    //     mapper: SpellMapper,
-    //     path: `${API_BASE_URL}/spells`,
-    // },
-    // {
-    //     entity: Class,
-    //     mapper: ClassMapper,
-    //     path: `${API_BASE_URL}/classes`,
-    //     subresources: [
-    //         {
-    //             path: 'spells',
-    //             entity: SpellList,
-    //         }
-    //     ],
-    // },
-    // {
-    //     entity: SubClass,
-    //     mapper: SubClassMapper,
-    //     path: `${API_BASE_URL}/subclasses`,
-    // },
-    // {
-    //     entity: Feature,
-    //     mapper: FeatureMapper,
-    //     path: `${API_BASE_URL}/features`,
-    // },
-    // {
-    //     entity: Level,
-    //     mapper: LevelMapper,
-    //     parents: [
-    //         {
-    //             parent: Class,
-    //             path: `${API_BASE_URL}/classes`,
-    //         },
-    //         {
-    //             parent: SubClass,
-    //             path: `${API_BASE_URL}/subclasses`,
-    //         },
-    //     ],
-    //     subpath: 'levels',
-    // },
+    {
+        entity: Race,
+        mapper: RaceMapper,
+        path: `${API_BASE_URL}/races`,
+    },
+    {
+        entity: SubRace,
+        mapper: SubRaceMapper,
+        path: `${API_BASE_URL}/subraces`,
+    },
 ];
 
-const ENTITIES = ENTITY_MAPPINGS.map(entityMapping => entityMapping.entity);
+export const ENTITIES = ENTITY_MAPPINGS.map(
+    entityMapping => entityMapping.entity,
+);
 
 export type { Mappings, EntityMapping, ParentMapping };
-export { ENTITY_MAPPINGS };
-export { ENTITIES };

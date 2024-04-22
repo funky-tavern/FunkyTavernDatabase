@@ -1,9 +1,9 @@
 import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
-import ProficiencyReferenceType from './types/proficiency.type';
 import { Skill } from './skill.entity';
 import { AbilityScore } from './ability-score.entity';
 import { EquipmentCategory } from './equipment-categories.entity';
 import { Equipment } from './equipment.entity';
+import { TProficiencyType } from './types/proficiency.type';
 
 @Entity()
 export class Proficiency {
@@ -17,7 +17,7 @@ export class Proficiency {
     name: string;
 
     @Column()
-    reference_type: ProficiencyReferenceType;
+    reference_type: TProficiencyType;
 
     @ManyToOne(() => Equipment, { nullable: true })
     equipment: Equipment;

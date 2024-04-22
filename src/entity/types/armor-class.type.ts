@@ -5,4 +5,4 @@ export const TArmorClass = z.object({
     value: z.number(),
 });
 
-export type ArmorClass = z.infer<typeof TArmorClass>;
+export type TArmorClass = z.infer<typeof TArmorClass>;
