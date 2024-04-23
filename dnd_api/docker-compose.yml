@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: dnd_database
+    image: ghcr.io/5e-bits/5e-database:latest
+    # build: ../5e-database
+    ports:
+      - "27017:27017"
+
+  cache:
+    container_name: dnd_redis
+    image: redis:latest
+    ports:
+      - "6380:6379"
+
+  api:
+    container_name: dnd_api
+    image: ghcr.io/5e-bits/5e-srd-api:3.6.0
+    environment:
+      MONGODB_URI: mongodb://dnd_database/5e-database
+      REDIS_URL: redis://dnd_redis
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
