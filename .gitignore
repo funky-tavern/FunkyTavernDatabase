@@ -9,3 +9,5 @@ temp/
 
 lib/
 .secret
+
+.env
