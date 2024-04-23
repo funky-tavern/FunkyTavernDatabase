@@ -7,18 +7,24 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
       packages: write
+
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
+
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run build --if-present
-      - run: cd lib && npm publish --access public
-        env:
-          #           NOTE: using the built-in GITHUB token here because we're publishing to THIS repository's packages.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#      - run: cd lib && npm publish --access public
+#        env:
+#          #           NOTE: using the built-in GITHUB token here because we're publishing to THIS repository's packages.
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
