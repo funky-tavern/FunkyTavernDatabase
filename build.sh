@@ -19,5 +19,12 @@ echo -e "\n::Building the D&D Database\n"
 ts-node src/build.ts
 
 echo -e "\n::Copying the necessary files to the lib folder\n"
-tsc || echo '::Build ran with errors. Check the log above for more details.'
+if [[ $(tsc) -ne 0 ]]; then
+    echo "::Build ran with errors. Check the log above for more details."
+    exit 1
+fi
+
 cp src/db lib/db -r && cp package.json lib/ && cp README.md lib/
+echo "::Build ran successfully."
+
+exit 0
