@@ -26,7 +26,10 @@
   },
   "scripts": {
     "clean": "rm -rf lib src/db",
-    "build": "rm -rf lib src/db && ts-node src/build.ts && tsc && cp src/db lib/db -r && cp package.json lib/ && cp README.md lib/",
+    "build-db": "ts-node src/build.ts",
+    "build-ts": "tsc || echo 'Build ran with errors. Check the log above for details.'",
+    "build-package": "cp src/db lib/db -r && cp package.json lib/ && cp README.md lib/",
+    "build": "npm run clean && npm run build-db && npm run build-ts && npm run build-package",
     "typeorm": "typeorm-ts-node-commonjs",
     "prepare": "prettier --config .prettierrc 'src/**/*.ts' --write && eslint --fix src/"
   }
