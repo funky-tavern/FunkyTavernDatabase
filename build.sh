@@ -12,7 +12,7 @@ echo -e "\n---------------------------------------------------------------------
 
 
 echo -e "\n::Cleaning up the lib folder\n"
-npm run clean
+npm run format
 
 
 echo -e "\n::Building the D&D Database\n"
