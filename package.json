@@ -1,6 +1,6 @@
 {
   "name": "@funky-tavern/db",
-  "version": "0.1.0-3",
+  "version": "0.1.0-4",
   "description": "Awesome project developed with TypeORM.",
   "type": "commonjs",
   "devDependencies": {
