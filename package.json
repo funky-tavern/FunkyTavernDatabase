@@ -1,6 +1,6 @@
 {
   "name": "@funky-tavern/db",
-  "version": "0.1.0",
+  "version": "0.1.0-2",
   "description": "Awesome project developed with TypeORM.",
   "type": "commonjs",
   "devDependencies": {
@@ -19,6 +19,7 @@
     "typescript": "4.5.2"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
     "typeorm": "0.3.17",
