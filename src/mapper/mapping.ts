@@ -36,6 +36,21 @@ import { Trait } from '../entity/trait';
 import TraitMapper from './entity_mapper/traits.mapper';
 import { Race } from '../entity/race.entity';
 import RaceMapper from './entity_mapper/race.mapper';
+import { Monster } from '../entity/monster.entity';
+import MonsterMapper from './entity_mapper/monster.mapper';
+import { MagicSchool } from '../entity/magic-school.entity';
+import MagicSchoolMapper from './entity_mapper/magic-school.mapper';
+import { Spell } from '../entity/spell.entity';
+import SpellMapper from './entity_mapper/spell.mapper';
+import { Class } from '../entity/class.entity';
+import ClassMapper from './entity_mapper/class.mapper';
+import { SpellList } from '../entity/spell-list.entity';
+import { SubClass } from '../entity/subclass.entity';
+import SubClassMapper from './entity_mapper/subclass.mapper';
+import { Feature } from '../entity/feature.entity';
+import FeatureMapper from './entity_mapper/feature.mapper';
+import { Level } from '../entity/level.entity';
+import LevelMapper from './entity_mapper/level.mapper';
 
 const API_BASE_URL = 'https://www.dnd5eapi.co/api';
 
@@ -137,6 +152,57 @@ export const ENTITY_MAPPINGS: Mappings[] = [
         entity: Trait,
         mapper: TraitMapper,
         path: `${API_BASE_URL}/traits`,
+    },
+    {
+        entity: Monster,
+        mapper: MonsterMapper,
+        path: `${API_BASE_URL}/monsters`,
+    },
+    {
+        entity: MagicSchool,
+        mapper: MagicSchoolMapper,
+        path: `${API_BASE_URL}/magic-schools`,
+    },
+    {
+        entity: Spell,
+        mapper: SpellMapper,
+        path: `${API_BASE_URL}/spells`,
+    },
+    {
+        entity: Class,
+        mapper: ClassMapper,
+        path: `${API_BASE_URL}/classes`,
+        subresources: [
+            {
+                path: 'spells',
+                entity: SpellList,
+            },
+        ],
+    },
+    {
+        entity: SubClass,
+        mapper: SubClassMapper,
+        path: `${API_BASE_URL}/subclasses`,
+    },
+    {
+        entity: Feature,
+        mapper: FeatureMapper,
+        path: `${API_BASE_URL}/features`,
+    },
+    {
+        entity: Level,
+        mapper: LevelMapper,
+        parents: [
+            {
+                parent: Class,
+                path: `${API_BASE_URL}/classes`,
+            },
+            {
+                parent: SubClass,
+                path: `${API_BASE_URL}/subclasses`,
+            },
+        ],
+        subpath: 'levels',
     },
     {
         entity: Race,
