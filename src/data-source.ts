@@ -10,8 +10,9 @@ export const DATABASE_FILE_PATH = path.join(
 );
 
 export const AppDataSource = new DataSource({
-    type: 'sqlite',
-    database: DATABASE_FILE_PATH,
+    type: 'sqljs',
+    location: DATABASE_FILE_PATH,
+    autoSave: true,
     synchronize: true,
     logging: false,
     entities: ENTITIES,
