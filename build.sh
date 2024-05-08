@@ -16,7 +16,7 @@ npm run format
 
 
 echo -e "\n::Building the D&D Database\n"
-ts-node src/build.ts
+mkdir src/db && ts-node src/build.ts
 
 echo -e "\n::Copying the necessary files to the lib folder\n"
 if [[ $(tsc) -ne 0 ]]; then
