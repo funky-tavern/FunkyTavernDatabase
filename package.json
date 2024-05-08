@@ -33,6 +33,7 @@
   "scripts": {
     "clean": "rm -rf lib src/db",
     "build": "bash ./build.sh",
+    "test": "jest",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write && eslint --fix src/"
   }
 }

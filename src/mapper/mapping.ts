@@ -57,10 +57,9 @@ import * as path from 'node:path';
 const envPath = path.resolve(__dirname, '..', '..', '.env');
 dotenv.config({ path: envPath });
 
-const API_BASE_URL =
-    process.env.ENV === 'dev'
-        ? 'http://localhost:3000/api'
-        : 'https://www.dnd5eapi.co/api';
+const API_BASE_URL = process.env.API_PATH
+    ? process.env.API_PATH
+    : 'https://www.dnd5eapi.co/api';
 
 type BaseMapping = {
     entity: new () => ObjectLiteral;
